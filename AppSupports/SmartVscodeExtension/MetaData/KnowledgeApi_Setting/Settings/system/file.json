@@ -1,0 +1,16 @@
+[
+    {
+        "id": "files.autoSave",
+        "desc": " Controls auto save of editors that have unsaved changes. - off: An editor with changes is never automatically saved.  - afterDelay: An editor with changes is automatically saved after the configured `files.autoSaveDelay`.\n  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.  - onWindowChange: An editor with changes is automatically saved when the window loses focus.",
+        "example": {
+            "files.autoSave": "off"
+        }
+    },
+    {
+        "id": "files.autoSaveDelay",
+        "desc": " Controls the delay in milliseconds after which an editor with unsaved changes is saved automatically. Only applies when `files.autoSave` is set to `afterDelay`.",
+        "example": {
+            "files.autoSaveDelay": 1000
+        }
+    }
+]

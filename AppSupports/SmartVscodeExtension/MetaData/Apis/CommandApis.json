@@ -1,0 +1,34 @@
+{
+  "listCommands": {
+    "name": "listCommands",
+    "description": "List all available commands from vscode or its extensions. You can use these commands to achieve diverse functions.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filterKey": {
+          "type": "string",
+          "description": "An optional filter key. If provided, only commands that contain this key in their name will be listed."
+        }
+      },
+      "required": [
+        "filterKey"
+      ]
+    }
+  },
+  "executeCommand": {
+    "name": "executeCommand",
+    "description": "Execute a specified command of vscode or its extensions. You can use this function to achieve diverse functions ",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "commandId": {
+          "type": "string",
+          "description": "The identifier of the command to be executed."
+        }
+      },
+      "required": [
+        "commandId"
+      ]
+    }
+  }
+}

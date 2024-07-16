@@ -1,0 +1,54 @@
+{
+  "getProperties": {
+    "name": "getProperties",
+    "description": "Retrieve the values for a set of given Visual Studio Code settings. An object containing key-value pairs representing the requested settings and their respective values.",
+    "parameters": {
+      "type": "array",
+      "properties": {
+        "keys": {
+          "type": "array[string]",
+          "description": "The setting key whose value is to be retrieved."
+        }
+      },
+      "required": [
+        "keys"
+      ]
+    }
+  },
+  "setProperties": {
+    "name": "setProperties",
+    "description": "Set the values of specified Visual Studio Code settings.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "key2Value": {
+          "type": "JSON",
+          "description": "An object containing key-value pairs to update the Visual Studio Code settings."
+        },
+        "onGlobal": {
+          "type": "boolean",
+          "description": "If true, the settings are applied globally. If false, the settings are applied to the current workspace. Default is false."
+        }
+      },
+      "required": [
+        "key2Value"
+      ]
+    }
+  },
+  "setLanguage": {
+    "name": "setLanguage",
+    "description": "Set the language mode for the editor.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "value like en,zh-cn. These are candidate values: Display Language,Locale; English (US),en; Simplified Chinese,zh-cn; Traditional Chinese,zh-tw; French,fr; German,de; Italian,it; Spanish,es; Japanese,ja; Korean,ko; Russian,ru; Portuguese (Brazil),pt-br; Turkish,tr; Polish,pl; Czech,cs; Hungarian,hu"
+        }
+      },
+      "required": [
+        "language"
+      ]
+    }
+  }
+}

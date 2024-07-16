@@ -1,0 +1,18 @@
+[
+  {
+    "id": "editor.fontSize",
+    "desc": " Controls the font size in pixels.",
+    "example": {
+      "editor.fontSize": 14
+    }
+  },
+  {
+    "id": "editor.tokenColorCustomizations",
+    "desc": " Overrides editor syntax colors and font style from the currently selected color theme.",
+    "example": {
+      "editor.tokenColorCustomizations": {
+        "comments": "#808080"
+      }
+    }
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "addConfigurationToLaunch": {
+    "name": "addConfigurationToLaunch",
+    "description": "Add an configuration to the launch.json file of vscode. If the launch.json file does not exist, it will be created. If the configuration already exists, it will be updated.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "JSON",
+          "description": "The configuration is added to the launch.json file."
+        }
+      }
+    },
+    "dependencyApis": {
+      "getLaunchFileContent": "Before calling this function, you must call getLaunchFileContent to get the origin content of the launch.json file."
+    }
+  },
+  "openRemoteConfigFile": {
+    "name": "openRemoteConfigFile",
+    "description": "Open the remote configuration file of vscode.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "createRemoteSSHServerConnect": {
+    "name": "createRemoteSSHServerConnect",
+    "description": "create a remote ssh server connection in vscode.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "createDBMSConnect": {
+    "name": "createDBMSConnect",
+    "description": "Create a connection to a Database Management System (DBMS) in Visual Studio Code. This connection can then be utilized to run SQL queries directly.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "extensionId": {
+          "type": "string",
+          "description": "The unique identifier for the DBMS extension in Visual Studio Code."
+        }
+      },
+      "required": [
+        "extensionId"
+      ]
+    },
+    "dependencyApis": {
+      "getInstalledExtensions": "Before calling this function, you must call getInstalledExtensions to obtain the unique identifier of the DBMS extension."
+    }
+  }
+}

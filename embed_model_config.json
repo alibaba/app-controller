@@ -1,0 +1,22 @@
+[
+  {
+    "config_name": "openai_embedding_config",
+    "model_type": "post_api_embedding",
+    "api_url": "{OPENAI_BASE_URL}v1/embeddings",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "{OPENAI_API_KEY}"
+    },
+    "messages_key": "input",
+    "json_args": {
+      "model": "text-embedding-3-small",
+      "encoding_format": "float"
+    }
+  },
+  {
+    "config_name": "qwen_embedding_config",
+    "model_type": "dashscope_text_embedding",
+    "model_name": "text-embedding-v2",
+    "api_key": "{DASHSCOPE_API_KEY}"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "openKeybindingSettings": {
+    "name": "openKeybindingSettings",
+    "description": "Open the settings page of keybindings (keyboard shortcuts) of vscode.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "openAndSetKeybinding": {
+    "name": "openAndSetKeybinding",
+    "description": "Set keybinding (keyboard shortcut) of a command.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "commandName": {
+          "type": "string",
+          "description": "NOT EMPTY STRING! The name of the command (e.g. @command:workbench.action.openGlobalKeybindings) to set, or short description in nature language of command to set."
+        }
+      },
+      "required": [
+        "commandName"
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "getInstalledExtensions": {
+    "name": "getInstalledExtensions",
+    "description": "Get a array of all installed extensions. It can be filtered using the 'filterKey' parameter.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filterKey": {
+          "type": "string",
+          "description": "An optional filter key. If provided, only extensions that contain this key in their name will be returned."
+        }
+      },
+      "required": [
+        "filterKey"
+      ]
+    }
+  },
+
+  "requireUserToInstallExtension": {
+    "name": "requireUserToInstallExtension",
+    "description": "Require the user to install an extension.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "extensionName": {
+          "type": "string",
+          "description": "The extension name or a search keyword."
+        }
+      },
+      "required": [
+        "extensionName"
+      ]
+    },
+    "dependencyApis": {
+      "getInstalledExtensions": "Before calling this function, you can call getInstalledExtensions to check if the extension is already installed."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "api": {
+    "name": "setProperties",
+    "description": "Set the values of specified Visual Studio Code settings.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "key2Value": {
+          "type": "JSON",
+          "description": "An object containing key-value pairs to update the Visual Studio Code settings."
+        },
+        "onGlobal": {
+          "type": "boolean",
+          "description": "If true, the settings are applied globally. If false, the settings are applied to the current workspace. Default is false."
+        }
+      },
+      "required": [
+        "key2Value"
+      ]
+    }
+  },
+  "retrieve_size": 10,
+  "chatModelLevel": "Lightweight"
+}

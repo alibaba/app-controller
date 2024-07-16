@@ -1,0 +1,18 @@
+{
+  "toggleBreakpointAtLine": {
+    "name": "toggleBreakpointAtLine",
+    "description": "Toggle the breakpoint status at the specified line of code. You can use this command to control the execution flow of your debugging session by setting breakpoints at desired lines.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "line": {
+          "type": "number",
+          "description": "An optional parameter. If provided, the 'toggleBreakpointAtLine' command will toggle the breakpoint status at this specific line number in the code. If not provided, the command will toggle the breakpoint status at the current line."
+        }
+      },
+      "required": [
+        "line"
+      ]
+    }
+  }
+}

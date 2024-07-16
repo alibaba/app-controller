@@ -1,0 +1,216 @@
+[
+  {
+    "id": 1,
+    "q": "请调小字体。",
+    "a": {
+      "setProperties": {
+        "arguments": {
+          "key2Value": {
+            "editor.fontSize": "@:type(x) is int and x < 20"
+          }
+        }
+      },
+      "getProperties": {
+        "arguments": {
+        }
+      }
+    }
+  },
+  {
+    "id": 2,
+    "q": "请把所有javascript文件中的所有“abcd”替换成“defg”。",
+    "a": {
+      "findAndReplace": {
+        "arguments": {
+          "position": "files",
+          "query": "abcd",
+          "replace": "defg",
+          "isRegex": "@:type(x) is bool",
+          "preserveCase": false,
+          "findInSelection": "@:type(x) is bool",
+          "matchWholeWord": false,
+          "isCaseSensitive": "@:type(x) is bool",
+          "filesToInclude": "*.js",
+          "filesToExclude": ""
+        }
+      }
+    }
+  },
+  {
+    "id": 3,
+    "q": "I want use the light theme.",
+    "a": {
+      "listThemes": {
+        "arguments": {
+        }
+      },
+      "applyTheme": {
+        "arguments": {
+          "themeId": "@:type(x) is str and 'light' in x.lower()",
+          "uiTheme": "@:type(x) is str"
+        }
+      }
+    }
+  },
+  {
+    "id": 4,
+    "q": "I want use the dark theme.",
+    "a": {
+      "listThemes": {
+        "arguments": {
+        }
+      },
+      "applyTheme": {
+        "arguments": {
+          "themeId": "@:type(x) is str and 'dark' in x.lower()",
+          "uiTheme": "@:type(x) is str"
+        }
+      }
+    }
+  },
+  {
+    "id": 5,
+    "q": "only change the background color to blue.",
+    "a": {
+      "setProperties": {
+        "arguments": {
+          "key2Value": {
+            "editor.background": "@:type(x) is string and == #0000FF"
+          }
+        }
+      },
+      "getProperties": {
+        "arguments": {
+        }
+      }
+    }
+  },
+  {
+    "id": 6,
+    "q": "comment out the selected block",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "editor.action.blockComment"
+        }
+      }
+    }
+  },
+  {
+    "id": 7,
+    "q": "duplicate the current line or selection.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "editor.action.copyLinesDownAction"
+        }
+      }
+    }
+  },
+  {
+    "id": 8,
+    "q": "collapse all sections in the current JSON file.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "editor.foldAll"
+        }
+      }
+    }
+  },
+  {
+    "id": 9,
+    "q": "open a new terminal window.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "workbench.action.terminal.new"
+        }
+      }
+    }
+  },
+  {
+    "id": 10,
+    "q": "format current file.",
+    "a": {
+      "formatCurrentFile": {
+        "arguments": {
+          "onlySelectedText": "false"
+        }
+      }
+    }
+  },
+  {
+    "id": 11,
+    "q": "close the sidebar on the left.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "workbench.action.toggleSidebarVisibility"
+        }
+      }
+    }
+  },
+  {
+    "id": 12,
+    "q": "connect to a remote SSH server.",
+    "a": {
+      "createRemoteSSHServerConnect": {
+        "arguments": {
+        }
+      }
+    }
+  },
+  {
+    "id": 13,
+    "q": "enable auto-saving of files every 5 seconds",
+    "a": {
+      "setProperties": {
+        "arguments": {
+          "key2Value": {
+            "files.autoSave": "afterDelay",
+            "files.autoSaveDelay": 5000
+          },
+          "onGlobal": "@:true"
+        }
+      },
+      "getProperties": {
+        "arguments": {
+        }
+      }
+    }
+  },
+  {
+    "id": 14,
+    "q": "copy the full path of the current file to the clipboard.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "workbench.action.files.copyPathOfActiveFile"
+        }
+      }
+    }
+  },
+  {
+    "id": 15,
+    "q": "go to line 35 in the current file.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "workbench.action.gotoLine"
+        }
+      }
+    }
+  },
+  {
+    "id": 16,
+    "q": "navigate back to the previous location.",
+    "a": {
+      "executeCommand": {
+        "arguments": {
+          "commandId": "workbench.action.navigateBack"
+        }
+      }
+    }
+  }
+]

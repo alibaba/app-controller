@@ -1,0 +1,22 @@
+[
+  {
+    "id": "editor.action.blockComment",
+    "desc": "Toggles a block comment on or off for the selected text in the editor."
+  },
+  {
+    "id": "editor.action.copyLinesDownAction",
+    "desc": "Copies the current line or selected lines and pastes them below the original."
+  },
+  {
+    "id": "editor.action.duplicateSelection",
+    "desc": "Duplicates the current selection or line if no selection is made in the editor."
+  },
+  {
+    "id": "editor.foldAll",
+    "desc": "Collapses all foldable regions in the editor."
+  },
+  {
+    "id": "editor.unfoldAll",
+    "desc": "Unfolds all regions in the editor, expanding all hidden text."
+  }
+]

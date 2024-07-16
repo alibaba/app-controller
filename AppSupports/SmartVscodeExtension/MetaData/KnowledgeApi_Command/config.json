@@ -1,0 +1,20 @@
+{
+  "api": {
+    "name": "executeCommand",
+    "description": "Execute a specified command of vscode or its extensions. You can use this function to achieve diverse functions ",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "commandId": {
+          "type": "string",
+          "description": "The identifier of the command to be executed."
+        }
+      },
+      "required": [
+        "commandId"
+      ]
+    }
+  },
+  "retrieve_size": 10,
+  "chatModelLevel": "Lightweight"
+}

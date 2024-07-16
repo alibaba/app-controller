@@ -1,0 +1,54 @@
+{
+  "findAndReplace": {
+    "name": "findAndReplace",
+    "description": "Find and replace text in the currently open editor or files of this workspace (project).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "string",
+          "description": "Choose between 'files' (for multi-file find-and-replace, all files) and 'editor' (for single file find-and-replace, current file). 'files' means search within files of this workspace (project), 'editor' means search within the currently open editor (file)."
+        },
+        "query": {
+          "type": "string",
+          "description": "String to fill the find input. If regex is enabled, fill correct regular expressions here. Capturing groups are supported."
+        },
+        "replace": {
+          "type": "string",
+          "description": "String to fill the replace input. If regex is enabled, you can refer to capturing groups using $1, $2, etc."
+        },
+        "isRegex": {
+          "type": "boolean",
+          "description": "enable regex."
+        },
+        "preserveCase": {
+          "type": "boolean",
+          "description": "Try to keep the original case when replacing. If not requested by the user, keep it set to false!"
+        },
+        "findInSelection": {
+          "type": "boolean",
+          "description": "Find result in selected text."
+        },
+        "matchWholeWord": {
+          "type": "boolean",
+          "description": "Match the whole word or not."
+        },
+        "isCaseSensitive": {
+          "type": "boolean",
+          "description": "Case sensitive or not."
+        },
+        "filesToInclude": {
+          "type": "string",
+          "description": "Search in which files, e.g. *.ts, src/**/include."
+        },
+        "filesToExclude": {
+          "type": "string",
+          "description": "Exclude files from the search, e.g. *.ts, src/**/include."
+        }
+      },
+      "required": [
+        "position", "query"
+      ]
+    }
+  }
+}

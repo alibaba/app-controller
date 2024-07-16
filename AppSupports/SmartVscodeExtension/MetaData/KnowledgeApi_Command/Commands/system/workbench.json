@@ -1,0 +1,22 @@
+[
+  {
+    "id": "workbench.action.gotoLine",
+    "desc": "Opens a prompt to navigate to a specific line and, optionally, column in the current file."
+  },
+  {
+    "id": "workbench.action.navigateForward",
+    "desc": "Navigates forward in the history of editors and files opened in VS Code."
+  },
+  {
+    "id": "workbench.action.navigateBack",
+    "desc": "Navigates to the last location in the editor's history."
+  },
+  {
+    "id": "workbench.action.closeSidebar",
+    "desc": "Closes the sidebar in Visual Studio Code."
+  },
+  {
+    "id": "workbench.action.toggleSidebarVisibility",
+    "desc": "Toggles the visibility of the sidebar in VS Code."
+  }
+]

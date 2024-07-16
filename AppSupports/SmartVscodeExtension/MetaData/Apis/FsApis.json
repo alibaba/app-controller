@@ -1,0 +1,71 @@
+{
+  "insertContentToFile": {
+    "name": "insertContentToFile",
+    "description": "Insert content to a file.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filePath": {
+          "type": "string",
+          "description": "The path of the file to create."
+        },
+        "content": {
+          "type": "string",
+          "description": "The content of the file to create."
+        }
+      }
+    }
+  },
+  "openFileInEditor": {
+    "name": "openFileInEditor",
+    "description": "Open a file in the editor of vscode.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filePath": {
+          "type": "string",
+          "description": "The path of the file to open."
+        }
+      }
+    }
+  },
+  "getLaunchFileContent": {
+    "name": "getLaunchFileContent",
+    "description": "Get the content of the launch.json file of vscode.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  "addConfigurationToLaunch": {
+    "name": "addConfigurationToLaunch",
+    "description": "Add an configuration to the launch.json file of vscode. If the launch.json file does not exist, it will be created. If the configuration already exists, it will be updated.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "JSON",
+          "description": "The configuration is added to the launch.json file."
+        }
+      }
+    },
+    "dependencyApis": {
+      "getLaunchFileContent": "Before calling this function, you must call getLaunchFileContent to get the origin content of the launch.json file."
+    }
+  },
+  "formatCurrentFile": {
+    "name": "formatCurrentFile",
+    "description": "Format the current file in the editor of vscode.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "onlySelectedText": {
+          "type": "boolean",
+          "description": "true or false. If true, only the selected text will be formatted, otherwise the whole file will be formatted. Default is false."
+        }
+      },
+      "required": []
+    }
+  }
+}

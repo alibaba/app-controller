@@ -1,0 +1,37 @@
+{
+  "executeProgram": {
+    "name": "executeProgram",
+    "description": "execute the selected debug configuration in launch.json.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "debugConfigurationName": {
+          "type": "string",
+          "description": "Name of the selected debug configuration name in launch.json."
+        }
+      },
+      "required": [
+        "debugProgram"
+      ]
+    },
+    "dependencyApis": {
+      "openFileInEditor": "In general, you must open the file in editor before starting debugging."
+    }
+  },
+  "executeHtmlInBrowser": {
+    "name": "executeHtmlInBrowser",
+    "description": "execute the selected html file in browser.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filePath": {
+          "type": "string",
+          "description": "Path of the html file to be executed in browser."
+        }
+      },
+      "required": [
+        "filePath"
+      ]
+    }
+  }
+}

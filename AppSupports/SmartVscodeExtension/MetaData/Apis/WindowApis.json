@@ -1,0 +1,36 @@
+{
+  "createNewWindow": {
+    "name": "createNewWindow",
+    "description": "Create a new vscode window. it is not a workspace.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  "openWorkspaceFolder": {
+    "name": "openWorkspaceFolder",
+    "description": "open a workspace folder with an optional path to the folder. If provided, the folder will be opened as a workspace in Visual Studio Code. If not provided, a dialog will be displayed for the user to select a folder to open as a workspace. Note: If the user does not explicitly provide a path, you should not input a path.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "folderPath": {
+          "type": "string",
+          "description": "An optional path to a folder."
+        }
+      },
+      "required": [
+        "folderPath"
+      ]
+    }
+  },
+  "closeWorkspaceFolder": {
+    "name": "closeWorkspaceFolder",
+    "description": "close current workspace folder.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

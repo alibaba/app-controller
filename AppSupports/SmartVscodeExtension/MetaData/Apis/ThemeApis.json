@@ -1,0 +1,35 @@
+{
+  "listThemes": {
+    "name": "listThemes",
+    "description": "Get a array of all installed theme extensions containing their theme id and uiTheme indicating whether the theme is light, dark, or high contrast.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  "applyTheme": {
+    "name": "applyTheme",
+    "description": "Apply a specified theme based on its ID and UI theme type.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "themeId": {
+          "type": "string",
+          "description": "The ID of the theme to be applied"
+        },
+        "uiTheme": {
+          "type": "string",
+          "description": "The UI theme type, such as 'vs-dark', 'vs-light', or 'vs-high-contrast'"
+        }
+      },
+      "required": [
+        "themeId",
+        "uiTheme"
+      ]
+    },
+    "dependencyApis": {
+      "listThemes": "Before calling this function, you can call listThemes to check if the themes is already installed."
+    }
+  }
+}
