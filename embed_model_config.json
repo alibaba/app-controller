@@ -12,11 +12,5 @@
       "model": "text-embedding-3-small",
       "encoding_format": "float"
     }
-  },
-  {
-    "config_name": "qwen_embedding_config",
-    "model_type": "dashscope_text_embedding",
-    "model_name": "text-embedding-v2",
-    "api_key": "{DASHSCOPE_API_KEY}"
   }
 ]
