@@ -6,6 +6,9 @@ ARG OPENAI_BASE_URL
 ARG OPENAI_API_KEY
 ARG SERVER_PORT=5000
 
+ARG PROJECT_PATH=/usr/local/bin
+ENV PYTHON_ENV_NAME=app-controller
+
 ENV OPENAI_BASE_URL=${OPENAI_BASE_URL}
 ENV OPENAI_API_KEY=${OPENAI_API_KEY}
 
@@ -34,24 +37,18 @@ RUN mkdir -p ${CONDA_DIR} && \
 
 RUN ${CONDA_DIR}/bin/conda init
 
-RUN ${CONDA_DIR}/bin/conda create --name llm4api python=3.10
+RUN ${CONDA_DIR}/bin/conda create --name ${PYTHON_ENV_NAME} python=3.10
 
 # Install llm4api service 
-RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/alibaba/pilotscope.git /root/Llm4Api
+RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/alibaba/app-controller.git ${PROJECT_PATH}
 
 # Install libraries
-RUN source ${CONDA_DIR}/bin/activate llm4api && \
-    cd /root/Llm4Api && \
+RUN source ${CONDA_DIR}/bin/activate ${PYTHON_ENV_NAME} && \
+    cd ${PROJECT_PATH} && \
     pip install -r requirement.txt
 
-# Expose SSHD port (optional based on requirement)
-EXPOSE 22
+# 复制启动脚本到镜像中
+COPY entrypoint.sh ${PROJECT_PATH}/entrypoint.sh
 
-# Command to run SSH server (if SSH is necessary)
-CMD ["/usr/sbin/sshd", "-D"]
-
-# The default command to run a bash shell (Overwrite if needed)
-CMD ["/bin/bash"]
-
-# Start server
-python server.py -p ${SERVER_PORT}
+# 设置ENTRYPOINT来执行启动脚本
+ENTRYPOINT ["${PROJECT_PATH}/entrypoint.sh"]
