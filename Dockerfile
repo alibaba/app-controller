@@ -4,13 +4,10 @@ FROM ubuntu:18.04
 # Set enviroment variables for llm4api service
 ARG OPENAI_BASE_URL
 ARG OPENAI_API_KEY
-ARG DASHSCOPE_API_KEY
 ARG SERVER_PORT=5000
 
 ENV OPENAI_BASE_URL=${OPENAI_BASE_URL}
 ENV OPENAI_API_KEY=${OPENAI_API_KEY}
-ENV DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
-
 
 # Set environment to non-interactive to avoid any prompts during the build process
 ENV DEBIAN_FRONTEND=noninteractive

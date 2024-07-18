@@ -1,7 +1,7 @@
 # Makefile
 
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = AgentScope-Doc
+SPHINXPROJ    = App-Controller-Doc
 ASSETSDIR     = assets
 BUILDDIR      = build/html
 SOURCEDIR_EN  = en/source
@@ -15,18 +15,12 @@ en:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR_EN)"
 
-# Chinese document
-zh_CN:
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR_ZH)" "$(BUILDDIR_ZH)"
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR_ZH)"
-
 index:
 	@cp "$(ASSETSDIR)/redirect.html" "$(BUILDDIR)/index.html"
 
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR_EN)" "$(BUILDDIR_EN)" $(O)
 
-all: en zh_CN index
+all: en index
 
-.PHONY: all en zh_CN index
+.PHONY: all en index

@@ -1,5 +1,6 @@
 (deploy-en)=
 
+# Deploy
 
 In this tutorial, we will illustrate the process of introducing intelligence into applications using the App-Controller framework,
 including how to add necessaries knowledge to the App-Controller and how to deploy the App-Controller to achieve intelligent
@@ -177,7 +178,7 @@ Similarly, App-Controller will automatically update index file when any knowledg
 However, App-Controller will not update the index file when any item is deleted . In this case, you need to manually all the index
 file in the `Index` directory.
 
-# Step2: Communication Interface Implementation
+## Step2: Communication Interface Implementation
 
 App-Controller offers a robust HTTP-interface for applications to seamlessly communicate with its services. Below you will find
 the
@@ -213,7 +214,8 @@ JSON object.
 ```
 
 **Response**:
-Please refer to the [Response](#Response) section for more details.
+Please refer to the [Response](#endpoint-response) section for more details.
+
 ---
 
 ### HandleApiResponse Endpoint
@@ -253,7 +255,8 @@ JSON object.
 ```
 
 **Response**:
-Please refer to the [Response](#Response) section for more details.
+Please refer to the [Response](#endpoint-response) section for more details.
+
 ---
 
 ### Finish Endpoint
@@ -280,7 +283,8 @@ JSON object.
 ```
 
 **Response**:
-Please refer to the [Response](#Response) section for more details.
+Please refer to the [Response](#endpoint-response) section for more details.
+
 ---
 
 ### Cancel Endpoint
@@ -305,10 +309,12 @@ JSON object.
 ```
 
 **Response**:
-Please refer to the [Response](#Response) section for more details.
+
+Please refer to the [Response](#deploy) section for more details.
+
 ---
 
-### Response
+### Endpoint Response
 
 In general, the App-Controller will return the following several responses, including `Task_Api_Call`,`Task_Failed`
 ,`Task_Finished`

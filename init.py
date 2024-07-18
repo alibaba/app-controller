@@ -14,7 +14,7 @@ async def init_db():
     #  also specify the app name of "models"
     #  which contain models from "app.models"
     await Tortoise.init(
-        db_url='sqlite://{}/AppWielder.sqlite3'.format(os.path.join(config.app_data_dir, "UserData")),
+        db_url='sqlite://{}/App-Controller.sqlite3'.format(os.path.join(config.app_data_dir, "UserData")),
         modules={'models': ["Database.Models.SessionModel"]}
     )
     # Generate the schema

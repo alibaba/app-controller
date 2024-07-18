@@ -1,14 +1,16 @@
 (app-controller-en)=
 
+# Introduction
+
 <h3 align="center"><img src="../_static/logo.png" height="64"><br>App-Controller: Allow users to manipulate your app with natural
 language</h3>
 
 <div align="center">
 
-[![](https://img.shields.io/badge/python-3.9+-blue)](https://pypi.org/project/agentscope/)
+![](https://img.shields.io/badge/python-3.9+-blue)
 [![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub)
-[![](https://img.shields.io/badge/license-Apache--2.0-black)](./LICENSE)
-[![](https://img.shields.io/badge/Contribute-Welcome-green)](https://modelscope.github.io/agentscope/tutorial/contribute.html)
+![](https://img.shields.io/badge/license-Apache--2.0-black)
+![](https://img.shields.io/badge/Contribute-Welcome-green)
 
 [//]: # ([![]&#40;https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars&#41;]&#40;&#41;)
 
@@ -17,7 +19,7 @@ language</h3>
 ## News
 
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
-  Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmarterVscode](), which allows users to manipulate
+  Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmartVscode](), which allows users to manipulate
   various VsCode features through natural language commands, such as changing the theme or generating code with a single
   sentence. [Learn more](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin) -
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
@@ -87,9 +89,9 @@ intelligently storing frequently requested results, reducing the number of calls
 and
 cutting down on costs associated with API calls (coming soon).
 
-## Applications: The SmarterVscode Plugin Based on App-Controller
+## Applications: The SmartVscode Plugin Based on App-Controller
 
-We developed a Visual Studio Code plugin, [SmarterVscode](), that allows users to operate various VsCode features through natural
+We developed a Visual Studio Code plugin, [SmartVscode](), that allows users to operate various VsCode features through natural
 language. Below are some demonstrations of its features:
 
 ### Tic-tac-toe Game
@@ -117,7 +119,7 @@ API calls to fulfill user instructions.
 
 <img src="../_static/developer.png" width=1000>
 
-#### Preparation Stage:
+### Preparation Stage:
 
 1. **Communication interface**: Application developers need to achieve a **standard communication interface** with the
    App-Controller.
@@ -125,7 +127,7 @@ API calls to fulfill user instructions.
    documentation
    and other optional documents.
 
-#### Deploy stage
+### Deploy stage
 
 After starting App-Controller, the app forwards user input to the App-Controller. The App-Controller integrates user input and
 available API

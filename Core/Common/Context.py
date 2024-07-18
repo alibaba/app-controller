@@ -84,4 +84,8 @@ class Context:
     def get_embed_model_name(self, config):
         if self.chat_model_config is None:
             return config.default_embed_model_name
-        return load_model_by_config_name(self.get_embed_model_config_name()).model_name
+        model = load_model_by_config_name(self.get_embed_model_config_name())
+        if hasattr(model, "model_name"):
+            return model.model_name
+        else:
+            return model.json_args["model"]

@@ -25,11 +25,9 @@ conda activate App-Controller
 In order to facilitate the connection with your application, you should install App-Controller directly from the source code, follow
 these steps to clone the repository and install the platform in editable mode:
 
-**_Note: This project is under active development, it's recommended to install AgentScope from source._**
-
 ```bash
 # Pull the source code from Github
-git clone https://github.com/modelscope/agentscope.git
+git clone git@github.com:alibaba/app-controller.git
 cd App-Controller
 
 # Install the required dependencies
