@@ -1,4 +1,4 @@
-# AgentScope Documentation
+# App-Controller Documentation
 
 ## Build Documentation
 

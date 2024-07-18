@@ -29,6 +29,7 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install sphinx
+        pip install sphinx-autobuild
         pip install myst-parser
         pip install sphinx_rtd_theme
         pip install sphinxcontrib.mermaid
