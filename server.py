@@ -16,13 +16,14 @@ from Database.Models.SessionModel import SessionModel
 from Pipeline.ChatPipeline import ChatPipeline
 from Pipeline.IntentKnowledgeChatPipeline import IntentKnowledgeAgentChatPipeline
 from aiohttp import web
+import aiohttp_cors
 from Common.Utils import update_model_config, load_model_config
 from Common.Context import Context
 from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
 
 parser = argparse.ArgumentParser(description="Llm4Api Service")
 parser.add_argument("--port", "-p", type=int, default=config.SERVER_PORT, \
-    help="The port of the service, default: 5000")
+                    help="The port of the service, default: 5000")
 
 session_id_2_pipeline = {}
 session_id_2_test_manager = {}
@@ -144,6 +145,19 @@ app.add_routes([web.post('/start', start),
                 web.post('/finish', finish),
                 web.post('/cancel', cancel),
                 web.post('/query_session', query_session)])
+
+# Set up the CORS configuration
+cors = aiohttp_cors.setup(app, defaults={
+    "*": aiohttp_cors.ResourceOptions(
+        allow_credentials=True,
+        expose_headers="*",
+        allow_headers="*",
+    )
+})
+
+# Apply CORS settings to every route
+for route in list(app.router.routes()):
+    cors.add(route)
 
 # Set up the database initialization and closing hooks
 app.on_startup.append(init_server)
