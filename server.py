@@ -21,9 +21,8 @@ from Common.Utils import update_model_config, load_model_config
 from Common.Context import Context
 from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
 
-parser = argparse.ArgumentParser(description="Llm4Api Service")
-parser.add_argument("--port", "-p", type=int, default=config.SERVER_PORT, \
-                    help="The port of the service, default: 5000")
+parser = argparse.ArgumentParser(description="App-Controller Service")
+parser.add_argument("--port", "-p", type=int, default=config.SERVER_PORT, help="The port of the service")
 
 session_id_2_pipeline = {}
 session_id_2_test_manager = {}
