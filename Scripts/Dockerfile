@@ -4,7 +4,7 @@ FROM ubuntu:18.04
 # Set enviroment variables for llm4api service
 ARG OPENAI_BASE_URL
 ARG OPENAI_API_KEY
-ARG SERVER_PORT=5000
+ARG SERVER_PORT
 
 ENV APP_CONTROLLER_PROJECT_PATH=/usr/local/bin/app-controller
 ENV APP_CONTROLLER_PYTHON_NAME=app-controller
