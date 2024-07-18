@@ -165,7 +165,7 @@ AppSupports/SmartVscodeExtension/Index/*
 !AppSupports/SmartVscodeExtension/Index/.gitkeep
 AppSupports/SmartVscodeExtension/Ignore/*
 AppSupports/SmartVscodeExtension/UserData/*
-
+!AppSupports/SmartVscodeExtension/UserData/.gitkeep
 
 
 
