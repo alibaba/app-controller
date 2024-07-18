@@ -1,8 +1,8 @@
-# AgentScope Documentation
+# App-Controller Documentation
 
 ## Build Documentation
 
-Please use the following commands to build sphinx doc of AgentScope.
+Please use the following commands to build sphinx doc of App-Controller.
 
 ```shell
 # step 1: Install dependencies
