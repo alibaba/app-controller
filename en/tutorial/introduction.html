@@ -1,0 +1,251 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; App-Controller  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c9484b72" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="App-Controller Documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" > 
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            App-Controller
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> <!-- language_selector.html -->
+<div class="language-selector">
+    <a href="../../en/tutorial/introduction.html">English</a></li> |
+    <a href="../../zh_CN/tutorial/introduction.html">中文</a></li>
+</div> 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">App-Controller Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#news">News</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-app-controller">What is App-Controller?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#applications-the-smartvscode-plugin-based-on-app-controller">Applications: The SmartVscode Plugin Based on App-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-to-your-application">Connect to your Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute to App-Controller</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">App-Controller</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorial/introduction.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="app-controller-en"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<h3 align="center"><img src="../_static/logo.png" height="64"><br>App-Controller: Allow users to manipulate your app with natural
+language</h3>
+<div align="center">
+<p><img alt="" src="https://img.shields.io/badge/python-3.9+-blue" />
+<a class="reference external" href="https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub"><img alt="" src="https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown" /></a>
+<img alt="" src="https://img.shields.io/badge/license-Apache--2.0-black" />
+<img alt="" src="https://img.shields.io/badge/Contribute-Welcome-green" /></p>
+</div>
+<section id="news">
+<h2>News<a class="headerlink" href="#news" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/><strong>[2024-06-27]</strong>
+Based on <strong>App-Controller</strong>, we have developed a Visual Studio Code plugin, <a class="reference internal" href="#"><span class="xref myst">SmartVscode</span></a>, which allows users to manipulate
+various VsCode features through natural language commands, such as changing the theme or generating code with a single
+sentence. <a class="reference external" href="https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin">Learn more</a> -</p></li>
+<li><p><img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/><strong>[2024-06-27]</strong>
+We are thrilled to announce the release of <strong>App-Controller</strong> version 1.0!</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-is-app-controller">
+<h2>What is App-Controller?<a class="headerlink" href="#what-is-app-controller" title="Link to this heading"></a></h2>
+<p>App-Controller is an innovative API orchestration framework built upon Large Language Models (LLMs) and Agents.
+It aims to integrate and synchronize APIs provided by any applications (APPs) using the advanced reasoning capabilities of LLMs.</p>
+<ul class="simple">
+<li><p>App-Controller allows applications to respond and execute instructions formulated in natural language, significantly simplifying
+user interaction with applications.</p></li>
+</ul>
+<img src="../_static/function.png" width=1000>
+<blockquote>
+<div><p>The above image illustrates how App-Controller enhances application interactivity.
+Specifically, the graphic is divided into two parts: the left-half details the traditional process of inquiry and execution when
+completing tasks, while the right-half displays the streamlined workflow with App-Controller’s intervention.
+In a traditional scenario, when a user needs to accomplish a task in an app but doesn’t know how to do it, they first ask the
+LLM and receive an answer, then command the app to obtain the result and complete the task.
+In contrast, after introducing App-Controller, the user simply inputs their requirement in natural language directly into the
+app to
+get the result and finish the task. With App-Controller’s assistance, the app consults the LLM for user intent and learns the
+necessary commands to execute, subsequently returning the result.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Any application vendor only needs to implement communication interfaces on the app and submit a list of supported APIs to
+App-Controller, which can independently explore and identify the optimal API call sequence to fulfill user instructions.</p></li>
+</ul>
+<p>App-Controller ‘s core competency lies in its highly automated API orchestration logic and user-friendly data interaction
+patterns,
+making it easier and faster for developers to add intelligent features to their apps.
+It also comes with a flexible HTTP interface that enhances the way applications work together.
+In the end, App-Controller aims to provide a straightforward and efficient way for users and developers to interact with apps,
+enabling a seamless experience that meets diverse needs.</p>
+<p>🔥 <strong>Enhanced Usability</strong>: Allows users to control your application via simple natural language commands, eliminating the need to
+learn complex interfaces or command sets and making the services or content readily accessible.</p>
+<p>🛠️ <strong>Easy Integration</strong>: Developers only need to register their application’s API directory, and App-Controller will
+automatically
+manage the identification and orchestration, negating the need for intricate coding.</p>
+<p>🚀 <strong>Asynchronous and Concurrent Processing</strong>: App-Controller enhances its support for concurrent requests using modern
+asynchronous
+technology, ensuring efficiency and quick responses even under high-load conditions with multiple users or tasks.</p>
+<p>🌐 <strong>Robust API Interactions</strong>: App-Controller offers a stable and user-friendly HTTP API interface, enabling seamless
+interactions
+with applications while ensuring high-efficiency and security in data transfer.</p>
+<p>🤖 <strong>Multitude of Large Language Models</strong>: App-Controller integrates well with various Large Language Models, allowing developers
+to
+choose the most suitable model based on their needs and contexts for optimal understanding and natural language processing.</p>
+<p>📚 <strong>Comprehensive Documentation</strong>: App-Controller provides extensive documentation, including quick start guides, API references,
+best practice examples, and FAQs, to help developers get started and fully utilize the framework.</p>
+<p>💾 <strong>Persistent Task Flows</strong>: Task workflows can be stored persistently in databases, facilitating the monitoring and management
+of tasks and allowing developers to check the status and history at any time.</p>
+<p>🛢️ <strong>Smart Caching Mechanism</strong>: With advanced caching technology, App-Controller optimizes performance and response times by
+intelligently storing frequently requested results, reducing the number of calls to external models (coming soon).</p>
+<p>🌟 <strong>Token Optimization</strong>: App-Controller’s optimization algorithm intelligently assesses message utility, reducing token usage
+and
+cutting down on costs associated with API calls (coming soon).</p>
+</section>
+<section id="applications-the-smartvscode-plugin-based-on-app-controller">
+<h2>Applications: The SmartVscode Plugin Based on App-Controller<a class="headerlink" href="#applications-the-smartvscode-plugin-based-on-app-controller" title="Link to this heading"></a></h2>
+<p>We developed a Visual Studio Code plugin, <a class="reference internal" href="#"><span class="xref myst">SmartVscode</span></a>, that allows users to operate various VsCode features through natural
+language. Below are some demonstrations of its features:</p>
+<section id="tic-tac-toe-game">
+<h3>Tic-tac-toe Game<a class="headerlink" href="#tic-tac-toe-game" title="Link to this heading"></a></h3>
+<p>https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58</p>
+</section>
+<section id="style-changing">
+<h3>Style Changing<a class="headerlink" href="#style-changing" title="Link to this heading"></a></h3>
+<p>https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da</p>
+</section>
+<section id="theme-changing">
+<h3>Theme Changing<a class="headerlink" href="#theme-changing" title="Link to this heading"></a></h3>
+<p>https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb</p>
+</section>
+<section id="enable-auto-saving">
+<h3>Enable auto saving<a class="headerlink" href="#enable-auto-saving" title="Link to this heading"></a></h3>
+<p>https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8</p>
+</section>
+</section>
+<section id="connect-to-your-application">
+<h2>Connect to your Application<a class="headerlink" href="#connect-to-your-application" title="Link to this heading"></a></h2>
+<p>The following image illustrates the process of introducing intelligence into applications using the App-Controller framework,
+detailing the tasks that application developers need to undertake and the process by which App-Controller independently
+orchestrates
+API calls to fulfill user instructions.</p>
+<img src="../_static/developer.png" width=1000>
+<section id="preparation-stage">
+<h3>Preparation Stage:<a class="headerlink" href="#preparation-stage" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Communication interface</strong>: Application developers need to achieve a <strong>standard communication interface</strong> with the
+App-Controller.</p></li>
+<li><p><strong>Document</strong>: They also need to provide soe <strong>knowledge</strong> to the App-Controller, including the app’s available API
+documentation
+and other optional documents.</p></li>
+</ol>
+</section>
+<section id="deploy-stage">
+<h3>Deploy stage<a class="headerlink" href="#deploy-stage" title="Link to this heading"></a></h3>
+<p>After starting App-Controller, the app forwards user input to the App-Controller. The App-Controller integrates user input and
+available API
+information, interacts with the LLM to select the appropriate API to execute, and determine the task status. Iteratively, the app
+executes the selected API and returns the execution result to the App-Controller. The App-Controller continues to interact with
+the LLM to
+make the next decision. The pipeline is terminated when the task has been completed, or failed, and the result is returned to the
+user.</p>
+<p>After completing these steps, the app can achieve intelligent interaction with users.</p>
+<p><a class="reference internal" href="#app-controller-en">[Return to the top]</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="App-Controller Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Alibaba Tongyi Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

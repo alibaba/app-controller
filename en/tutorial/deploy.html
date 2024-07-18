@@ -1,0 +1,507 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploy &mdash; App-Controller  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c9484b72" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contribute to App-Controller" href="contribute.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" > 
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            App-Controller
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div> <!-- language_selector.html -->
+<div class="language-selector">
+    <a href="../../en/tutorial/deploy.html">English</a></li> |
+    <a href="../../zh_CN/tutorial/deploy.html">中文</a></li>
+</div> 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">App-Controller Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deploy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step1-data-preparation">Step1: Data Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step2-communication-interface-implementation">Step2: Communication Interface Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute to App-Controller</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">App-Controller</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Deploy</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorial/deploy.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deploy">
+<span id="deploy-en"></span><h1>Deploy<a class="headerlink" href="#deploy" title="Link to this heading"></a></h1>
+<p>In this tutorial, we will illustrate the process of introducing intelligence into applications using the App-Controller framework,
+including how to add necessaries knowledge to the App-Controller and how to deploy the App-Controller to achieve intelligent
+interaction
+with users.</p>
+<section id="step1-data-preparation">
+<h2>Step1: Data Preparation<a class="headerlink" href="#step1-data-preparation" title="Link to this heading"></a></h2>
+<p>First, you need to provide some <strong>knowledge</strong> to the App-Controller, including the app’s available API documentation
+and other optional documents.</p>
+<p>You should create a directory structure for submitting your knowledge(MetaData) to App-Controller as follows.
+Note that the <code class="docutils literal notranslate"><span class="pre">UserData</span></code> and <code class="docutils literal notranslate"><span class="pre">Index</span></code> are generated by the App-Controller, so you only need to provide the <code class="docutils literal notranslate"><span class="pre">MetaData</span></code> directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Your<span class="w"> </span>application<span class="w"> </span>name
+├──<span class="w"> </span>MetaData
+│<span class="w">   </span>├──<span class="w"> </span>Apis<span class="w">                                        </span><span class="c1"># Describing the API information of the application.</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Apis_1.json<span class="w">                             </span><span class="c1"># The first group of APIs.</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>...<span class="w">                   </span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Apis_k.json<span class="w">                             </span><span class="c1"># The k-th group of APIs.</span>
+│<span class="w">   </span>├──<span class="w"> </span>KnowledgeApi_custom_folder_name<span class="w">             </span><span class="c1"># Knowledge for the first special API. (Optional)</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>config.json<span class="w">                             </span><span class="c1"># The configuration file for the special KnowledgeApi.</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>KnowledgeFile_1.json<span class="w">                    </span><span class="c1"># The document for the special KnowledgeApi. </span>
+│<span class="w">   </span>├──<span class="w"> </span>KnowledgeApi_custom_folder_name<span class="w">             </span><span class="c1"># Knowledge for k-th special KnowledgeApi. (Optional)</span>
+├──<span class="w"> </span>Index<span class="w">                                           </span><span class="c1"># The automatically generated index file for Apis and other knowledge.</span>
+│<span class="w">   </span>├──<span class="w"> </span>embedding_model_name<span class="w">                        </span><span class="c1"># The index from first embedding model.</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Apis<span class="w">                                    </span><span class="c1"># The index for Apis. </span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>KnowledgeApi_custom_folder_name<span class="w">         </span><span class="c1"># The index for the certain specific KnowledgeApi.</span>
+│<span class="w">   </span>├──<span class="w"> </span>embedding_model_name2<span class="w">                       </span><span class="c1"># The index from second embedding model.</span>
+│<span class="w">   </span>├──<span class="w"> </span>...
+├──<span class="w"> </span>UserData<span class="w">                                        </span><span class="c1"># It is generated by the App-Controller to record the user&#39;s input and reasoning process</span>
+</pre></div>
+</div>
+<section id="prepare-api-documentation">
+<h3>Prepare API Documentation<a class="headerlink" href="#prepare-api-documentation" title="Link to this heading"></a></h3>
+<p>You must provide available API information for your application. The API information should be stored in the <code class="docutils literal notranslate"><span class="pre">Apis</span></code> directory.
+All files in the directory should be a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file and each file can contain multiple APIs. In general, You can organize the API
+with similar functions into one file.</p>
+<p>Typically, a file can be organized as below.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;api_name&quot;: {
+    &quot;name&quot;: &quot;api_name&quot;,
+    &quot;description&quot;: &quot;A detailed description of the API function. More detailed information will improve the performance.&quot;,
+    &quot;parameters&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;argument_name_1&quot;: {
+          &quot;type&quot;: &quot;type for argument_name_1, such as string, list, boolean, object, etc.&quot;,
+          &quot;description&quot;: &quot;A detailed description of argument_name_1, including the capability and range of value.&quot;
+        }
+        // the rest of the argument with the same json format
+      },
+      //The required field is used to specify the required parameters for the API.
+      &quot;required&quot;: [
+        &quot;argument_name_1&quot;
+      ]
+    }
+  },
+  // the rest of the APIs with the same json format
+}
+</pre></div>
+</div>
+<p>Once the App-Controller is started, it will automatically search all the <code class="docutils literal notranslate"><span class="pre">.json</span></code> files in the <code class="docutils literal notranslate"><span class="pre">Apis</span></code> directory and build index for
+each API.
+The index file will be stored in the <code class="docutils literal notranslate"><span class="pre">Index</span></code> directory.</p>
+<p>Note that, App-Controller will automatically update index file when any api is added or updated to the <code class="docutils literal notranslate"><span class="pre">Apis</span></code> directory.
+However, App-Controller will not update the index file when any api is deleted from the <code class="docutils literal notranslate"><span class="pre">Apis</span></code> directory. In this case, you need
+to
+manually all the index file related to api in the <code class="docutils literal notranslate"><span class="pre">Index</span></code> directory.</p>
+</section>
+<section id="prepare-knowledgeapi-documentation">
+<h3>Prepare KnowledgeAPI Documentation<a class="headerlink" href="#prepare-knowledgeapi-documentation" title="Link to this heading"></a></h3>
+<p>In general, there are some special APIs that can achieve various functions. For example, a special api called “setSetting(key:
+str, value: str)” can be used to change the various setting of the application by filling different parameters. We call such api
+as KnowledgeAPI.
+We design a <code class="docutils literal notranslate"><span class="pre">KnowledgeApi</span></code> mechanism for providing more detailed information for the parameters of KnowledgeAPI.</p>
+<p>Specifically, for each user task, we will explore whether the user’s input can be fulfilled by the
+KnowledgeApi with specific parameters. If the user’s input can be fulfilled by the KnowledgeApi, the App-Controller will return
+the
+KnowledgeApi to fulfill the user’s input.</p>
+<p>You can create any <code class="docutils literal notranslate"><span class="pre">KnowledgeApi_customm_folder_name</span></code> directory prefixed with <code class="docutils literal notranslate"><span class="pre">KnowledgeApi_</span></code> to provide the knowledge for the
+special API and the directory should be organized as below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>│<span class="w">   </span>KnowledgeApi_customm_folder_name<span class="w">                </span><span class="c1"># Knowledge for the first special API. (Optional)</span>
+│<span class="w">   </span>├──<span class="w"> </span>config.json<span class="w">                                 </span><span class="c1"># The configuration file for the special API.</span>
+│<span class="w">   </span>├──<span class="w"> </span>knowledge_folder<span class="w">                            </span><span class="c1"># Knowledge folder for KnowledgeApi</span>
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>knowledge1.json<span class="w">                         </span><span class="c1"># Knowledge file</span>
+│<span class="w">   </span>├──<span class="w"> </span>knowledge2.json<span class="w">                             </span><span class="c1"># Knowledge file</span>
+</pre></div>
+</div>
+<p>It includes a necessary <code class="docutils literal notranslate"><span class="pre">config.json</span></code> and the <code class="docutils literal notranslate"><span class="pre">knowledge</span></code> file recording the information for this special API.
+All <code class="docutils literal notranslate"><span class="pre">knowledge</span></code> file can be saved in the anywhere under the folder <code class="docutils literal notranslate"><span class="pre">KnowledgeApi_customm_folder_name</span></code>.</p>
+<section id="config-file">
+<h4>Config file<a class="headerlink" href="#config-file" title="Link to this heading"></a></h4>
+<p>A config file is used to specify the information of the special API. The config file should be organized as below.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;special_api_name&quot;: {
+    &quot;name&quot;: &quot;special_api_name&quot;,
+    &quot;description&quot;: &quot;A detailed description of the API function. More detailed information will improve the performance.&quot;,
+    &quot;parameters&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;argument_name_1&quot;: {
+          &quot;type&quot;: &quot;type for argument_name_1, such as string, list, boolean, object, etc.&quot;,
+          &quot;description&quot;: &quot;A detailed description of argument_name_1, including the capability and range of value.&quot;
+        }
+        // the rest of the argument with the same json format
+      },
+      //The required field is used to specify the required parameters for the API.
+      &quot;required&quot;: [
+        &quot;argument_name_1&quot;
+      ]
+    }
+  },
+  // the number of candidate knowledge item for index search. 
+  &quot;retrieve_size&quot;: 10,
+  // the Advanced or Lightweight level for the chat model. 
+  &quot;chatModelLevel&quot;: &quot;Lightweight&quot;
+}
+</pre></div>
+</div>
+</section>
+<section id="knowledge-file">
+<h4>Knowledge file<a class="headerlink" href="#knowledge-file" title="Link to this heading"></a></h4>
+<p>The file includes a list of knowledge item. Each item use a json format to record the
+information and include the <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">desc</span></code>, and <code class="docutils literal notranslate"><span class="pre">example</span></code>(optional) field.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The unique identifier for the knowledge item, such as the name of the setting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desc</span></code>: A detailed description of the knowledge item.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example(optional)</span></code>: An example of the knowledge item. You should provide enough information here such that LLM can learn how to
+utilize this knowledge item to fill with the parameters of the special API.</p></li>
+</ul>
+<p>A example of knowledge file about VsCode should be organized as below.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>[
+  {
+    &quot;id&quot;: &quot;editor.fontSize&quot;,
+    &quot;desc&quot;: &quot; Controls the font size in pixels.&quot;,
+    &quot;example&quot;: {
+      &quot;editor.fontSize&quot;: 14
+    }
+  },
+  {
+    &quot;id&quot;: &quot;editor.tokenColorCustomizations&quot;,
+    &quot;desc&quot;: &quot; Overrides editor syntax colors and font style from the currently selected color theme.&quot;,
+    &quot;example&quot;: {
+      &quot;editor.tokenColorCustomizations&quot;: {
+        &quot;comments&quot;: &quot;#808080&quot;
+      }
+    }
+  }
+]
+</pre></div>
+</div>
+<p>Once the App-Controller is started, it will automatically build knowledge index for each knowledgeApi independently by searching
+all
+the directories prefixed with <code class="docutils literal notranslate"><span class="pre">KnowledgeApi_</span></code>.</p>
+<p>Then, for each knowledgeApi, App-Controller will automatically search all the <code class="docutils literal notranslate"><span class="pre">knowledge</span></code> files in
+the <code class="docutils literal notranslate"><span class="pre">KnowledgeApi_custom_folder_name</span></code> and read config file.
+Each knowledge item will be indexed independently and the index file will be stored in the <code class="docutils literal notranslate"><span class="pre">Index</span></code> directory.</p>
+<p>Similarly, App-Controller will automatically update index file when any knowledge item is added or updated.
+However, App-Controller will not update the index file when any item is deleted . In this case, you need to manually all the index
+file in the <code class="docutils literal notranslate"><span class="pre">Index</span></code> directory.</p>
+</section>
+</section>
+</section>
+<section id="step2-communication-interface-implementation">
+<h2>Step2: Communication Interface Implementation<a class="headerlink" href="#step2-communication-interface-implementation" title="Link to this heading"></a></h2>
+<p>App-Controller offers a robust HTTP-interface for applications to seamlessly communicate with its services. Below you will find
+the
+detailed descriptions of the interface’s endpoints, ensuring smooth interaction between your application and the App-Controller
+platform.</p>
+<section id="start-endpoint">
+<h3>Start Endpoint<a class="headerlink" href="#start-endpoint" title="Link to this heading"></a></h3>
+<p><strong>Endpoint</strong>: <code class="docutils literal notranslate"><span class="pre">/start</span></code></p>
+<p><strong>Method</strong>: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Purpose</strong>:
+Submit the user input to the App-Controller system to initiate pipeline of scheduler.</p>
+<p><strong>RequestBody</strong>:
+JSON object.</p>
+<p><strong>Request Example</strong>:</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;userId&quot;: &quot;The unique identifier for the user engaging with the system.&quot;,
+  &quot;sessionId&quot;: &quot;A unique identifier for the current session. Each user input should be assigned a new sessionId&quot;,
+  &quot;content&quot;: &quot;The user input&quot;,
+  &quot;chat_model_config&quot;: &quot;Configuration settings for the chat model that drives dialogue or messaging interactions.&quot;,
+  &quot;embedding_model_config&quot;: &quot;Configuration settings for the embedding model used to process or understand the content.&quot;,
+  &quot;environments&quot;: {
+    &quot;The description of first environment&quot;: &quot;the value of first environment&quot;,
+    // the rest of the environment with the same json format
+  }
+}
+</pre></div>
+</div>
+<p><strong>Response</strong>:
+Please refer to the <a class="reference internal" href="#endpoint-response"><span class="xref myst">Response</span></a> section for more details.</p>
+</section>
+<hr class="docutils" />
+<section id="handleapiresponse-endpoint">
+<h3>HandleApiResponse Endpoint<a class="headerlink" href="#handleapiresponse-endpoint" title="Link to this heading"></a></h3>
+<p><strong>Endpoint</strong>: <code class="docutils literal notranslate"><span class="pre">/handleApiResponse</span></code></p>
+<p><strong>Method</strong>: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Purpose</strong>:
+Submit the execution result to the App-Controller system.</p>
+<p><strong>RequestBody</strong>:
+JSON object.</p>
+<p><strong>Request Example</strong>:</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  // return the original response from the App-Controller with extra parameter &quot;result&quot; for each api.
+  &quot;status&quot;: &quot;Task_Api_Call&quot;,
+  &quot;data&quot;: {
+    &quot;apis&quot;: [
+      {
+        &quot;name&quot;: &quot;the name of the api&quot;,
+        &quot;arguments&quot;: {
+          &quot;argument1 name&quot;: &quot;value or list or object&quot;,
+          &quot;argument2 name&quot;: &quot;value or list or object&quot;,
+          // the rest of the argument with the same json format
+        },
+        // extra parameter
+        &quot;result&quot;: &quot;the result of the api call, including whether the api call is successful or not. The error message if the api call is failed.&quot;
+      }
+    ]
+  },
+  &quot;isTerminal&quot;: &quot;true or false using boolean type&quot;,
+}
+</pre></div>
+</div>
+<p><strong>Response</strong>:
+Please refer to the <a class="reference internal" href="#endpoint-response"><span class="xref myst">Response</span></a> section for more details.</p>
+</section>
+<hr class="docutils" />
+<section id="finish-endpoint">
+<h3>Finish Endpoint<a class="headerlink" href="#finish-endpoint" title="Link to this heading"></a></h3>
+<p><strong>Endpoint</strong>: <code class="docutils literal notranslate"><span class="pre">/finish</span></code></p>
+<p><strong>Method</strong>: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Purpose</strong>:
+Inform the App-Controller system that the task has been completed.
+It is only called when the App-Controller returns the <code class="docutils literal notranslate"><span class="pre">Task_Api_Call</span></code> response with <code class="docutils literal notranslate"><span class="pre">isTerminal</span></code> set to <code class="docutils literal notranslate"><span class="pre">true</span></code> and the api call is
+successful.</p>
+<p><strong>RequestBody</strong>:
+JSON object.</p>
+<p><strong>Request Example</strong>:</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;userId&quot;: &quot;The unique identifier for the user engaging with the system.&quot;,
+  &quot;sessionId&quot;: &quot;A unique identifier for the current session. Each user input should be assigned a new sessionId&quot;,
+}
+</pre></div>
+</div>
+<p><strong>Response</strong>:
+Please refer to the <a class="reference internal" href="#endpoint-response"><span class="xref myst">Response</span></a> section for more details.</p>
+</section>
+<hr class="docutils" />
+<section id="cancel-endpoint">
+<h3>Cancel Endpoint<a class="headerlink" href="#cancel-endpoint" title="Link to this heading"></a></h3>
+<p><strong>Endpoint</strong>: <code class="docutils literal notranslate"><span class="pre">/cancel</span></code></p>
+<p><strong>Method</strong>: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Purpose</strong>:
+Inform the App-Controller system that the task has been cancelled. The task will be stopped directly.</p>
+<p><strong>RequestBody</strong>:
+JSON object.</p>
+<p><strong>Request Example</strong>:</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;userId&quot;: &quot;The unique identifier for the user engaging with the system.&quot;,
+  &quot;sessionId&quot;: &quot;A unique identifier for the current session. Each user input should be assigned a new sessionId&quot;,
+}
+</pre></div>
+</div>
+<p><strong>Response</strong>:</p>
+<p>Please refer to the <a class="reference internal" href="#"><span class="doc std std-doc">Response</span></a> section for more details.</p>
+</section>
+<hr class="docutils" />
+<section id="endpoint-response">
+<h3>Endpoint Response<a class="headerlink" href="#endpoint-response" title="Link to this heading"></a></h3>
+<p>In general, the App-Controller will return the following several responses, including <code class="docutils literal notranslate"><span class="pre">Task_Api_Call</span></code>,<code class="docutils literal notranslate"><span class="pre">Task_Failed</span></code>
+,<code class="docutils literal notranslate"><span class="pre">Task_Finished</span></code>
+,<code class="docutils literal notranslate"><span class="pre">Task_Cancelled</span></code>,<code class="docutils literal notranslate"><span class="pre">Task_Exception</span></code>,<code class="docutils literal notranslate"><span class="pre">Task_Question</span></code>.</p>
+<section id="task-api-call">
+<h4>Task_Api_Call<a class="headerlink" href="#task-api-call" title="Link to this heading"></a></h4>
+<p>The response will be returned when the App-Controller needs to call the API to fulfill the user’s input.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  // Indicate the status of the response.
+  &quot;status&quot;: &quot;Task_Api_Call&quot;,
+  // 
+  &quot;data&quot;: {
+    &quot;apis&quot;: [
+      {
+        &quot;name&quot;: &quot;the name of the api&quot;,
+        &quot;arguments&quot;: {
+          &quot;argument1 name&quot;: &quot;value or list or object&quot;,
+          &quot;argument2 name&quot;: &quot;value or list or object&quot;,
+          // the rest of the argument with the same json format
+        }
+      }
+    ]
+  },
+  &quot;isTerminal&quot;: &quot;true or false using boolean type&quot;,
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">apis</span></code>: return the list of api that need to be sequentially called to fulfill the user’s input. Each api includes the <code class="docutils literal notranslate"><span class="pre">name</span></code>
+and <code class="docutils literal notranslate"><span class="pre">arguments</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isTerminal</span></code>: <code class="docutils literal notranslate"><span class="pre">true</span></code> mean the task has been completed directly after the api is successfully called, <code class="docutils literal notranslate"><span class="pre">false</span></code> mean the task has
+not been completed after the api is successfully called, the interaction will continue.</p></li>
+</ul>
+</section>
+<section id="task-finished">
+<h4>Task_Finished<a class="headerlink" href="#task-finished" title="Link to this heading"></a></h4>
+<p>The response will be returned when the App-Controller consider the task has been completed.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;status&quot;: &quot;Task_Finished&quot;
+}
+</pre></div>
+</div>
+<p>Note that, App-Controller use two ways to notify the task has been completed. One is to return the <code class="docutils literal notranslate"><span class="pre">Task_Finished</span></code> response with
+the
+close of the session context, the other is to return the <code class="docutils literal notranslate"><span class="pre">Task_Api_Call</span></code> response with <code class="docutils literal notranslate"><span class="pre">isTerminal</span></code> set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. However, the
+task will continue if the api call is failed.</p>
+</section>
+<section id="task-failed">
+<h4>Task_Failed<a class="headerlink" href="#task-failed" title="Link to this heading"></a></h4>
+<p>The response will be returned when the App-Controller consider the task cannot be completed.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;status&quot;: &quot;Task_Failed&quot;
+}
+</pre></div>
+</div>
+</section>
+<section id="task-cancelled">
+<h4>Task_Cancelled<a class="headerlink" href="#task-cancelled" title="Link to this heading"></a></h4>
+<p>The response will be returned when you send request to App-Controller with a session_id that has been stopped.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;status&quot;: &quot;Task_Cancelled&quot;
+}
+</pre></div>
+</div>
+</section>
+<section id="task-exception">
+<h4>Task_Exception<a class="headerlink" href="#task-exception" title="Link to this heading"></a></h4>
+<p>The response will be returned when there are any exceptions during the task processing. The task will be stopped directly.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;status&quot;: &quot;Task_Exception&quot;
+}
+</pre></div>
+</div>
+</section>
+<section id="task-question">
+<h4>Task_Question<a class="headerlink" href="#task-question" title="Link to this heading"></a></h4>
+<p>The response will be returned when the App-Controller consider the input as a question instead of a task.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>{
+  &quot;status&quot;: &quot;Task_Question&quot;,
+}
+</pre></div>
+</div>
+</section>
+</section>
+<section id="step3-configuration-your-app-controller">
+<h3>Step3: Configuration your App-Controller<a class="headerlink" href="#step3-configuration-your-app-controller" title="Link to this heading"></a></h3>
+<p>You can configure the App-Controller by modifying the <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file.
+There are several important parameters that you need to pay attention to.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[App]</span>
+<span class="c1">; Application name</span>
+<span class="na">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">visual studio code</span>
+<span class="c1">; the path of the app data directory, which is used to store the &quot;MetaData&quot;,&quot;Index&quot;,&quot;UserData&quot; and others.</span>
+<span class="na">app_data_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/Users/wlg/Documents/alibaba/llm4apis/LLM_For_APIs/AppSupports/SmartVscodeExtension/</span>
+
+<span class="c1">; Model settings</span>
+<span class="k">[Models]</span>
+<span class="c1">; build index for these embedding models separately</span>
+<span class="na">enabled_embed_models</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">qwen_embedding_config:text-embedding-v2,openai_embedding_config:text-embedding-3-small</span>
+
+<span class="c1">; Server configuration</span>
+<span class="k">[Server]</span>
+<span class="na">http_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5000</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>app: The name of the application.</p></li>
+<li><p>app_data_dir: The path of the app data directory, which is used to store the “MetaData”,”Index”,”UserData” and others.</p></li>
+<li><p>enabled_embed_models: The index are dependent on the embedding model. You can specify multiple embedding models separated by
+<code class="docutils literal notranslate"><span class="pre">,</span></code>. Each embedding model should be organized as <code class="docutils literal notranslate"><span class="pre">model_orgnization_name:embedding_model_name</span></code>. All indexes will build for each
+embedding model separately.</p></li>
+<li><p>http_port: The port of the App-Controller server.
+More details about the configuration file can be found in the <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file.</p></li>
+</ul>
+<p><a class="reference internal" href="#103-start-en"><span class="xref myst">[Return to the top]</span></a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contribute.html" class="btn btn-neutral float-right" title="Contribute to App-Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Alibaba Tongyi Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
