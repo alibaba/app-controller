@@ -57,6 +57,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deploy</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#step1-data-preparation">Step1: Data Preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step2-communication-interface-implementation">Step2: Communication Interface Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step3-configuration-your-app-controller">Step3: Configuration your App-Controller</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute to App-Controller</a></li>
@@ -439,8 +440,46 @@ task will continue if the api call is failed.</p>
 </div>
 </section>
 </section>
+</section>
 <section id="step3-configuration-your-app-controller">
-<h3>Step3: Configuration your App-Controller<a class="headerlink" href="#step3-configuration-your-app-controller" title="Link to this heading"></a></h3>
+<h2>Step3: Configuration your App-Controller<a class="headerlink" href="#step3-configuration-your-app-controller" title="Link to this heading"></a></h2>
+<section id="embedding-model-configuration">
+<h3>Embedding Model Configuration<a class="headerlink" href="#embedding-model-configuration" title="Link to this heading"></a></h3>
+<p>App-Controller need to use two types of model, including the chat model and the embedding model. These models need api key to be
+called.
+In our system, the user of your application need to provide api keys of two types model. In addition, the developer of application
+need to provide the api key of the embedding model for pre-building the index.</p>
+<ul class="simple">
+<li><p><strong>Chat model</strong>: It is used to reason the suitable API for the user’s input. All users of your application need to send api key
+of selected chat model to the App-Controller. Then, the chat model will be called by the api key.</p></li>
+<li><p><strong>Embedding model</strong>: For developer of application, you need to provide the api key of the embedding model for pre-building the
+index on available apis and other knowledge. For user of your application, the api key of the embedding model will be used to
+embed the user’s input for searching the most similar knowledge.</p></li>
+</ul>
+<p>You can configure your embedding model by modifying the <code class="docutils literal notranslate"><span class="pre">embed_model_config</span></code> file.
+It supports multiple embedding models. Each embedding model will build index for all apis and knowledge independently.
+Each config of embed model should refer to  <a class="reference external" href="https://modelscope.github.io/agentscope/en/tutorial/203-model.html">Model Config</a></p>
+<p>For example, you can configure the embedding model of openai as below.</p>
+<div class="highlight-json5 notranslate"><div class="highlight"><pre><span></span>[
+  {
+    &quot;config_name&quot;: &quot;openai_embedding_config&quot;,
+    &quot;model_type&quot;: &quot;openai_embedding&quot;,
+    &quot;model_name&quot;: &quot;{model_name}&quot;,
+    &quot;api_key&quot;: &quot;{your_api_key}&quot;,
+    &quot;organization&quot;: &quot;{your_organization}&quot;,
+    &quot;client_args&quot;: {
+      // e.g. &quot;max_retries&quot;: 3,
+    },
+    &quot;generate_args&quot;: {
+      // e.g. &quot;encoding_format&quot;: &quot;float&quot;
+    }
+  }
+]
+</pre></div>
+</div>
+</section>
+<section id="basic-configuration">
+<h3>Basic Configuration<a class="headerlink" href="#basic-configuration" title="Link to this heading"></a></h3>
 <p>You can configure the App-Controller by modifying the <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file.
 There are several important parameters that you need to pay attention to.</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[App]</span>
@@ -452,7 +491,8 @@ There are several important parameters that you need to pay attention to.</p>
 <span class="c1">; Model settings</span>
 <span class="k">[Models]</span>
 <span class="c1">; build index for these embedding models separately</span>
-<span class="na">enabled_embed_models</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">qwen_embedding_config:text-embedding-v2,openai_embedding_config:text-embedding-3-small</span>
+<span class="c1">; enabled_embed_models = openai_embedding_config:text-embedding-3-small,qwen_embedding_config:text-embedding-v2</span>
+<span class="na">enabled_embed_models</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">openai_embedding_config:text-embedding-3-small</span>
 
 <span class="c1">; Server configuration</span>
 <span class="k">[Server]</span>

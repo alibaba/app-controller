@@ -405,7 +405,46 @@ The response will be returned when the App-Controller consider the input as a qu
 }
 ```
 
-### Step3: Configuration your App-Controller
+## Step3: Configuration your App-Controller
+
+### Embedding Model Configuration
+
+App-Controller need to use two types of model, including the chat model and the embedding model. These models need api key to be
+called.
+In our system, the user of your application need to provide api keys of two types model. In addition, the developer of application
+need to provide the api key of the embedding model for pre-building the index.
+
+- **Chat model**: It is used to reason the suitable API for the user's input. All users of your application need to send api key
+  of selected chat model to the App-Controller. Then, the chat model will be called by the api key.
+- **Embedding model**: For developer of application, you need to provide the api key of the embedding model for pre-building the
+  index on available apis and other knowledge. For user of your application, the api key of the embedding model will be used to
+  embed the user's input for searching the most similar knowledge.
+
+You can configure your embedding model by modifying the `embed_model_config` file.
+It supports multiple embedding models. Each embedding model will build index for all apis and knowledge independently.
+Each config of embed model should refer to  [Model Config](https://modelscope.github.io/agentscope/en/tutorial/203-model.html)
+
+For example, you can configure the embedding model of openai as below.
+
+```json5
+[
+  {
+    "config_name": "openai_embedding_config",
+    "model_type": "openai_embedding",
+    "model_name": "{model_name}",
+    "api_key": "{your_api_key}",
+    "organization": "{your_organization}",
+    "client_args": {
+      // e.g. "max_retries": 3,
+    },
+    "generate_args": {
+      // e.g. "encoding_format": "float"
+    }
+  }
+]
+```
+
+### Basic Configuration
 
 You can configure the App-Controller by modifying the `config.ini` file.
 There are several important parameters that you need to pay attention to.
@@ -420,7 +459,8 @@ app_data_dir = /Users/wlg/Documents/alibaba/llm4apis/LLM_For_APIs/AppSupports/Sm
 ; Model settings
 [Models]
 ; build index for these embedding models separately
-enabled_embed_models = qwen_embedding_config:text-embedding-v2,openai_embedding_config:text-embedding-3-small
+; enabled_embed_models = openai_embedding_config:text-embedding-3-small,qwen_embedding_config:text-embedding-v2
+enabled_embed_models = openai_embedding_config:text-embedding-3-small
 
 ; Server configuration
 [Server]
@@ -433,6 +473,6 @@ http_port = 5000
   `,`. Each embedding model should be organized as `model_orgnization_name:embedding_model_name`. All indexes will build for each
   embedding model separately.
 - http_port: The port of the App-Controller server.
-More details about the configuration file can be found in the `config.ini` file.
+  More details about the configuration file can be found in the `config.ini` file.
 
 [[Return to the top]](#103-start-en)
