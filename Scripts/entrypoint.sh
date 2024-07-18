@@ -4,5 +4,7 @@
 /usr/sbin/sshd -D
 
 # start server
-conda activate ${PYTHON_ENV_NAME}
-python server.py -p ${SERVER_PORT}
+conda activate ${APP_CONTROLLER_PYTHON_NAME}
+
+cd ${APP_CONTROLLER_PROJECT_PATH}
+python server.py -p ${APP_CONTROLLER_SERVER_PORT}
