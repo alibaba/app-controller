@@ -1,5 +1,6 @@
 import sys
 import argparse
+import traceback
 
 sys.path.append("Core")
 
@@ -65,8 +66,9 @@ async def start(request):
         if result.status != ResponseStatusEnum.TASK_QUESTION:
             test_manager.check(result)
     except Exception as e:
+        stack_trace = traceback.format_exc()
+        sys_logger.error(f"An error occurred: {e}\n\nStack Trace:\n{stack_trace}")
         result = Response.get_exception_response()
-        sys_logger.error(e)
         test_manager.task_failed()
 
     # task may be cancelled
@@ -92,9 +94,10 @@ async def handle_api_response(request):
             result = await pipeline.handle_api_response(context)
             test_manager.check(result)
         except Exception as e:
+            stack_trace = traceback.format_exc()
+            sys_logger.error(f"An error occurred: {e}\n\nStack Trace:\n{stack_trace}")
             result = Response.get_exception_response()
             test_manager.task_failed()
-            sys_logger.error(e)
 
     if not is_valid_pipeline(context):
         clear(context)

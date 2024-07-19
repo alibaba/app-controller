@@ -78,3 +78,7 @@ def load_model_config(file_name):
 
 def get_embed_model(emb_model_config_name):
     return _EmbeddingModel(load_model_by_config_name(emb_model_config_name))
+
+
+def is_existed_model_config(model_config_name):
+    return model_config_name in _MODEL_CONFIGS

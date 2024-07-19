@@ -5,7 +5,7 @@ from concurrent.futures.thread import ThreadPoolExecutor
 from Common.Config import Config
 from Common.Constants import TextConstants
 from Common.SysLogger import sys_logger
-from Common.Utils import singleton
+from Common.Utils import singleton, is_existed_model_config
 from Index.ApiIndex import ApiIndex
 from Index.KnowledgeApiIndex import KnowledgeApiIndex
 
@@ -24,6 +24,8 @@ class EmbedIndexManager:
                 if not os.path.isdir(os.path.join(self.config.metadata_dir_path, dir_name)):
                     continue
                 for extend_model_name in self.config.enabled_embed_models:
+                    if not is_existed_model_config(extend_model_name.split(":")[0]):
+                        continue
                     future = executor.submit(self._build_global_index, extend_model_name, dir_name)
                     futures.append(future)
 
