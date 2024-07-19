@@ -8,7 +8,7 @@ language</h3>
 <div align="center">
 
 ![](https://img.shields.io/badge/python-3.9+-blue)
-[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub)
+[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
 ![](https://img.shields.io/badge/license-Apache--2.0-black)
 ![](https://img.shields.io/badge/Contribute-Welcome-green)
 
@@ -21,7 +21,7 @@ language</h3>
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmartVscode](), which allows users to manipulate
   various VsCode features through natural language commands, such as changing the theme or generating code with a single
-  sentence. [Learn more](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin) -
+  sentence. [Learn more](https://github.com/alibaba/smart-vscode-extension)
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   We are thrilled to announce the release of **App-Controller** version 1.0!
 
@@ -94,23 +94,27 @@ cutting down on costs associated with API calls (coming soon).
 We developed a Visual Studio Code plugin, [SmartVscode](), that allows users to operate various VsCode features through natural
 language. Below are some demonstrations of its features:
 
+
 ### Tic-tac-toe Game
 
-https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58
+<!-- https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58 -->
+![game](../_static/game8x.gif)
 
 ### Style Changing
 
-https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da
+<!-- https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da -->
+![style](../_static/fontsize2x.gif)
 
 ### Theme Changing
 
-https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb
+<!-- https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb -->
+![Theme Changing](../_static/theme1_8x.gif)
+
 
 ### Enable auto saving
 
-https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8
-
-## Connect to your Application
+<!-- https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8 -->
+![Auto Saving](../_static/autosave2x.gif)
 
 The following image illustrates the process of introducing intelligence into applications using the App-Controller framework,
 detailing the tasks that application developers need to undertake and the process by which App-Controller independently
