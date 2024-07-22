@@ -4,10 +4,10 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/python-3.9+-blue)]
+![](https://img.shields.io/badge/python-3.9+-blue)
 [![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
-[![](https://img.shields.io/badge/license-Apache--2.0-black)]
-[![](https://img.shields.io/badge/Contribute-Welcome-green)]
+![](https://img.shields.io/badge/license-Apache--2.0-black)
+![](https://img.shields.io/badge/Contribute-Welcome-green)
 
 
 </div>
