@@ -58,6 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#step1-data-preparation">Step1: Data Preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step2-communication-interface-implementation">Step2: Communication Interface Implementation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step3-configuration-your-app-controller">Step3: Configuration your App-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step4-start-the-service">Step4: Start the service</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute to App-Controller</a></li>
@@ -452,9 +453,10 @@ need to provide the api key of the embedding model for pre-building the index.</
 <ul class="simple">
 <li><p><strong>Chat model</strong>: It is used to reason the suitable API for the user’s input. All users of your application need to send api key
 of selected chat model to the App-Controller. Then, the chat model will be called by the api key.</p></li>
-<li><p><strong>Embedding model</strong>: For developer of application, you need to provide the api key of the embedding model for pre-building the
-index on available apis and other knowledge. For user of your application, the api key of the embedding model will be used to
-embed the user’s input for searching the most similar knowledge.</p></li>
+<li><p><strong>Embedding model</strong>: For the developer of application, you need to provide the api key of the embedding model for pre-building the
+index on available apis and other knowledge. For the user of your application, the api key of the embedding model will be used to
+embed the user’s input for searching the most similar knowledge.
+Note that the embedding model used by the user can only be selected from the embedding models used by the developer to build th index.</p></li>
 </ul>
 <p>You can configure your embedding model by modifying the <code class="docutils literal notranslate"><span class="pre">embed_model_config</span></code> file.
 It supports multiple embedding models. Each embedding model will build index for all apis and knowledge independently.
@@ -501,15 +503,24 @@ There are several important parameters that you need to pay attention to.</p>
 </div>
 <ul class="simple">
 <li><p>app: The name of the application.</p></li>
-<li><p>app_data_dir: The path of the app data directory, which is used to store the “MetaData”,”Index”,”UserData” and others.</p></li>
+<li><p>app_data_dir: The path of the app data directory, which is used to store the <code class="docutils literal notranslate"><span class="pre">MetaData</span></code>, <code class="docutils literal notranslate"><span class="pre">Index</span></code>, <code class="docutils literal notranslate"><span class="pre">UserData</span></code> and others.</p></li>
 <li><p>enabled_embed_models: The index are dependent on the embedding model. You can specify multiple embedding models separated by
 <code class="docutils literal notranslate"><span class="pre">,</span></code>. Each embedding model should be organized as <code class="docutils literal notranslate"><span class="pre">model_orgnization_name:embedding_model_name</span></code>. All indexes will build for each
 embedding model separately.</p></li>
 <li><p>http_port: The port of the App-Controller server.
 More details about the configuration file can be found in the <code class="docutils literal notranslate"><span class="pre">config.ini</span></code> file.</p></li>
 </ul>
-<p><a class="reference internal" href="#103-start-en"><span class="xref myst">[Return to the top]</span></a></p>
 </section>
+</section>
+<section id="step4-start-the-service">
+<h2>Step4: Start the service<a class="headerlink" href="#step4-start-the-service" title="Link to this heading"></a></h2>
+<p>After completing the above configuration, you can start the service by running the following command in a bash.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start a service via the configured port number.</span>
+python<span class="w"> </span>server.py
+</pre></div>
+</div>
+<p>Once the service is started, the backend will automatically build/update/load the index files of the konwledge provided in the <a class="reference internal" href="#step1-data-preparation"><span class="xref myst">data preparation</span></a> and listen to the user requests forwarded from the App.</p>
+<p><a class="reference internal" href="#deploy-en">[Return to the top]</a></p>
 </section>
 </section>
 

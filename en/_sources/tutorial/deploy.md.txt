@@ -416,9 +416,10 @@ need to provide the api key of the embedding model for pre-building the index.
 
 - **Chat model**: It is used to reason the suitable API for the user's input. All users of your application need to send api key
   of selected chat model to the App-Controller. Then, the chat model will be called by the api key.
-- **Embedding model**: For developer of application, you need to provide the api key of the embedding model for pre-building the
-  index on available apis and other knowledge. For user of your application, the api key of the embedding model will be used to
-  embed the user's input for searching the most similar knowledge.
+- **Embedding model**: For the developer of application, you need to provide the api key of the embedding model for pre-building the
+  index on available apis and other knowledge. For the user of your application, the api key of the embedding model will be used to
+  embed the user's input for searching the most similar knowledge. 
+  Note that the embedding model used by the user can only be selected from the embedding models used by the developer to build th index.
 
 You can configure your embedding model by modifying the `embed_model_config` file.
 It supports multiple embedding models. Each embedding model will build index for all apis and knowledge independently.
@@ -468,11 +469,20 @@ http_port = 5000
 ```
 
 - app: The name of the application.
-- app_data_dir: The path of the app data directory, which is used to store the "MetaData","Index","UserData" and others.
+- app_data_dir: The path of the app data directory, which is used to store the `MetaData`, `Index`, `UserData` and others.
 - enabled_embed_models: The index are dependent on the embedding model. You can specify multiple embedding models separated by
   `,`. Each embedding model should be organized as `model_orgnization_name:embedding_model_name`. All indexes will build for each
   embedding model separately.
 - http_port: The port of the App-Controller server.
   More details about the configuration file can be found in the `config.ini` file.
 
-[[Return to the top]](#103-start-en)
+## Step4: Start the service
+
+After completing the above configuration, you can start the service by running the following command in a bash.
+``` bash
+# Start a service via the configured port number.
+python server.py
+```
+Once the service is started, the backend will automatically build/update/load the index files of the konwledge provided in the [data preparation](#step1-data-preparation) and listen to the user requests forwarded from the App.
+
+[[Return to the top]](#deploy-en)
