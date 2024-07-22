@@ -2,13 +2,13 @@
 
 # Introduction
 
-<h3 align="center"><img src="../_static/logo.png" height="64"><br>App-Controller: Allow users to manipulate your app with natural
+<h3 align="center"><img src="../_static/logo.png" height="64"><br>App-Controller: Allow users to manipulate your App with natural
 language</h3>
 
 <div align="center">
 
 ![](https://img.shields.io/badge/python-3.9+-blue)
-[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
+[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/App-controller/en/index.html)
 ![](https://img.shields.io/badge/license-Apache--2.0-black)
 ![](https://img.shields.io/badge/Contribute-Welcome-green)
 
@@ -40,14 +40,14 @@ It aims to integrate and synchronize APIs provided by any applications (APPs) us
 > The above image illustrates how App-Controller enhances application interactivity.
 > Specifically, the graphic is divided into two parts: the left-half details the traditional process of inquiry and execution when
 > completing tasks, while the right-half displays the streamlined workflow with App-Controller's intervention.
-> In a traditional scenario, when a user needs to accomplish a task in an app but doesn’t know how to do it, they first ask the
-> LLM and receive an answer, then command the app to obtain the result and complete the task.
+> In a traditional scenario, when a user needs to accomplish a task in an App but doesn’t know how to do it, they first ask the
+> LLM and receive an answer, then command the App to obtain the result and complete the task.
 > In contrast, after introducing App-Controller, the user simply inputs their requirement in natural language directly into the
-> app to
-> get the result and finish the task. With App-Controller's assistance, the app consults the LLM for user intent and learns the
+> App to
+> get the result and finish the task. With App-Controller's assistance, the App consults the LLM for user intent and learns the
 > necessary commands to execute, subsequently returning the result.
 
-- Any application vendor only needs to implement communication interfaces on the app and submit a list of supported APIs to
+- Any application vendor only needs to implement communication interfaces on the App and submit a list of supported APIs to
   App-Controller, which can independently explore and identify the optimal API call sequence to fulfill user instructions.
 
 App-Controller 's core competency lies in its highly automated API orchestration logic and user-friendly data interaction
@@ -127,20 +127,20 @@ API calls to fulfill user instructions.
 
 1. **Communication interface**: Application developers need to achieve a **standard communication interface** with the
    App-Controller.
-2. **Document**: They also need to provide soe **knowledge** to the App-Controller, including the app's available API
+2. **Document**: They also need to provide soe **knowledge** to the App-Controller, including the App's available API
    documentation
    and other optional documents.
 
 ### Deploy stage
 
-After starting App-Controller, the app forwards user input to the App-Controller. The App-Controller integrates user input and
+After starting App-Controller, the App forwards user input to the App-Controller. The App-Controller integrates user input and
 available API
-information, interacts with the LLM to select the appropriate API to execute, and determine the task status. Iteratively, the app
+information, interacts with the LLM to select the appropriate API to execute, and determine the task status. Iteratively, the App
 executes the selected API and returns the execution result to the App-Controller. The App-Controller continues to interact with
 the LLM to
 make the next decision. The pipeline is terminated when the task has been completed, or failed, and the result is returned to the
 user.
 
-After completing these steps, the app can achieve intelligent interaction with users.
+After completing these steps, the App can achieve intelligent interaction with users.
 
 [[Return to the top]](#app-controller-en)
