@@ -11,7 +11,8 @@ class SimpleApiRetriever(ApiRetrieverBase):
         super().__init__(config, context)
 
     async def retrieve_apis(self, user_question, model_keywords, embed_model):
-        TimeStatistic.start("RAG retrieval")
+        timer = TimeStatistic()
+        timer.start("RAG retrieval")
         nodes = []
         nodes.extend(await self.api_index.retrieval(user_question, embed_model))
         for keyword in model_keywords:
@@ -23,5 +24,5 @@ class SimpleApiRetriever(ApiRetrieverBase):
             api = self.api_manager.get_api(api_json["name"])
             if api not in apis:
                 apis.append(api)
-        TimeStatistic.end("RAG retrieval", self.recorder, output=True)
+        self.recorder.time(timer.end("RAG retrieval"))
         return apis

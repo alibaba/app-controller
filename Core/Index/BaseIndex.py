@@ -22,7 +22,8 @@ class BaseIndex(ABC):
     def build_index(self, emb_model_config_name):
         Settings.embed_model = _EmbeddingModel(load_model_by_config_name(emb_model_config_name))
         time_identifier = "build_{}_index".format(self.identifier.lower())
-        TimeStatistic.start(time_identifier)
+        timer = TimeStatistic()
+        timer.start(time_identifier)
 
         if self.exist_index():
             sys_logger.info("Loading index for {}".format(self.identifier))
@@ -31,7 +32,8 @@ class BaseIndex(ABC):
             self.index = VectorStoreIndex([])
         self._update_index()
         self._storage_index()
-        TimeStatistic.end(time_identifier, sys_logger, output=True)
+
+        sys_logger.info("The time taken to build the index is {}".format(timer.end(time_identifier)))
 
     def exist_index(self):
         return os.path.exists(self.index_dir)

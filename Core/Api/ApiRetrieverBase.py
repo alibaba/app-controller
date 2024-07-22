@@ -14,6 +14,7 @@ class ApiRetrieverBase(ABC):
         self.config = config
         self.api_index: ApiIndex = index_manager.get_index(TextConstants.API, context.get_embed_model_name(config))
         self.api_manager = api_manager
+        self.context = context
         self.recorder = Recorder(config, context.session_id)
 
     @abstractmethod

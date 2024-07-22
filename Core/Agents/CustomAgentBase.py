@@ -33,11 +33,12 @@ class CustomAgentBase(AgentBase, ABC):
     async def _get_model_response(self, _check_valid_response):
         while True:
             try:
+                timer = TimeStatistic()
                 prompt = self.model.format(Msg("system", self.prompt.system(), role="system"), self.memory.get_memory())
-                TimeStatistic.start(self.name + "Model request")
+                timer.start("Model request")
                 loop = asyncio.get_event_loop()
                 model_response = await loop.run_in_executor(model_response_thread_pool, self.model, prompt)
-                TimeStatistic.end(self.name + "Model request", self.recorder, output=True)
+                self.recorder.time(timer.end("Model request"))
 
                 if _check_valid_response(model_response):
                     if model_response.text is not None:

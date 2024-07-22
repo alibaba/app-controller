@@ -60,7 +60,7 @@ class Context:
 
     @classmethod
     def _parser_test_data(cls, x):
-        return x["isTest"], x["testAnswer"]
+        return x.get("isTest", False), x.get("testAnswer", None)
 
     def _get_envs_prompt(self, environments):
         prompt = ""

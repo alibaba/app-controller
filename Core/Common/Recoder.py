@@ -42,6 +42,9 @@ class Recorder:
     def model(self, message: str, record: bool = True):
         self.info(message, record, label="Model")
 
+    def time(self, message: str, record: bool = True):
+        self.info(message, record, label="Time")
+
     def info(self, message: str, record: bool = True, label="Info"):
         if record:
             self.messages.append("[{}]".format(label) + message)
