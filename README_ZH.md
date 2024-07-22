@@ -4,12 +4,11 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/python-3.9+-blue)](https://pypi.org/project/agentscope/)
+[![](https://img.shields.io/badge/python-3.9+-blue)]
 [![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
-[![](https://img.shields.io/badge/license-Apache--2.0-black)](./LICENSE)
-[![](https://img.shields.io/badge/Contribute-Welcome-green)](https://modelscope.github.io/agentscope/tutorial/contribute.html)
+[![](https://img.shields.io/badge/license-Apache--2.0-black)]
+[![](https://img.shields.io/badge/Contribute-Welcome-green)]
 
-[//]: # ([![]&#40;https://img.shields.io/github/stars/gencay/vscode-chatgpt?color=blue&label=Github%20Stars&#41;]&#40;&#41;)
 
 </div>
 
@@ -90,7 +89,7 @@ https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea
 
 ## 文档
 
-[文档](https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub)详细介绍了如何将App-Controller连接到你的应用程序，你能参考这些文档来更好的使用App-Controller。
+[文档](https://alibaba.github.io/app-controller/en/index.html)详细介绍了如何将App-Controller连接到你的应用程序，你能参考这些文档来更好的使用App-Controller。
 
 ## 许可证
 

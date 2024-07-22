@@ -117,7 +117,7 @@ After completing these steps, the App can achieve intelligent interaction with u
 
 ## Documentation
 
-[Documentation](https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub)
+[Documentation](https://alibaba.github.io/app-controller/en/index.html)
 provides comprehensive information on how to integrate App-Controller into your application. You can refer to these documents for an improved experience with App-Controller.
 
 ## License
