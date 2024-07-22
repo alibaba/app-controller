@@ -5,7 +5,7 @@
 <div align="center">
 
 [![](https://img.shields.io/badge/python-3.9+-blue)](https://pypi.org/project/agentscope/)
-[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub)
+[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
 [![](https://img.shields.io/badge/license-Apache--2.0-black)](./LICENSE)
 [![](https://img.shields.io/badge/Contribute-Welcome-green)](https://modelscope.github.io/agentscope/tutorial/contribute.html)
 
@@ -17,8 +17,8 @@
 
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   基于**App-Controller**，我们实现了一个Visual Studio
-  Code插件[SmartVscode]()
-  ，允许用户通过自然语言来操作VsCode支持的各种功能，例如：一句话改变主题，字体，生成代码等等。[了解更多](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin)
+  Code插件[SmartVscode](https://github.com/alibaba/smart-vscode-extension)
+  ，允许用户通过自然语言来操作VsCode支持的各种功能，例如：一句话改变主题，字体，生成代码等等。
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   我们现在发布了**App-Controller** v1.0版本！
 
@@ -66,7 +66,7 @@ App-Controller 的核心竞争力在于其高度自动化的 API 编排逻辑以
 - 🌟 Token优化：App-Controller 的优化算法能够智能的评估消息的可用性，降低令牌(token)的使用量，减少因API调用导致的开销（即将推出）。
 
 ## 应用：基于App-Controller的VsCode插件
-我们实现了一个Visual Studio Code插件[SmartVscode]()，它允许用户通过自然语言来操作VsCode支持的各种功能，下面是其支持的部分功能演示：
+我们实现了一个Visual Studio Code插件[SmartVscode](https://github.com/alibaba/smart-vscode-extension)，它允许用户通过自然语言来操作VsCode支持的各种功能，下面是其支持的部分功能演示：
 
 ### Tic-tac-toe Game
 https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58
@@ -99,5 +99,5 @@ App-Controller根据Apache License 2.0发布。
 ## 贡献
 
 欢迎参与到App-Controller的构建中！
-请参阅我们的[贡献指南](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html)了解更多细节。
+请参阅我们的[贡献指南](https://alibaba.github.io/app-controller/en/tutorial/contribute.html)了解更多细节。
 

@@ -6,7 +6,7 @@ language</h3>
 <div align="center">
 
 ![](https://img.shields.io/badge/python-3.9+-blue)
-[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://modelscope.github.io/agentscope/#welcome-to-agentscope-tutorial-hub)
+[![](https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown)](https://alibaba.github.io/app-controller/en/index.html)
 ![](https://img.shields.io/badge/license-Apache--2.0-black)
 ![](https://img.shields.io/badge/Contribute-Welcome-green)
 
@@ -17,9 +17,9 @@ language</h3>
 ## 新闻
 
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
-  Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmartVscode](), which allows users to manipulate
+  Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), which allows users to manipulate
   various VsCode features through natural language commands, such as changing the theme or generating code with a single
-  sentence. [Learn more](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html#vscode-plugin) -
+  sentence. 
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   We are thrilled to announce the release of **App-Controller** version 1.0!
 
@@ -73,7 +73,7 @@ enabling a seamless experience that meets diverse needs.
 
 ## Applications: The SmartVscode Plugin Based on App-Controller
 
-We developed a Visual Studio Code plugin, [SmartVscode](), that allows users to operate various VsCode features through natural language. Below are some demonstrations of its features:
+We developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), that allows users to operate various VsCode features through natural language. Below are some demonstrations of its features:
 
 ### Tic-tac-toe Game
 
@@ -125,4 +125,4 @@ App-Controller is released under the Apache License 2.0.
 
 ## Contributions
 Join us in building App-Controller!
-Please see our [Contribution Guide](https://modelscope.github.io/agentscope/zh_CN/tutorial/302-contribute.html) for more detail
+Please see our [Contribution Guide](https://alibaba.github.io/app-controller/en/tutorial/contribute.html) for more detail
