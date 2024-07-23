@@ -21,6 +21,7 @@ class KnowledgeApiAgentPrompt(Prompt):
         Should Api "{ApiName}" be able to help me accomplish my task with precision, please respond in the following JSON format:
         {
             "type": 1,
+            "think": "The reason why you choose this action.",
             "api":
             {
                 "name": "api name",

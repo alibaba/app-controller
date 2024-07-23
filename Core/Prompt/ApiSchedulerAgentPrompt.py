@@ -34,7 +34,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         Output in JSON format: 
         {
             "type": 2,
-            "terminal": "If this API is the last one needed for the requirement, set to "true". Otherwise false"
+            "terminal": "If the task can be accomplished after executing this api successfully, set it to "true". Otherwise false"
             "api":
             {
                 "name": "API name from RAG's results",
@@ -67,7 +67,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         ############
         """
 
-    start_prompt = "{}. You should think about how to complete it in vscode."
+    start_prompt = "{}. You should think about how to complete it."
 
     retrieve_api_prompt = """There are relevant APIs for provided keywords. 
     {}. 
