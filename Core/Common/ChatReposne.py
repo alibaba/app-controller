@@ -16,7 +16,7 @@ class Response:
 
     @classmethod
     def get_task_finished_response(cls):
-        return Response(ResponseStatusEnum.TASK_CANCELLED, None)
+        return Response(ResponseStatusEnum.TASK_FINISHED, None)
 
     @classmethod
     def get_task_cancelled_response(cls, msg=None):
