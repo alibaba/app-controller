@@ -26,6 +26,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         Output in JSON format: 
         {
             "type": 1,
+            "think":"Why did you choose this operation? Please briefly explain your reason.",
             "keywords":A list of keywords. such as ["keyword1", "keyword2"]. The provided keywords should be diverse; you should not provide similar keywords.
         }
         
@@ -38,6 +39,7 @@ class ApiSchedulerAgentPrompt(Prompt):
             "api":
             {
                 "name": "API name from RAG's results",
+                "think":"Why did you choose this operation? Please briefly explain your reason.",
                 "arguments":
                 {
                     "argument1 name": "value1",
@@ -50,14 +52,16 @@ class ApiSchedulerAgentPrompt(Prompt):
         Purpose: Inform that the task cannot be completed due to insufficient APIs, chosen after a lot of attempts.
         Output in JSON format: 
         {
-            "type": 3
+            "type": 3,
+            "think":"Why did you choose this operation? Please briefly explain your reason.",
         }
         
         Action 4:
         Purpose: Inform that the task has been finished.
         Output in JSON format: 
         {
-            "type": 4
+            "type": 4,
+            "think":"Why did you choose this operation? Please briefly explain your reason.",
         }
         ############
         
