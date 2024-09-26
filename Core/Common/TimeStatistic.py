@@ -25,3 +25,13 @@ class TimeStatistic:
             self._count[name] = 0
         self._total_time[name] += inc_time
         self._count[name] += 1
+
+    def get_statistics(self, name):
+        if name in self._total_time:
+            return {
+                "Total time": self._total_time[name],
+                "Count": self._count[name],
+                "Average_time": self._total_time[name] / self._count[name]
+            }
+        else:
+            raise RuntimeError(f"TimeStatistic: {name} has no statistics")

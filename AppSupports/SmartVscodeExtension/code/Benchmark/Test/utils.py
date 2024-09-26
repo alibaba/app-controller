@@ -3,12 +3,12 @@ import json
 import threading
 import queue
 
-from AppSupports.SmartVscodeExtension.code.tests.TaskTestResult import TaskTestResult
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TaskTestResult import TaskTestResult
 
 
 FRONTEND_SERVER_HOST = "localhost"
 FRONTEND_SERVER_PORT = 3000
-TEST_CLIENT_PORT = 5001
+TEST_CLIENT_PORT = 5000
 
 
 def send_test_case(case):
@@ -28,7 +28,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         try:
             json_data = json.loads(post_data)
-            print("receive data", json_data)
+            # print("receive data", json_data)
             data_queue.put(json_data)
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
@@ -60,4 +60,6 @@ def receive_test_result():
 def test_one_case(case: dict):
     send_test_case(case)
     res = receive_test_result()
+    print("Success: ", res.success)
+    print("Info: ", res.info)
     return res

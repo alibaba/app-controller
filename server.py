@@ -11,7 +11,7 @@ from Common.SysLogger import sys_logger
 
 from Index.EmbedIndexManager import index_manager
 from init import init_server, close_server
-from AppSupports.SmartVscodeExtension.code.tests.TestManager import TestManager
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TestManager import TestManager
 from Common.Recoder import Recorder
 from Database.Models.SessionModel import SessionModel
 from Pipeline.ChatPipeline import ChatPipeline

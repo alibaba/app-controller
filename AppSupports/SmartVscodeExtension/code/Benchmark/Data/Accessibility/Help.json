@@ -1,0 +1,13 @@
+
+[
+    {
+    "id": 1,
+    "q": ["I need to open the accessibility help menu.",
+          "Help me open the help menu."],
+    "a": [{
+        "executeCommand": {
+            "arguments": {"commandId": "editor.action.accessibilityHelp"}
+        }
+    }]
+  }
+]

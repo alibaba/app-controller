@@ -1,6 +1,6 @@
 import unittest
 
-from AppSupports.SmartVscodeExtension.code.tests.BaseTest import BaseTest
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.BaseTest import BaseTest
 
 
 class TestExtension(BaseTest):

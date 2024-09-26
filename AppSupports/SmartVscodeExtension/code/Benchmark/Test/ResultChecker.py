@@ -3,15 +3,16 @@ import re
 import traceback
 
 from Common.ChatReposne import Response
+from Common.CustomEnum import ResponseStatusEnum
+
 
 
 class ResultChecker:
     def __init__(self, api_gts) -> None:
         self.success = True
-        if isinstance(api_gts, list):
-            self.api_gts = api_gts
-        else:
-            self.api_gts = [api_gts]
+        self.info = ""
+        self.api_gts = api_gts if isinstance(api_gts, list) else [api_gts]
+        self.apis = []
         self.each_fail_reason = ["" for _ in range(len(self.api_gts))]
         self.each_fail = [False for _ in range(len(self.api_gts))]
         self.fail_reason_in_nl = ""
@@ -20,46 +21,62 @@ class ResultChecker:
         self.last_fail = [{} for _ in range(len(self.api_gts))]
 
     def check(self, result: Response):
-        if result.status == "api_call":
-            # apis = json.loads(result.data["apis"])
-            apis = result.data["apis"]
-            assert len(apis) == 1, "Now only one api in a single interaction turn."
-            api = apis[0]
-            name = api["name"]
-            for i, api_gt in enumerate(self.api_gts):
-                if name in api_gt:
-                    res, passed = api_args_check(api_gt[name]["arguments"], api["arguments"])
-                    if passed:
-                        self.covered_api[i].add(name)
-                    else:
-                        self.last_fail[i][name] = res
-                else:
-                    self.each_fail_reason[i] += f"Use unnecessary or non-existed api '{name}'. Think add this api or not."
-                    self.each_fail[i] = True
-        elif result.status == "Task Failed":
-            self.success = False
-            self.fail_reason_in_nl += f"LLM gave up the task."
-            self.finish = True
-        if result.data["isTerminal"] or result.status == "Task Finished":
-            success = False
-            for i, api_gt in enumerate(self.api_gts):
-                if not self.each_fail[i] and len(self.covered_api[i]) >= len(api_gt):
-                    success = True
-            self.success = success
-            if not self.success:
-                for i, api_gt in enumerate(self.api_gts):
-                    self.fail_reason_in_nl += f"Option {i}:" + self.each_fail_reason[i]
-                    if len(self.covered_api[i]) < len(api_gt):
-                        self.fail_reason_in_nl += "Not pass all api needed."
-                        for k, v in self.last_fail[i].items():
-                            if k not in self.covered_api[i]:
-                                self.fail_reason_in_nl += v
-            self.finish = True
+        if result.status == ResponseStatusEnum.TASK_API_CALL:
+            self._handle_api_call(result)
+            if result.data["isTerminal"]:
+                self._handle_task_finished()
+        elif result.status == ResponseStatusEnum.TASK_FAILED:
+            self._handle_task_failed()
+        elif result.status == ResponseStatusEnum.TASK_FINISHED:
+            self._handle_task_finished()
         print(f"fin is set to {self.finish}", flush=True)
+        if self.finish:
+            self.info += self.fail_reason_in_nl
+
+    def _handle_api_call(self, result: Response):
+        apis = result.data["apis"]
+        assert len(apis) == 1, "Now only one api in a single interaction turn."
+        api = apis[0]
+        self.apis.append(json.dumps(api))
+        name = api["name"]
+        for i, api_gt in enumerate(self.api_gts):
+            if name in api_gt:
+                res, passed = api_args_check(api_gt[name]["arguments"], api["arguments"])
+                if passed:
+                    self.covered_api[i].add(name)
+                else:
+                    self.last_fail[i][name] = res
+            else:
+                self.each_fail_reason[i] += f"Use unnecessary or non-existed api '{name}'. Think add this api or not.  "
+                self.each_fail[i] = True
+
+    def _handle_task_failed(self):
+        self.success = False
+        self.info += "Result: " + ", ".join(self.apis) + "\n"
+        self.fail_reason_in_nl += f"LLM gave up the task. "
+        self.finish = True
+
+    def _handle_task_finished(self):
+        self.info += "Result: " + ", ".join(self.apis) + "\n"
+        success = False
+        for i, api_gt in enumerate(self.api_gts):
+            if not self.each_fail[i] and len(self.covered_api[i]) >= len(api_gt):
+                success = True
+        self.success = success
+        if not self.success:
+            for i, api_gt in enumerate(self.api_gts):
+                self.fail_reason_in_nl += f"Option {i}:" + self.each_fail_reason[i]
+                if len(self.covered_api[i]) < len(api_gt):
+                    self.fail_reason_in_nl += "Not pass all api needed. "
+                    for k, v in self.last_fail[i].items():
+                        if k not in self.covered_api[i]:
+                            self.fail_reason_in_nl += v
+        self.finish = True
 
     def task_failed(self):
         self.success = False
         self.fail_reason_in_nl = traceback.format_exc()
+        self.info += self.fail_reason_in_nl
         self.finish = True
 
 
