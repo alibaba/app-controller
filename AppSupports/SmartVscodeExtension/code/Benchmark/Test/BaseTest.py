@@ -3,13 +3,15 @@ import json
 import os
 
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TaskTestResult import TaskTestResult
-from AppSupports.SmartVscodeExtension.code.Benchmark.Test.utils import test_one_case
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.utils import test_one_case, spawn_server_thread
 from Core.Common.TimeStatistic import TimeStatistic
 
 
 class BaseTest(unittest.TestCase):
-    def setUp(self):
-        pass
+    @classmethod
+    def setUpClass(cls):
+        print("Start test server")
+        spawn_server_thread()
 
     def execute(self, case):
         return test_one_case(case)
@@ -22,11 +24,15 @@ class BaseTest(unittest.TestCase):
 
 
 class BenchmarkTest(BaseTest):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.benchmark_data_path = 'AppSupports/SmartVscodeExtension/code/Benchmark/Data'
+        cls.test_data_path = None
+        cls.tasks = {} # id -> task
     
-    def setUp(self):
-        self.benchmark_data_path = 'AppSupports/SmartVscodeExtension/code/Benchmark/Data'
-        self.test_data_path = None
-        self.tasks = {} # id -> task
+    def get_id(self):
+        return int(self._testMethodName.split('_')[1])
     
     def load_tasks(self, test_data_path):
         """
@@ -52,22 +58,23 @@ class BenchmarkTest(BaseTest):
         except json.JSONDecodeError:
             self.fail(f"JSONDecodeError: The file {self.test_data_path} is not properly formatted.")
             
-    def evaluate_task(self, task_id):
+    def evaluate_task(self):
         
         """
-        Evaluate one test task.
-        Args:
-            task_id (int/str): The unique identifier of the test task to evaluate.
+        Evaluate one test task, which is the one with the ID extracted from the test method name.
         
+        Args:
+            The test method name should be "test_<task_id>", where <task_id> is the ID of the task and should be an integer.
+
         task (dict): A dictionary representing a test task with the following structure:
             "id": <unique identifier for the test task>,
-            "q": [<list of queries>],  # Each query in the list corresponds to the same answer.
+            "q": [<list of queries>],1  # Each query in the list corresponds to the same answer.
             "a": [<list of answers>]   # Each answer in the list completes the same task.
         
         Example:
             Given a task dictionary with the following content:
             {
-                "id": "1",
+                "id": 1,
                 "q": ["query1", "query2", "query3"],
                 "a": [{answer1}, {answer2}]
             }
@@ -76,6 +83,7 @@ class BenchmarkTest(BaseTest):
             - Case ID: 1-2, Query: query2, Answer: [{answer1}, {answer2}]
             - Case ID: 1-3, Query: query3, Answer: [{answer1}, {answer2}]
         """
+        task_id = self.get_id()
         task = self.tasks.get(task_id, None)
         
         # Safety checks
@@ -98,26 +106,27 @@ class BenchmarkTest(BaseTest):
         count = 0
         for i, q in enumerate(task['q']):
             case = {
-            "id": f'{id}-{i+1}', 
-            "q": q,
-            "a": task['a'],
+                "id": f'{id}-{i+1}', 
+                "q": q,
+                "a": task['a'],
             }
-            print("-------------")
+            print("\n-------------")
             print(f'Running test case {case["id"]}')
             print("Query: ", case["q"])
             print("Answer: ", case["a"])
             timer.start(f"task_{task_id}")
-            with self.subTest(case=case):
+            with self.subTest(case={"id": case["id"], "q": case["q"]}):
                 success = self.evaluate(case)
+                if success:
+                    count += 1
             elapsed_time = timer.end(f"task_{task_id}")
             print(f"Response time: {float(elapsed_time):.2f} s")
-            if success:
-                count += 1
                 
         # Summary
         print("==============")
         print(f"Summary:\nTask {id} completed. {count}/{len(task['q'])} queries passed.")
         stats = timer.get_statistics(f"task_{task_id}")
-        formatted_stats = {k: f"{v:.2f} s" for k, v in stats.items()}
+        formatted_stats = {k: f"{v:.2f} " for k, v in stats.items()}
         print(formatted_stats)
+        print("==============")
         

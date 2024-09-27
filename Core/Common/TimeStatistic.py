@@ -29,9 +29,9 @@ class TimeStatistic:
     def get_statistics(self, name):
         if name in self._total_time:
             return {
-                "Total time": self._total_time[name],
+                "Total time (s)": self._total_time[name],
                 "Count": self._count[name],
-                "Average_time": self._total_time[name] / self._count[name]
+                "Average_time (s)": self._total_time[name] / self._count[name]
             }
         else:
             raise RuntimeError(f"TimeStatistic: {name} has no statistics")

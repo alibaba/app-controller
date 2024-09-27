@@ -5,10 +5,13 @@ import queue
 
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TaskTestResult import TaskTestResult
 
-
+import configparser
+parser = configparser.ConfigParser()
+parser.read("config.ini")
 FRONTEND_SERVER_HOST = "localhost"
-FRONTEND_SERVER_PORT = 3000
-TEST_CLIENT_PORT = 5000
+FRONTEND_SERVER_PORT = int(parser.get('Server', 'TEST_SERVER_PORT'))
+TEST_CLIENT_PORT = int(parser.get('Server', 'TEST_CLIENT_PORT'))
+
 
 
 def send_test_case(case):
@@ -45,12 +48,11 @@ def run_server(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, 
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
-
-
-server_thread = threading.Thread(target=run_server, kwargs={"port": TEST_CLIENT_PORT})
-server_thread.daemon = True
-server_thread.start()
-
+    
+def spawn_server_thread():
+    server_thread = threading.Thread(target=run_server, kwargs={"port": TEST_CLIENT_PORT})
+    server_thread.daemon = True
+    server_thread.start()
 
 def receive_test_result():
     data = data_queue.get(block=True)
