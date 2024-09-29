@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to lock the current editor group.", "I want to prevent the current editor group from being reused when I open a new editor."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.lockEditorGroup"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to unlock the current editor group that I have locked previously.", "I seem to have restricted access to one of my editor groups, please help me regain access."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.unlockEditorGroup"}
+            }
+        }]
+    }
+]

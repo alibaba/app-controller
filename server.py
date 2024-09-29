@@ -40,7 +40,10 @@ def is_valid_pipeline(context: Context):
 
 def get_pipeline(context: Context):
     if context.session_id not in session_id_2_pipeline:
-        session_id_2_pipeline[context.session_id] = IntentKnowledgeAgentChatPipeline(config, context)
+        if config.test_mode:
+            session_id_2_pipeline[context.session_id] = KnowledgeAgentChatPipeline(config, context)
+        else:
+            session_id_2_pipeline[context.session_id] = IntentKnowledgeAgentChatPipeline(config, context)
     pipeline = session_id_2_pipeline[context.session_id]
     pipeline.reset()
     return pipeline

@@ -1,0 +1,10 @@
+[
+    {
+        "id": "workbench.action.lockEditorGroup",
+        "desc": "Locks the current editor group to prevent it from being reused for opening other files."
+    },
+    {
+        "id": "workbench.action.unlockEditorGroup",
+        "desc": "Unlocks the currently selected editor group, allowing for the movement and resizing of the editor within the window."
+    }
+]
