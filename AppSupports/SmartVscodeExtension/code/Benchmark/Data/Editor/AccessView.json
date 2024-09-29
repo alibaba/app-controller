@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "q": ["Enable a text display in VSCode that's friendly for screen readers."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.accessibleView"}
+            }
+        },{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.accessibilitySupport": "on"}
+                }
+            }
+        }]
+    }
+]

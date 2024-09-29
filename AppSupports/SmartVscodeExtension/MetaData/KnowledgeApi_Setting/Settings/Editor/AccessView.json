@@ -1,0 +1,9 @@
+[
+    {
+        "id": "editor.accessibilitySupport",
+        "desc": "Controls if the UI should run in a mode where it is optimized for screen readers.\n  - auto: Use platform APIs to detect when a Screen Reader is attached.\n  - on: Optimize for usage with a Screen Reader.\n  - off: Assume a screen reader is not attached.",
+        "example": {
+            "editor.accessibilitySupport": "auto"
+        }
+    }
+]
