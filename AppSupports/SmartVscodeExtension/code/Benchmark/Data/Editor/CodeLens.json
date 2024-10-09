@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to enable CodeLens.",
+               "Can you help me to enable to see the reference information directly in my code?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.codeLens": true}
+                }
+            }
+        }]
+    }
+]

@@ -1,0 +1,9 @@
+[
+    {
+        "id": "editor.codeLens",
+        "desc": " Controls whether the editor shows CodeLens.",
+        "example": {
+            "editor.codeLens": true
+        }
+    }
+]

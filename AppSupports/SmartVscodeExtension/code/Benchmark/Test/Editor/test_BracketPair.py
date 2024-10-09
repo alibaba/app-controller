@@ -1,19 +1,15 @@
 import unittest
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.BaseTest import BenchmarkTest
 
-class TestEditorAction(BenchmarkTest):
+class TestEditorBracketPair(BenchmarkTest):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        test_data_path = 'Editor/Action.json'
+        test_data_path = 'Editor/BracketPair.json'
         cls.load_tasks(cls, test_data_path)
-
+        
     def test_1(self):
-        # Lock the current editor group
-        self.evaluate_task()
-    
-    def test_2(self):
-        # Unlock the current editor group
+        # Enable the colorization of matching bracket pairs
         self.evaluate_task()
 
 if __name__ == "__main__":

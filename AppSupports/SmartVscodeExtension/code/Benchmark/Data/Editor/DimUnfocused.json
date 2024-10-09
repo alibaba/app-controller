@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to enable the dimming of unfocused editors and terminals to make it easier to see where I'm typing",
+               "I'm having trouble distinguishing between focused and unfocused editors. Can you make the unfocused ones less bright?" ],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"accessibility.dimUnfocused.enabled": true}
+                    }
+                }
+            },{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"accessibility.dimUnfocused.enabled": true, "accessibility.dimUnfocused.opacity": "@:x < 0.75 and x > 0.2"}
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "q": ["I want to adjust the opacity of the dimness level to 0.5 to use for unfocused editors and terminals"],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"accessibility.dimUnfocused.opacity": 0.5}
+                    }
+                }
+            }
+        ]
+    }
+]

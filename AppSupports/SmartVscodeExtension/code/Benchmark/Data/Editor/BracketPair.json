@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to enable the colorization of matching bracket pairs in my code."],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"editor.bracketPairColorization.enabled": true}
+                    }
+                }
+            }
+        ]
+    }
+]

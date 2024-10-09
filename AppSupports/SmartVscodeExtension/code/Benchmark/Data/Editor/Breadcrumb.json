@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to enable the breadcrumbs navigation in my project.",
+               "I'd like to see the path of my files in the editor." ],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"breadcrumbs.enabled": true}
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "q": ["I only want to see the last element of the file path in the breadcrumb view.",
+               "I only want to see the last element in the file path view." ],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"breadcrumbs.filePath": "last"}
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "q": ["I only want to see the current symbol in the breadcrumb view.",
+               "Can you adjust the settings so that I can see the last symbol in the navigation path?" ],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"breadcrumbs.symbolPath": "last"}
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "q": ["Can you arrange the symbols in my breadcrumbs outline view in alphabetical order?"],
+        "a": [{
+                "setProperties": {
+                    "arguments": {
+                        "key2Value": {"breadcrumbs.symbolSortOrder": "name"}
+                    }
+                }
+            }
+        ]
+    }
+]

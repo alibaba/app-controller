@@ -1,0 +1,9 @@
+[
+    {
+        "id": "editor.bracketPairColorization.enabled",
+        "desc": "Controls whether bracket pair colorization is enabled or not. ",
+        "example": {
+            "editor.bracketPairColorization.enabled": true
+        }
+    }
+]

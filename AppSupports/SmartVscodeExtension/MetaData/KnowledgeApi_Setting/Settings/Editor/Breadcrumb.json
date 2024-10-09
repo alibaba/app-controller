@@ -1,0 +1,30 @@
+[
+    {
+        "id": "breadcrumbs.enabled",
+        "desc": "Enable/disable navigation breadcrumbs.",
+        "example": {
+            "breadcrumbs.enabled": true
+        }
+    },
+    {
+        "id": "breadcrumbs.filePath",
+        "desc": " Controls whether and how file paths are shown in the breadcrumbs view.\n  - on: Show the file path in the breadcrumbs view.\n  - off: Do not show the file path in the breadcrumbs view.\n  - last: Only show the last element of the file path in the breadcrumbs view.",
+        "example": {
+            "breadcrumbs.filePath": "on"
+        }
+    },
+    {
+        "id": "breadcrumbs.symbolPath",
+        "desc": " Controls whether and how symbols are shown in the breadcrumbs view.\n  - on: Show all symbols in the breadcrumbs view.\n  - off: Do not show symbols in the breadcrumbs view.\n  - last: Only show the current symbol in the breadcrumbs view.",
+        "example": {
+            "breadcrumbs.symbolPath": "on"
+        }
+    },
+    {
+        "id": "breadcrumbs.symbolSortOrder",
+        "desc": " Controls how symbols are sorted in the breadcrumbs outline view.\n  - position: Show symbol outline in file position order.\n  - name: Show symbol outline in alphabetical order.\n  - type: Show symbol outline in symbol type order.",
+        "example": {
+            "breadcrumbs.symbolSortOrder": "position"
+        }
+    }
+]

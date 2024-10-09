@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you help me increase the font size in my editor to 20?", "The text in my editor is too small to read, can we make it bigger, say about 20?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.fontSize": 20}
+                }
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["The text in my editor is too big to read, can we make it smaller?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.fontSize": "@:type(x) is int and x < 20"}
+                }
+            }
+        }, {
+            "getProperties": {
+                "arguments": {
+                    "key": "editor.fontSize"
+                }
+            },
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.fontSize": "@:type(x) is int and x < 20"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["Can you help me enable the font ligatures in my editor?", "I'd like to change the way my code looks, specifically the <= symbol. I want it to appear as a single character, like ≤."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.fontLigatures": true}
+                }
+            }
+        }]
+    }
+]
