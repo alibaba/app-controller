@@ -35,7 +35,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         Output in JSON format: 
         {
             "type": 2,
-            "terminal": "If the task can be accomplished after executing this api successfully, set it to "true". Otherwise false"
+            "terminal": "If the task can be accomplished after executing this api successfully, set it to "true". Otherwise false",
             "api":
             {
                 "name": "API name from RAG's results",
@@ -45,7 +45,7 @@ class ApiSchedulerAgentPrompt(Prompt):
                     "argument1 name": "value1",
                     "argument2 name": "value2"
                 }
-            },
+            }
         }
         
         Action 3:
@@ -53,7 +53,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         Output in JSON format: 
         {
             "type": 3,
-            "think":"Why did you choose this operation? Please briefly explain your reason.",
+            "think":"Why did you choose this operation? Please briefly explain your reason."
         }
         
         Action 4:
@@ -61,7 +61,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         Output in JSON format: 
         {
             "type": 4,
-            "think":"Why did you choose this operation? Please briefly explain your reason.",
+            "think":"Why did you choose this operation? Please briefly explain your reason."
         }
         ############
         
@@ -89,7 +89,7 @@ class ApiSchedulerAgentPrompt(Prompt):
         {
             "type": 2,
             "terminal": false,
-            "api":{Api},
+            "api":{Api}
         }
     """
 

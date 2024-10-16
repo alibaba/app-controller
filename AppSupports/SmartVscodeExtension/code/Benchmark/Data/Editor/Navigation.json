@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to navigate to the type definition of the selected word in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.goToTypeDefinition"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to navigate to the implementation of the selected symbol in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.goToImplementation"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I need to navigate to the corresponding bracket in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.jumpToBracket"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["Can you change the setting so that the peek editor doesn't close when I double-click in its region?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.stablePeek": true}
+                }
+            }
+        }]
+    }
+    
+]

@@ -22,5 +22,25 @@
     {
         "id": "workbench.action.splitEditorInGroup",
         "desc": "Splits the currently active editor into two, within the same editor group."
+    },
+    {
+        "id": "workbench.action.toggleSplitEditorInGroup",
+        "desc": "Toggle between split mode for the active editor."
+    },
+    {
+        "id": "workbench.action.toggleSplitEditorInGroupLayout",
+        "desc": "Toggle between horizontal and vertical layout in the active editor group."
+    },
+    {
+        "id": "workbench.action.joinEditorInGroup",
+        "desc": "Go back to a single editor for the active file."
+    },
+    {
+        "id": "workbench.action.moveEditorGroupToNewWindow",
+        "desc": "Moves the active editor group into a new window."
+    },
+    {
+        "id": "workbench.action.copyEditorGroupToNewWindow",
+        "desc": "Copies the current editor group into a new window."
     }
 ]

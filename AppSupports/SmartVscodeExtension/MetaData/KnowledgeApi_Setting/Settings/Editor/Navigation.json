@@ -1,0 +1,9 @@
+[
+    {
+        "id": "editor.stablePeek",
+        "desc": " Keep peek editors open even when double-clicking their content or when hitting `Escape`.",
+        "example": {
+            "editor.stablePeek": true
+        }
+    }
+]

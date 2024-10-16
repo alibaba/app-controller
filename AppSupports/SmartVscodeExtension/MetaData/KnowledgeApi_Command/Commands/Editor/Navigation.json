@@ -1,0 +1,14 @@
+[
+    {
+        "id": "editor.action.goToTypeDefinition",
+        "desc": "Navigates to the type definition of the symbol at the cursor position in the editor."
+    },
+    {
+        "id": "editor.action.goToImplementation",
+        "desc": "Navigates to the implementation of the symbol at the current cursor position in the editor."
+    },
+    {
+        "id": "editor.action.jumpToBracket",
+        "desc": "Moves the cursor to the next bracket in the code."
+    }
+]
