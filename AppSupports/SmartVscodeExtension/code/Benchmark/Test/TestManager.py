@@ -19,13 +19,17 @@ class TestManager:
         self.result = result
         if self.on_test_stage:
             self.result_checker.check(result)
-            if self.result_checker.finish:
-                self.post_back_to_unittest()
+            # if self.result_checker.finish:
+            #     self.post_back_to_unittest()
+            
+    def task_finished(self):
+        if self.on_test_stage:
+            self.post_back_to_unittest()
 
     def task_failed(self):
         if self.on_test_stage:
             self.result_checker.task_failed()
-            self.post_back_to_unittest()
+            # self.post_back_to_unittest()
 
     def post_back_to_unittest(self):
         if self.result_checker and self.on_test_stage:

@@ -1,0 +1,9 @@
+[
+    {
+        "id": "workbench.editor.labelFormat",
+        "desc": " Controls the format of the label for an editor.\n  - default: Show the name of the file. When tabs are enabled and two files have the same name in one group the distinguishing sections of each file's path are added. When tabs are disabled, the path relative to the workspace folder is shown if the editor is active.\n  - short: Show the name of the file followed by its directory name.\n  - medium: Show the name of the file followed by its path relative to the workspace folder.\n  - long: Show the name of the file followed by its absolute path.",
+        "example": {
+            "workbench.editor.labelFormat": "default"
+        }
+    }
+]

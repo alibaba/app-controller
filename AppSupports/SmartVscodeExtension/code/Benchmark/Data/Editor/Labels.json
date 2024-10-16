@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you show the name of the file followed by its relative path in the editor label?",
+               "I'd like to see the relative address of the file along with its name in the editor label."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"workbench.editor.labelFormat": "medium"}
+                }
+            }
+        }]
+    }
+]

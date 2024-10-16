@@ -81,8 +81,7 @@ async def start(request):
 
     # task should be finished immediately when it is a question
     if result.status == ResponseStatusEnum.TASK_QUESTION:
-        await finish(request)
-
+        await finish(request)    
     return web.json_response(result.to_json())
 
 
@@ -111,6 +110,8 @@ async def handle_api_response(request):
 
 async def finish(request):
     context = Context.from_dict(await request.json())
+    test_manager = get_test_manager(context)
+    test_manager.task_finished()
 
     recorder = Recorder(config, context.session_id)
     await recorder.save()

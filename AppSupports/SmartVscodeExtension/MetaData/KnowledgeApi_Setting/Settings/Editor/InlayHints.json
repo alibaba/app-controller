@@ -1,0 +1,9 @@
+[
+    {
+        "id": "editor.inlayHints.enabled",
+        "desc": " Enables the inlay hints in the editor.\n  - on: Inlay hints are enabled\n  - onUnlessPressed: Inlay hints are showing by default and hide when holding Ctrl+Alt\n  - offUnlessPressed: Inlay hints are hidden by default and show when holding Ctrl+Alt\n  - off: Inlay hints are disabled",
+        "example": {
+            "editor.inlayHints.enabled": "on"
+        }
+    }
+  ]

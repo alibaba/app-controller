@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to enable inlay hints in my code editor.",
+               "I want to see additional information about my source code inline."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.inlayHints.enabled": "on"}
+                }
+            }
+        }]
+    }
+]

@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you turn on quick suggestions when I'm typing comments or strings?",
+               "I'd like to see possible code completions as I type in the editor, including when I'm writing comments or strings."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.quickSuggestions": {
+                            "comments": "on",
+                            "strings": "on"
+                        }
+                    }
+                }
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to use the 'Enter' key to accept suggestions only when the suggestion includes text changes.",
+               "I want to be able to confirm the suggested changes with the 'Enter' key, but only when the suggestion actually modifies the text."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.acceptSuggestionOnEnter": "smart"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["Can you set the delay for quick suggestions to 1000 ms?",
+               "I need a bit more time before the quick suggestions pop up, can we make it a second?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.quickSuggestionsDelay": 1000}
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want the suggestions to automatically appear when I type certain trigger characters.",
+               "I'd like to have some hints pop up when I'm typing certain characters, can you make that happen?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.suggestOnTriggerCharacters": true}
+                }
+            }
+       }]
+    },
+    {
+        "id": 5,
+        "q": ["Can you turn off the locality bonus for suggestions?",
+               "I don't want the suggestions to be sorted based on their proximity to the cursor."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.suggest.localityBonus": false}
+                }
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["Can you always select the first suggestion when showing the suggest list?",
+               "I want the first suggestion to be automatically selected when the list of suggestions appears."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.suggestSelection": "first"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["Can you set the word-based suggestions to be computed from all open documents?",
+               "I want the suggestions to be based on words from all the open documents, not just the active one."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.wordBasedSuggestions": "allDocuments"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 8,
+        "q": ["I want to enable the parameter hints while I'm coding.",
+               "I need some help with the parameters while I'm typing my code. Can you show me some hints?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.parameterHints.enabled": true}
+                }
+            }
+        }]
+    }
+]

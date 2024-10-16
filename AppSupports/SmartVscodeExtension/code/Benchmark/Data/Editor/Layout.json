@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to duplicate the current editor into a new editor group to the left.",
+               "I want to create a copy of my current work area and place it on the left side."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.splitEditorLeft"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q":["I need to switch between vertical and horizontal layout of my editor groups quickly.",
+              "I'm working on multiple files and I need to change the way they are displayed from side by side on top of each other to stacked."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleEditorGroupLayout"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I need to split the current editor into two separate sections.",
+               "I want to view my code in two different sections at the same time."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.splitEditorInGroup"}
+            }    
+        }]
+    }
+]

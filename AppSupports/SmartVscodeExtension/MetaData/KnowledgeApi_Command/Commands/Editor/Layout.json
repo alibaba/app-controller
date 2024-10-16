@@ -1,0 +1,26 @@
+[
+    {
+        "id": "workbench.action.splitEditorLeft",
+        "desc": "Splits the active editor group and moves the editor into the new group on the left side."
+    },
+    {
+        "id": "workbench.action.splitEditorRight",
+        "desc": "Splits the currently active editor into two, placing the new editor group to the right of the current one."
+    },
+    {
+        "id": "workbench.action.splitEditorUp",
+        "desc": "Splits the currently active editor into two, placing the new editor group above the current one."
+    },
+    {
+        "id": "workbench.action.splitEditorDown",
+        "desc": "Splits the currently active editor into two, placing the new editor group below the current one."
+    },
+    {
+        "id": "workbench.action.toggleEditorGroupLayout",
+        "desc": "Toggles the layout of editor groups between vertical and horizontal orientation."
+    },
+    {
+        "id": "workbench.action.splitEditorInGroup",
+        "desc": "Splits the currently active editor into two, within the same editor group."
+    }
+]

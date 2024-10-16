@@ -1,0 +1,26 @@
+import unittest
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.BaseTest import BenchmarkTest
+
+class TestEditorLayout(BenchmarkTest):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        test_data_path = 'Editor/Layout.json'
+        cls.load_tasks(cls, test_data_path)
+        
+    def test_1(self):
+        # Duplicate the current  editor into a new editor group to the left.
+        self.evaluate_task()
+    
+    def test_2(self):
+        # Toggles the layout of editor groups between vertical and horizontal orientation.
+        self.evaluate_task()
+    
+    def test_3(self):
+        # Split the current editor.
+        self.evaluate_task()
+        
+    
+
+if __name__ == "__main__":
+    unittest.main()
