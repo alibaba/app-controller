@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "q": ["I want to set the color of comments to gray."],
+    "a": [{
+        "setProperties": {
+            "arguments": {
+                "key2Value": {"editor.tokenColorCustomizations": {"comments": "@:type(x) is str"}}
+            }
+        }
+    }]
+  },
+  {
+    "id": 2,
+    "q": ["I want to turn on semantic highlighting for all themes in my project"],
+    "a": [{
+        "setProperties": {
+            "arguments": {
+                "key2Value": {"editor.semanticHighlighting.enabled": true}
+            }
+        }
+    }]
+  }
+]

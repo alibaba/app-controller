@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to pin the 'main.py' to the editor tab bar so that I can access it quickly.",
+             "I want to keep the 'main.py' open in the editor."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.pinEditor"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to unpin the editor tab that I previously pinned."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.unpinEditor"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to change the size of my pinned tabs to 'compact' so that they only show the icon or the first letter of the editor name.",
+             "I'd like to make my pinned tabs smaller and only show the first letter of their names. Can you help with that?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"workbench.editor.pinnedTabSizing": "compact"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to see my pinned editor tabs separately from the regular ones."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleSeparatePinnedEditorTabs"}
+            }
+        }]
+    }
+]

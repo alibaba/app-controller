@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to change the size of my tab characters to 4 spaces."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.tabSize": 4}
+                }
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q":["I want to set the 'Tab' key to spaces when I'm indenting my code."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.insertSpaces": true}
+                }
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q":["I want to enable tab completion so that when I press tab, the best matching suggestion is inserted.",
+            "I want to type a few letters and then have the rest of the code snippet automatically filled in when I press the tab key."], 
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.tabCompletion": "on"}
+                }
+            }
+        }]
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "editor.tokenColorCustomizations",
+        "desc": " Overrides editor syntax colors and font style from the currently selected color theme. It can be set the comments, functions, keywords, numbers, strings, types, and varialbes.",
+        "example": {
+          "editor.tokenColorCustomizations": {
+            "numbers": "#808080"
+          }
+        }
+    },
+    {
+      "id": "editor.semanticHighlighting.enabled",
+      "desc": " Controls whether the semanticHighlighting is shown for the languages that support it.\n  - true: Semantic highlighting enabled for all color themes.\n  - false: Semantic highlighting disabled for all color themes.\n  - configuredByTheme: Semantic highlighting is configured by the current color theme's `semanticHighlighting` setting.",
+      "example": {
+          "editor.semanticHighlighting.enabled": "configuredByTheme"
+      }
+    }
+]

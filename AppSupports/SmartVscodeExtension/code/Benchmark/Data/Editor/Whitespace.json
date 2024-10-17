@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "q": ["I want to set the render of white space to 'trailing'",
+      "I'd like to see only the spaces at the end of my lines, can you make that happen?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.renderWhitespace": "trailing"}
+              }
+          }
+      }]
+    }
+  ]

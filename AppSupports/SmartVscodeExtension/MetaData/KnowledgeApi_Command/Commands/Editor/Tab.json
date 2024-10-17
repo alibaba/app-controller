@@ -1,0 +1,14 @@
+[
+    {
+        "id": "workbench.action.pinEditor",
+        "desc": "Pins the currently active editor, keeping it open even when opening other documents."
+    },
+    {
+        "id": "workbench.action.unpinEditor",
+        "desc": "Unpins the currently active editor, allowing it to be reused for another file if no changes have been made."
+    },
+    {
+        "id": "workbench.action.toggleSeparatePinnedEditorTabs",
+        "desc": "Toggles the display of pinned tabs in a separate row in the editor."
+    }
+]

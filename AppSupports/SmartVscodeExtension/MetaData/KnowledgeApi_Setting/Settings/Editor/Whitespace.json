@@ -1,0 +1,9 @@
+[
+    {
+        "id": "editor.renderWhitespace",
+        "desc": " Controls how the editor should render whitespace characters.\n  - none\n  - boundary: Render whitespace characters except for single spaces between words.\n  - selection: Render whitespace characters only on selected text.\n  - trailing: Render only trailing whitespace characters.\n  - all",
+        "example": {
+            "editor.renderWhitespace": "selection"
+        }
+    }
+]

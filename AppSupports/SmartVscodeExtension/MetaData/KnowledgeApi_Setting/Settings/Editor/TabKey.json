@@ -1,0 +1,23 @@
+[
+    {
+        "id": "editor.tabSize",
+        "desc": " The number of spaces a tab is equal to. This setting is overridden based on the file contents when `editor.detectIndentation` is on.",
+        "example": {
+            "editor.tabSize": 4
+        }
+    },
+    {
+        "id": "editor.insertSpaces",
+        "desc": " Insert spaces when pressing `Tab`. This setting is overridden based on the file contents when `editor.detectIndentation` is on.",
+        "example": {
+            "editor.insertSpaces": true
+        }
+    },
+    {
+        "id": "editor.tabCompletion",
+        "desc": " Enables tab completions.\n  - on: Tab complete will insert the best matching suggestion when pressing tab.\n  - off: Disable tab completions.\n  - onlySnippets: Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.",
+        "example": {
+            "editor.tabCompletion": "off"
+        }
+    }
+]
