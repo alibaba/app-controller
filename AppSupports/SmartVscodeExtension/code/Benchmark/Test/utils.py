@@ -45,14 +45,28 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 
 def run_server(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=TEST_CLIENT_PORT):
+    global httpd
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
-    
+
 def spawn_server_thread():
+    global server_thread
     server_thread = threading.Thread(target=run_server, kwargs={"port": TEST_CLIENT_PORT})
-    server_thread.daemon = True
+    # server_thread.daemon = True
     server_thread.start()
+
+def stop_server():
+    if 'httpd' in globals():
+        httpd.shutdown()
+        httpd.server_close()
+    # httpd = http_queue.get(block=True)
+    # httpd.shutdown()
+    # httpd.server_close()
+    if 'server_thread' in globals():
+        server_thread.join()
+
+
 
 def receive_test_result():
     data = data_queue.get(block=True)

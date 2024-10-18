@@ -9,19 +9,19 @@ class TestEditorTab(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        # Pin the tab.
+        '''Pin the tab.'''
         self.evaluate_task()    
     
     def test_2(self):
-        # Unpin the tab.
+        '''Unpin the tab.'''
         self.evaluate_task()
     
     def test_3(self):
-        # Set the tab size.
+        '''Set the tab size.'''
         self.evaluate_task()
     
     def test_4(self):
-        # Seperate pinned editor tabs.
+        '''Seperate pinned editor tabs.'''
         self.evaluate_task()
 
 if __name__ == "__main__":

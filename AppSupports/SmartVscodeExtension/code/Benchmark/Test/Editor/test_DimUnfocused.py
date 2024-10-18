@@ -9,11 +9,11 @@ class TestEditorDimUnfocused(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        # Controll whether to dim unfocused editors and terminals
+        '''Controll whether to dim unfocused editors and terminals'''
         self.evaluate_task()
     
     def test_2(self):
-        # Controll the opacity fraction (0.2 to 1.0) to use for unfocused editors and terminals.
+        '''Controll the opacity fraction (0.2 to 1.0) to use for unfocused editors and terminals.'''
         self.evaluate_task()
 
 if __name__ == "__main__":

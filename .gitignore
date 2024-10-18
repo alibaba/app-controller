@@ -167,5 +167,8 @@ AppSupports/SmartVscodeExtension/Ignore/*
 AppSupports/SmartVscodeExtension/UserData/*
 !AppSupports/SmartVscodeExtension/UserData/.gitkeep
 
+*test_report*
+
+
 
 

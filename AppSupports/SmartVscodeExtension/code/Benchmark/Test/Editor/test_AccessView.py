@@ -8,7 +8,7 @@ class TestEditorAccessView(BenchmarkTest):
         test_data_path = 'Editor/AccessView.json'
         cls.load_tasks(cls, test_data_path)
     def test_1(self):
-        # Enable a text display in VSCode that's friendly for screen readers.
+        '''Enable a text display in VSCode that's friendly for screen readers.'''
         self.evaluate_task()
 
 if __name__ == "__main__":

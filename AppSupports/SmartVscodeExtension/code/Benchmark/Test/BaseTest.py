@@ -3,7 +3,7 @@ import json
 import os
 
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TaskTestResult import TaskTestResult
-from AppSupports.SmartVscodeExtension.code.Benchmark.Test.utils import test_one_case, spawn_server_thread
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.utils import test_one_case, spawn_server_thread, stop_server
 from Core.Common.TimeStatistic import TimeStatistic
 
 
@@ -12,9 +12,16 @@ class BaseTest(unittest.TestCase):
     def setUpClass(cls):
         print("Start test server")
         spawn_server_thread()
+    
+    @classmethod
+    def tearDownClass(cls):
+        print("Close test server")
+        stop_server()
 
     def execute(self, case):
         return test_one_case(case)
+
+    
 
     def evaluate(self, case):
         res: TaskTestResult = self.execute(case)

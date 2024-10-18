@@ -9,11 +9,11 @@ class TestEditorAction(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
 
     def test_1(self):
-        # Lock the current editor group
+        '''Lock the current editor group'''
         self.evaluate_task()
     
     def test_2(self):
-        # Unlock the current editor group
+        '''Unlock the current editor group'''
         self.evaluate_task()
 
 if __name__ == "__main__":

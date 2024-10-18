@@ -9,19 +9,19 @@ class TestEditorNavigation(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        # Go to the type definition.
+        '''Go to the type definition.'''
         self.evaluate_task()    
     
     def test_2(self):
-        # Go to the implementation.
+        '''Go to the implementation.'''
         self.evaluate_task()
     
     def test_3(self):
-        # Jump to the matching  bracket.
+        '''Jump to the matching  bracket.'''
         self.evaluate_task()
     
     def test_4(self):
-        # Set the peek stable.
+        '''Set the peek stable.'''
         self.evaluate_task()
 
 if __name__ == "__main__":
