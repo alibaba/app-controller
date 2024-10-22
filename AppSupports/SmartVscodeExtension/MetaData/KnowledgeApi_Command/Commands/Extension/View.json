@@ -1,0 +1,114 @@
+[
+    {
+        "id": "workbench.extensions.action.showPopularExtensions",
+        "desc": "Displays a list of popular extensions in the Extensions view."
+    },
+    {
+        "id": "workbench.extensions.action.showRecommendedExtensions",
+        "desc": "Displays a list of recommended extensions in the Extensions view."
+    },
+    {
+        "id": "workbench.extensions.action.recentlyPublishedExtensions",
+        "desc": "Opens the Extensions view to show recently published extensions in the Marketplace."
+    },
+    {
+        "id": "workbench.extensions.action.listBuiltInExtensions",
+        "desc": "Lists all built-in extensions in the Extensions view."
+    },
+    {
+        "id": "workbench.extensions.action.extensionUpdates",
+        "desc": "Opens the Extensions view to show recently updates for installed extensions."
+    },
+    {
+        "id": "workbench.extensions.action.listWorkspaceUnsupportedExtensions",
+        "desc": "Lists all extensions that are not supported in the current workspace."
+    },
+    {
+        "id": "workbench.extensions.action.showEnabledExtensions",
+        "desc": "Displays a list of all enabled extensions in Visual Studio Code."
+    },
+    {
+        "id": "workbench.extensions.action.showDisabledExtensions",
+        "desc": "Displays a list of all disabled extensions in the Extensions view."
+    },
+    {
+        "id": "workbench.extensions.action.clearExtensionsSearchResults",
+        "desc": "Clears the search results in the Extensions view."
+    },
+    {
+        "id": "workbench.extensions.action.refreshExtension",
+        "desc": "Refreshes the list of extensions in the Extensions view."
+    },
+    {
+        "id": "workbench.views.extensions.installed.focus",
+        "desc": "Focuses on the list of installed extensions within the Extensions view."
+    },
+    {
+        "id": "workbench.views.extensions.popular.focus",
+        "desc": "Focuses on the 'Popular' section within the Extensions view in VS Code."
+    },
+    {
+        "id": "workbench.views.extensions.enabled.focus",
+        "desc": "Focuses on the enabled extensions view in the Extensions sidebar."
+    },
+    {
+        "id": "workbench.views.extensions.disabled.focus",
+        "desc": "Focuses on the view of disabled extensions within Visual Studio Code."
+    },
+    {
+        "id": "workbench.views.extensions.searchInstalled.focus",
+        "desc": "Focuses the search box in the Extensions view to search among installed extensions."
+    },
+    {
+        "id": "workbench.views.extensions.searchEnabled.focus",
+        "desc": "Focuses the search box in the Extensions view to search among enabled extensions."
+    },
+    {
+        "id": "workbench.views.extensions.searchDisabled.focus",
+        "desc": "Focuses on the search box in the Extensions view with disabled extensions filter applied."
+    },
+    {
+        "id": "workbench.views.extensions.searchOutdated.focus",
+        "desc": "Focuses the search box in the Extensions view to filter for outdated extensions available updated."
+    },
+    {
+        "id": "workbench.views.extensions.searchBuiltin.focus",
+        "desc": "Focuses the search box in the built-in extensions view."
+    },
+    {
+        "id": "workbench.views.extensions.searchWorkspaceUnsupported.focus",
+        "desc": "Focuses the input field for searching extensions that are not supported in the current workspace in VS Code."
+    },
+    {
+        "id": "workbench.views.extensions.workspaceRecommendations.focus",
+        "desc": "Focuses on the workspace recommendations view in the Extensions sidebar."
+    },
+    {
+        "id": "extensions.filter.featured",
+        "desc": "Show featured extensions in the Extensions sidebar."
+    },
+    {
+        "id": "workbench.views.extensions.builtinFeatureExtensions.focus",
+        "desc": "Focuses on the built-in feature extensions view in the Extensions sidebar in VS Code."
+    },
+    {
+        "id": "extensions.sort.installs",
+        "desc": "Sorts the extensions by the number of installations."
+    },
+    {
+        "id": "extensions.sort.name",
+        "desc": "Sorts the extensions alphabetically by their names."
+    },
+    {
+        "id": "extensions.sort.publishDate",
+        "desc": "Sorts the extensions by their publication date."
+    },
+    {
+        "id": "extensions.sort.rating",
+        "desc": "Sorts the extensions based on their user ratings."
+    },
+    {
+        "id": "extensions.sort.updateDate",
+        "desc": "Sorts the extensions by their last updated date."
+    }
+]

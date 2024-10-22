@@ -1,0 +1,23 @@
+[
+    {
+        "id": "extensions.ignoreRecommendations",
+        "desc": " When enabled, the notifications for extension recommendations will not be shown.",
+        "example": {
+            "extensions.ignoreRecommendations": false
+        }
+    },
+    {
+        "id": "extensions.autoUpdate",
+        "desc": " Controls the automatic update behavior of extensions. The updates are fetched from a Microsoft online service.\n  - true: Download and install updates automatically for all extensions except for those updates are ignored.\n  - onlyEnabledExtensions: Download and install updates automatically only for enabled extensions except for those updates are ignored. Disabled extensions are not updated automatically.\n  - onlySelectedExtensions: Download and install updates automatically only for selected extensions.\n  - false: Extensions are not automatically updated.",
+        "example": {
+            "extensions.autoUpdate": true
+        }
+    },
+    {
+        "id": "extensions.autoCheckUpdates",
+        "desc": " When enabled, automatically checks extensions for updates. If an extension has an update, it is marked as outdated in the Extensions view. The updates are fetched from a Microsoft online service.",
+        "example": {
+            "extensions.autoCheckUpdates": true
+        }
+    }
+]

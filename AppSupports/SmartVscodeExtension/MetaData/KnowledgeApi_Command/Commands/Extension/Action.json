@@ -1,0 +1,26 @@
+[
+    {
+        "id": "workbench.extensions.action.installVSIX",
+        "desc": "Installs an extension from a VSIX file."
+    },
+    {
+        "id": "workbench.extensions.action.disableAll",
+        "desc": "Disables all installed extensions globally in Visual Studio Code."
+    },
+    {
+        "id": "workbench.extensions.action.disableAllWorkspace",
+        "desc": "Disables all installed extensions for the current workspace in Visual Studio Code."
+    },
+    {
+        "id": "workbench.extensions.action.enableAll",
+        "desc": "Enables all disabled extensions in Visual Studio Code."
+    },
+    {
+        "id": "workbench.extensions.action.enableAllWorkspace",
+        "desc": "Enables all extensions that are currently disabled for the workspace in Visual Studio Code."
+    },
+    {
+        "id": "workbench.extensions.action.checkForUpdates",
+        "desc": "Checks for updates to installed extensions in Visual Studio Code."
+    }
+]

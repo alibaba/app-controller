@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you show me where the extensions are installed"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.openExtensionsFolder"}
+            }
+        }]
+    }
+]

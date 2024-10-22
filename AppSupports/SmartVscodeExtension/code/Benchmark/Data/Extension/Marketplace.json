@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to browse some extensions in VS Code",
+                "I want to open the extensions store in the VS Code"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.view.extensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.marketplace.focus"}
+            }
+        }]
+    }
+]

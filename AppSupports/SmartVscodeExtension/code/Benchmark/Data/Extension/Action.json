@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to install an extension from a .vsix file"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.installVSIX"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I don't want to receive any notifications about extension recommendations."], 
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"extensions.ignoreRecommendations": true}
+                }
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to disable all installed extensions globally."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.disableAll"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to disable all installed extensions in current workspace."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.disableAllWorkspace"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to enable all disabled extensions globally.", 
+            "I need to enable all the extensions that I've previously disabled"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.enableAll"}
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I want to enable all disabled extensions in current workspace."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.enableAllWorkspace"}
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I want to keep my extensions without any updates, can you help me with that?",
+            "I want to turn off the auto update for extensions."], 
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"extensions.autoUpdate": false}
+                }
+            }
+        }]
+    },
+    {
+        "id": 8,
+        "q": ["I want to enable the automatic update check for my extensions."], 
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"extensions.autoCheckUpdates": true}
+                }
+            }
+        }]
+    },
+    {
+        "id": 9,
+        "q": ["Can you check if there are any updates for my extensions?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.checkForUpdates"}
+            }
+        }]
+    }
+]

@@ -1,0 +1,6 @@
+[
+    {
+        "id": "workbench.extensions.action.openExtensionsFolder",
+        "desc": "Opens the folder where extensions are installed in VS Code."
+    }
+]

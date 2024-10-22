@@ -1,0 +1,209 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you show me the most popular extension?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.showPopularExtensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.popular.focus"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["Show me the recommended extensions."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.showRecommendedExtensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.workspaceRecommendations.focus"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["Can you show me the extensions that were published recently?",
+                "Show me the new extensions."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.recentlyPublishedExtensions"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["Show me the built-in extensions.",
+            "Show me the extensions that come with VS Code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.listBuiltInExtensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.searchBuiltin.focus"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["Can you show me the recently updates for my extensions?."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.extensionUpdates"}
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["Show me the extensions that are not supported in my workspace.",
+            "Can you list the extensions that are not compatible with my current workspace?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.listWorkspaceUnsupportedExtensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.searchWorkspaceUnsupported.focus"}
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I want to see all the extensions that are currently enabled in my VScode."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.showEnabledExtensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.enabled.focus"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.searchEnabled.focus"}
+            }
+        }]
+    },
+    {
+        "id": 8,
+        "q": ["I want to see all the extensions that are currently disabled in my VScode."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.showDisabledExtensions"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.disabled.focus"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.searchDisabled.focus"}
+            }
+        }]
+    },
+    {
+        "id": 9,
+        "q": ["Please help me clear the search results in the Extension view"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.clearExtensionsSearchResults"}
+            }
+        }]
+    },
+    {
+        "id": 10,
+        "q": ["Can you refresh the list of extensions in the Extension view?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.extensions.action.refreshExtension"}
+            }
+        }]
+    },
+    {
+        "id": 11,
+        "q": ["I want to see all the installed extensions in my VScode."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.installed.focus"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.searchInstalled.focus"}
+            }
+        }]
+    },
+    {
+        "id": 12,
+        "q": ["I need to find all the outdated extensions in my project that can be updated.",
+            "Can you show me the extensions that have updates available?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.searchOutdated.focus"}
+            }
+        }]
+    },
+    {
+        "id": 13,
+        "q": ["Can you show me the featured extension in VScode?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "extensions.filter.featured"}
+            }
+        }, {
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.views.extensions.builtinFeatureExtensions.focus"}
+            }
+        }]
+    },
+    {
+        "id": 14,
+        "q": ["Can you show me the extensions arranged by the number of installations?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "extensions.sort.installs"}
+            }
+        }]
+    },
+    {
+        "id": 15,
+        "q": ["Can you show me the extensions sorted by their names?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "extensions.sort.name"}
+            }
+        }]
+    },
+    {
+        "id": 16,
+        "q": ["Can you show me the extensions sorted by their publication date?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "extensions.sort.publishDate"}
+            }
+        }]
+    },
+    {
+        "id": 17,
+        "q": ["Can you show me the extensions sorted by their rating?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "extensions.sort.rating"}
+            }
+        }]
+    },
+    {
+        "id": 18,
+        "q": ["Can you show me the extensions sorted by their last updated date?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "extensions.sort.updateDate"}
+            }
+        }]
+    }
+    
+]

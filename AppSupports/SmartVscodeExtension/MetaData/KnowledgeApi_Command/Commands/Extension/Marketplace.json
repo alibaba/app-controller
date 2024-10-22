@@ -1,0 +1,10 @@
+[
+    {
+        "id": "workbench.view.extensions",
+        "desc": "Opens the Extensions view to help manage VS Code extensions."
+    },
+    {
+        "id": "workbench.views.extensions.marketplace.focus",
+        "desc": "Focuses on the Marketplace view within the Extensions sidebar in VS Code."
+    }
+]
