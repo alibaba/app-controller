@@ -1,0 +1,10 @@
+[
+    {
+        "id": "workbench.files.action.compareWithClipboard",
+        "desc": "Compares the content of the currently active file with the content in the clipboard."
+    },
+    {
+        "id": "workbench.action.editor.changeLanguageMode",
+        "desc": "Changes the language mode of the currently active editor in VS Code."
+    }
+]

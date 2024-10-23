@@ -1,0 +1,50 @@
+[
+    {
+        "id": "editor.formatOnSave",
+        "desc": " Format a file on save. A formatter must be available, the file must not be saved after delay, and the editor must not be shutting down.",
+        "example": {
+            "editor.formatOnSave": false
+        }
+    },
+    {
+        "id": "editor.formatOnPaste",
+        "desc": " Controls whether the editor should automatically format the pasted content. A formatter must be available and the formatter should be able to format a range in a document.",
+        "example": {
+            "editor.formatOnPaste": false
+        }
+    },
+    {
+        "id": "files.autoSave",
+        "desc": " Controls auto save of editors that have unsaved changes. - off: An editor with changes is never automatically saved.  - afterDelay: An editor with changes is automatically saved after the configured `files.autoSaveDelay`.\n  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.  - onWindowChange: An editor with changes is automatically saved when the window loses focus.",
+        "example": {
+            "files.autoSave": "off"
+        }
+    },
+    {
+        "id": "files.autoSaveDelay",
+        "desc": " Controls the delay in milliseconds after which an editor with unsaved changes is saved automatically. Only applies when `files.autoSave` is set to `afterDelay`.",
+        "example": {
+            "files.autoSaveDelay": 1000
+        }
+    },
+    {
+        "id": "search.exclude",
+        "desc": " Configure glob patterns for excluding files and folders in fulltext searches and quick open. Inherits all glob patterns from the `files.exclude` setting.",
+        "example": {
+            "search.exclude": {
+                "**/node_modules": true,
+                "**/bower_components": true,
+                "**/*.code-search": true
+            }
+        }
+    },
+    {
+        "id": "files.associations",
+        "desc": " Configure glob patterns of file associations to languages.",
+        "example": {
+            "files.associations": {
+                "*.myphp": "php"
+            }
+        }
+    }
+]

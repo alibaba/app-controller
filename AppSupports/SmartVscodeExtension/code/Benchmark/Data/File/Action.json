@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to compare the current file with the content I just copied to the clipboard."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.files.action.compareWithClipboard"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want my code to be automatically formatted every time I save my work."], 
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.formatOnSave": true}
+                }
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want my code to be formatted when I paste it."], 
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.formatOnPaste": true}
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["Can you set up auto save for me?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"files.autoSave": "afterDelay"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["Enable auto-saving of files every 5 seconds"],
+        "a": [{
+          "setProperties": {
+            "arguments": {
+              "key2Value": {
+                "files.autoSave": "afterDelay",
+                "files.autoSaveDelay": 5000
+              }
+            }
+          }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I want to exclude the 'node_modules' folder from my search results in VScode.",
+            "I don't want to see any results from the 'node_modules' directory when I perform a search."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"search.exclude": {"**/node_modules": true}}
+                }
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I want to change the language mode of my editor."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.editor.changeLanguageMode"}
+            }
+        }]
+    },
+    {
+        "id": 8,
+        "q": ["I want to set Python as the default language mode for .py files."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"files.associations": {"*.py": "python"}}
+                }
+            }
+        }]
+    }
+]
