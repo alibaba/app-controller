@@ -9,7 +9,9 @@ class TestEditorInlayHints(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        '''Enable Inlay Hints'''
+        """
+        Enable Inlay Hints.
+        """
         self.evaluate_task()
 
 if __name__ == "__main__":

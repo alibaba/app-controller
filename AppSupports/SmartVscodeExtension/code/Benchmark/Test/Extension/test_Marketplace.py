@@ -9,7 +9,9 @@ class TestExtensionMarketplace(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
     
     def test_1(self):
-        '''Open extensions view.'''
+        """
+        Open extensions view.
+        """
         self.evaluate_task()
 
     

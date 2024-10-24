@@ -9,7 +9,9 @@ class TestEditorBracketPair(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        '''Enable the colorization of matching bracket pairs'''
+        """
+        Enable the colorization of matching bracket pairs.
+        """
         self.evaluate_task()
 
 if __name__ == "__main__":

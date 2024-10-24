@@ -9,11 +9,15 @@ class TestEditorTokenColor(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        '''Set the color of comments.'''
+        """
+        Set the color of comments.
+        """
         self.evaluate_task()  
     
     def test_2(self):
-        '''Turn semantic highlighting on for all themes.'''
+        """
+        Turn semantic highlighting on for all themes.
+        """
         self.evaluate_task()  
 
 if __name__ == "__main__":

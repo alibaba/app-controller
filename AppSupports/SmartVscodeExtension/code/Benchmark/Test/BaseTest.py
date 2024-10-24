@@ -21,8 +21,6 @@ class BaseTest(unittest.TestCase):
     def execute(self, case):
         return test_one_case(case)
 
-    
-
     def evaluate(self, case):
         res: TaskTestResult = self.execute(case)
         self.assertTrue(res.success, res.info)

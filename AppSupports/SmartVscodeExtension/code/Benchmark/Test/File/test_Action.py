@@ -9,31 +9,45 @@ class TestFileAction(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
     
     def test_1(self):
-        '''Compare active file with clipboard.'''
+        """
+        Compare active file with clipboard.
+        """
         self.evaluate_task()
     
     def test_2(self):
-        '''Format active file on save.'''
+        """
+        Format active file on save.
+        """
         self.evaluate_task()
     
     def test_3(self):
-        '''Format active file on paste.'''
+        """
+        Format active file on paste.
+        """
         self.evaluate_task()
     
     def test_4(self):
-        '''Set the auto save.'''
+        """
+        Set the auto save.
+        """
         self.evaluate_task()
     
     def test_5(self):
-        '''Set the auto save delay.'''
+        """
+        Set the auto save delay.
+        """
         self.evaluate_task()
     
     def test_6(self):
-        '''Set the excluding files and folders in fulltext searches.'''
+        """
+        Set the excluding files and folders in fulltext searches.
+        """
         self.evaluate_task()
     
     def test_7(self):
-        '''Set the file associations.'''
+        """
+        Set the file associations.
+        """
         self.evaluate_task()
         
 

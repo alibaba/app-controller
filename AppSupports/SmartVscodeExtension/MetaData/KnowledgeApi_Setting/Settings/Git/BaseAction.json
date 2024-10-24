@@ -1,0 +1,9 @@
+[
+    {
+        "id": "git.autofetch",
+        "desc": " When set to true, commits will automatically be fetched from the default remote of the current Git repository. Setting to `all` will fetch from all remotes.",
+        "example": {
+            "git.autofetch": false
+        }
+    }
+]

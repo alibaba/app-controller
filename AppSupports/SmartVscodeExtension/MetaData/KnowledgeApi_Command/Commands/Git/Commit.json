@@ -1,0 +1,10 @@
+[
+    {
+        "id": "git.undoCommit",
+        "desc": "Git undo last commit."
+    },
+    {
+        "id": "git.commit",
+        "desc": "Commit the staged changes by git."
+    }
+]

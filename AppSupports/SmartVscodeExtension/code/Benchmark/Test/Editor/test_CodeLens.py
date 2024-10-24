@@ -9,7 +9,9 @@ class TestEditorCodeLens(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
         
     def test_1(self):
-        '''Enable CodeLens'''
+        """
+        Enable CodeLens.
+        """
         self.evaluate_task()
 
 if __name__ == "__main__":

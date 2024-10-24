@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you show me the changes I've made to my current file since the last git commit?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.openChange"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to view the differences between the current version of my project and the last committed version."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.viewChanges"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to view the differences between my codes side by side, can you set it up for me?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"diffEditor.renderSideBySide": true}
+                }
+            }
+        }]
+    }
+]

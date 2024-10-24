@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to create an issue for my project, can you help me with that?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "issue.createIssue"}
+            }
+        }]
+    }
+]

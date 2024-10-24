@@ -1,0 +1,14 @@
+[
+    {
+        "id": "git.openChange",
+        "desc": "Open changes to diff the current open file from the last commit by git."
+    },
+    {
+        "id": "git.openAllChanges",
+        "desc": "Open the changed files of whole repository from the last commit by git."
+    },
+    {
+        "id": "git.viewChanges",
+        "desc": "View changes to diff the whole repository from the last commit by git."
+    }
+]

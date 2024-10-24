@@ -9,7 +9,9 @@ class TestExtensionLocation(BenchmarkTest):
         cls.load_tasks(cls, test_data_path)
     
     def test_1(self):
-        '''Open the location where extensions are installed.'''
+        """
+        Open the location where extensions are installed.
+        """
         self.evaluate_task()
 
     

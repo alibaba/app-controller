@@ -1,0 +1,9 @@
+[
+    {
+        "id": "diffEditor.renderSideBySide",
+        "desc": " Controls whether the diff editor shows the diff side by side or inline.",
+        "example": {
+            "diffEditor.renderSideBySide": true
+        }
+    }
+]

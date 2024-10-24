@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to add a remote repository using git for my project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.addRemote"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to remove a remote repository using git for my project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.removeRemote"}
+            }
+        }]
+    }
+]

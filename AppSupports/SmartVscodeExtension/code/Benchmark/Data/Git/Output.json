@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to see the Git output for my current project to understand what's going wrong."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.showOutput"}
+            }
+        }]
+    }
+]

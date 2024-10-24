@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to initialize the current repository."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.init"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to stage the changes I made to the current file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.stage"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["Can you help me stage all the changes I've made to the files in my project?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.stageAll"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I need to unstage the changes I made to the current file.",
+                "I need to revert the stage operation I did on the current file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.unstage"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["Can you help me unstage all the changes I've made to the files in my project?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.unstageAll"}
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I need to discard all the changes I've made to the current file.",
+                "I need to revert all the changes I've made to the current file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.clean"}
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I want VS Code to automatically fetch commits from the default remote of my Git repository",
+        "I'd like to keep my local repository updated with the remote one. Can you make it so that VS Code fetches any changes from the remote repository automatically?"
+        ],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"git.autofetch": true}
+                }
+            }
+        }]
+    }
+    
+]

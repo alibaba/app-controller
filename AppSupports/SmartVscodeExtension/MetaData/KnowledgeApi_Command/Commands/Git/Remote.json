@@ -1,0 +1,10 @@
+[
+    {
+        "id": "git.addRemote",
+        "desc": "Add a remote repository by git."
+    },
+    {
+        "id": "git.removeRemote",
+        "desc": "Remove a remote repository by git."
+    }
+]

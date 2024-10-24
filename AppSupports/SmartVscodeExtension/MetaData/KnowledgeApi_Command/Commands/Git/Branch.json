@@ -1,0 +1,10 @@
+[
+    {
+        "id": "git.branch",
+        "desc": "Git create a new branch."
+    },
+    {
+        "id": "git.checkout",
+        "desc": "Git checkout to another branch."
+    }
+]

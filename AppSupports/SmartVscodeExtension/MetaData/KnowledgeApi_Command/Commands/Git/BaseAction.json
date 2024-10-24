@@ -1,0 +1,42 @@
+[
+    {
+        "id": "git.init",
+        "desc": "Initialize the current repository by git."
+    },
+    {
+        "id": "git.stage",
+        "desc": "Git stage changes in current active file."
+    },
+    {
+        "id": "git.stageAll",
+        "desc": "Git stage all changes in the workspace."
+    },
+    {
+        "id": "git.unstage",
+        "desc": "Git unstage Changes in current active file."
+    },
+    {
+        "id": "git.unstageAll",
+        "desc": "Git unstage all changes in the workspace."
+    },
+    {
+        "id": "git.clean",
+        "desc": "Discard changes in current active file by git."
+    },
+    {
+        "id": "git.cleanAll",
+        "desc": "Discard all changes in the workspace by git."
+    },
+    {
+        "id": "git.cleanAllTracked",
+        "desc": "Discard all tracked changes in the workspace by git."
+    },
+    {
+        "id": "git.cleanAllUntracked",
+        "desc": "Discard all untracked changes in the workspace by git."
+    },
+    {
+        "id": "git.clone",
+        "desc": "Git clone a remote repository."
+    }
+]

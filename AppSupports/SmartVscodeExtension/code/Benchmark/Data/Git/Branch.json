@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to create a new branch in my git repository."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.branch"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to switch to the 'dev' branch in my current Git project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.checkout"}
+            }
+        }]
+    }
+    
+]

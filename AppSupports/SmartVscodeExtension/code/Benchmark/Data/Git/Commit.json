@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to revert the last commit I made, can you help me with that?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.undoCommit"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to commit the changes."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "git.commit"}
+            }
+        }]
+    }
+    
+]
