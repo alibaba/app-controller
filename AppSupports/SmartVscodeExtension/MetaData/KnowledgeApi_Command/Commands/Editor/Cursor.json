@@ -1,14 +1,14 @@
 [
   {
-    "commandId": "editor.action.insertCursorAbove",
+    "id": "editor.action.insertCursorAbove",
     "desc": "Adds a new cursor above the current line."
   },
   {
-    "commandId": "editor.action.insertCursorBelow",
+    "id": "editor.action.insertCursorBelow",
     "desc": "Adds a new cursor below the current cursor position."
   },
   {
-    "commandId": "addCursorsAtSearchResults",
+    "id": "addCursorsAtSearchResults",
     "desc": "Add cursors to all selected text"
   }
 ]

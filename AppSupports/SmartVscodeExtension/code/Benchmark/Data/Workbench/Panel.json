@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to maixmize the panel size."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleMaximizedPanel"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to navigate to the warnings in my current project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.actions.view.problems"}
+            }
+        }]
+    }
+    
+]

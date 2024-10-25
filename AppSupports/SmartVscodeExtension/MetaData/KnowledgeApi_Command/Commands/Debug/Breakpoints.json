@@ -1,50 +1,50 @@
 [
   {
-    "commandId": "editor.debug.action.toggleBreakpoint",
+    "id": "editor.debug.action.toggleBreakpoint",
     "desc": "Toggles a breakpoint on the current line in the editor."
   },
   {
-    "commandId": "editor.debug.action.conditionalBreakpoint",
+    "id": "editor.debug.action.conditionalBreakpoint",
     "desc": "Adds a conditional breakpoint at the current cursor location in the editor."
   },
   {
-    "commandId": "editor.debug.action.addLogPoint",
+    "id": "editor.debug.action.addLogPoint",
     "desc": "Adds a log point at the current cursor location in the editor, allowing you to log messages to the console without stopping the debugger."
   },
   {
-    "commandId": "editor.debug.action.triggerByBreakpoint",
+    "id": "editor.debug.action.triggerByBreakpoint",
     "desc": "Triggers a breakpoint action in the editor when debugging."
   },
   {
-    "commandId": "debug.editFunctionBreakpointHitCount",
+    "id": "debug.editFunctionBreakpointHitCount",
     "desc": "Edit the hit count of a function breakpoint."
   },
   {
-    "commandId": "workbench.debug.viewlet.action.removeBreakpoint",
+    "id": "workbench.debug.viewlet.action.removeBreakpoint",
     "desc": "Removes a breakpoint in the editor."
   },
   {
-    "commandId": "workbench.debug.viewlet.action.removeAllBreakpoints",
+    "id": "workbench.debug.viewlet.action.removeAllBreakpoints",
     "desc": "Removes all breakpoints set in the editor."
   },
   {
-    "commandId": "workbench.debug.viewlet.action.enableAllBreakpoints",
+    "id": "workbench.debug.viewlet.action.enableAllBreakpoints",
     "desc": "Enables all breakpoints in the debugging viewlet of Visual Studio Code."
   },
   {
-    "commandId": "workbench.debug.viewlet.action.disableAllBreakpoints",
+    "id": "workbench.debug.viewlet.action.disableAllBreakpoints",
     "desc": "Disables all breakpoints in the editor."
   },
   {
-    "commandId": "workbench.debug.viewlet.action.reapplyBreakpointsAction",
+    "id": "workbench.debug.viewlet.action.reapplyBreakpointsAction",
     "desc": "Reapplies all breakpoints in the current session."
   },
   {
-    "commandId": "workbench.view.debug",
+    "id": "workbench.view.debug",
     "desc": "Opens the Debug view where you can launch configurations, view call stacks, and manage breakpoints."
   },
   {
-    "commandId": "workbench.debug.viewlet.action.addDataBreakpointOnAddress",
+    "id": "workbench.debug.viewlet.action.addDataBreakpointOnAddress",
     "desc": "Adds a data breakpoint based on a memory address in the debug viewlet."
   }
 ]

@@ -1,10 +1,10 @@
 [
   {
-    "commandId": "workbench.action.toggleZenMode",
+    "id": "workbench.action.toggleZenMode",
     "desc": "Toggles Zen Mode, which provides a distraction-free environment with a minimal UI, hiding other views, toolbars, and panels."
   },
   {
-    "commandId": "workbench.action.exitZenMode",
+    "id": "workbench.action.exitZenMode",
     "desc": "Exits Zen Mode, returning the editor to its normal state with all UI elements and panels visible again."
   }
 ]

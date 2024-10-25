@@ -8,83 +8,83 @@
     "desc": "Unlocks the currently selected editor group, allowing for the movement and resizing of the editor within the window."
   },
   {
-    "commandId": "editor.fold",
+    "id": "editor.fold",
     "desc": "Folds (collapses) the innermost uncollapsed region at the cursor location in the editor."
   },
   {
-    "commandId": "editor.foldRecursively",
+    "id": "editor.foldRecursively",
     "desc": "Folds the code block at the current cursor position and all the inner blocks recursively."
   },
   {
-    "commandId": "editor.foldAll",
+    "id": "editor.foldAll",
     "desc": "Collapses all foldable regions in the editor."
   },
   {
-    "commandId": "editor.unfoldAll",
+    "id": "editor.unfoldAll",
     "desc": "Unfolds all regions in the editor, expanding all hidden text."
   },
   {
-    "commandId": "editor.foldAllBlockComments",
+    "id": "editor.foldAllBlockComments",
     "desc": "Folds all block comment regions in the editor."
   },
   {
-    "commandId": "editor.foldAllMarkerRegions",
+    "id": "editor.foldAllMarkerRegions",
     "desc": "Folds all regions in the editor that have been marked with folding markers."
   },
   {
-    "commandId": "editor.unfoldAllMarkerRegions",
+    "id": "editor.unfoldAllMarkerRegions",
     "desc": "Unfolds all regions in the editor that have been folded by markers."
   },
   {
-    "commandId": "editor.createFoldingRangeFromSelection",
+    "id": "editor.createFoldingRangeFromSelection",
     "desc": "Creates a folding range from the current selection in the editor."
   },
   {
-    "commandId": "editor.removeManualFoldingRanges",
+    "id": "editor.removeManualFoldingRanges",
     "desc": "Removes all manually created folding ranges in the editor."
   },
   {
-    "commandId": "editor.action.rename",
+    "id": "editor.action.rename",
     "desc": "Triggers the rename action for the selected symbol in the editor, allowing the user to rename the symbol and automatically update all references to it within the scope."
   },
   {
-    "commandId": "workbench.action.replaceInFiles",
+    "id": "workbench.action.replaceInFiles",
     "desc": "Opens the global search interface with the replace option enabled to perform text replacement across multiple files."
   },
   {
-    "commandId": "workbench.action.toggleLockedScrolling",
+    "id": "workbench.action.toggleLockedScrolling",
     "desc": "Toggles locked scrolling, allowing the editor to scroll beyond the last line of the file."
   },
   {
-    "commandId": "editor.action.startFindReplaceAction",
+    "id": "editor.action.startFindReplaceAction",
     "desc": "Opens the Find and Replace panel in the active editor."
   },
   {
-    "commandId": "workbench.action.splitEditor",
+    "id": "workbench.action.splitEditor",
     "desc": "Splits the currently active editor into two, either side by side or stacked vertically."
   },
   {
-    "commandId": "workbench.action.splitEditorOrthogonal",
+    "id": "workbench.action.splitEditorOrthogonal",
     "desc": "Splits the active editor group into two groups orthogonally."
   },
   {
-    "commandId": "workbench.action.splitEditorLeft",
+    "id": "workbench.action.splitEditorLeft",
     "desc": "Splits the active editor group and moves the editor into the new group on the left side."
   },
   {
-    "commandId": "workbench.action.splitEditorRight",
+    "id": "workbench.action.splitEditorRight",
     "desc": "Splits the currently active editor into two, placing the new editor group to the right of the current one."
   },
   {
-    "commandId": "workbench.action.splitEditorUp",
+    "id": "workbench.action.splitEditorUp",
     "desc": "Splits the currently active editor into two, placing the new editor group above the current one."
   },
   {
-    "commandId": "workbench.action.splitEditorDown",
+    "id": "workbench.action.splitEditorDown",
     "desc": "Splits the currently active editor into two, placing the new editor group below the current one."
   },
   {
-    "commandId": "editor.action.trimTrailingWhitespace",
+    "id": "editor.action.trimTrailingWhitespace",
     "desc": "Trims trailing whitespace from the current file."
   }
 ]

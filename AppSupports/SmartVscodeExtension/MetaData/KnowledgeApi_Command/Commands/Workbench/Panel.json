@@ -1,0 +1,10 @@
+[
+    {
+        "id": "workbench.action.toggleMaximizedPanel",
+        "desc": "Toggles the maximization state of the panel, switching between default and maximized sizes."
+    },
+    {
+        "id": "workbench.actions.view.problems",
+        "desc": "Opens the Problems panel to display a list of current errors and warnings in the project."
+    }
+]
