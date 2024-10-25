@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "q": [ "I want to debug my program using the current configuration."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.debug.start"}
+          }
+      }]
+    },
+    {
+      "id": 2,
+      "q": [ "I need to stop the debugging process for my current project."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.debug.stop"}
+          }
+      }]
+    },
+    {
+      "id": 3,
+      "q": [ "I need to restart the debug session for my current project."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.debug.restart"}
+          }
+      }]
+    }
+]

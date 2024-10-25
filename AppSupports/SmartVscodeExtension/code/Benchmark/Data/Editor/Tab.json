@@ -38,5 +38,57 @@
                 "arguments": {"commandId": "workbench.action.toggleSeparatePinnedEditorTabs"}
             }
         }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to display only one tab in my workbench editor."],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.editor.showTabs": "single"}
+              }}
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I want to change the scroll bar size between the tab and editor regions to large.",
+        "Can you set larger size between the tab and editor regions?"],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.editor.titleScrollbarSizing": "larger"}
+              }}
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I want to open new tabs on the left side of my workspace forever"],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.editor.openPositioning": "left"}
+              }}
+        }]
+    },
+    {
+        "id": 8,
+        "q": ["I want to enable the editor tabs to wrap and fill multiple rows above the editor region.",
+            "I'd like to have my tabs arranged in multiple rows above the editor region, instead of a single row."],
+        "a": [{
+             "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.editor.wrapTabs": false}
+              }}
+        }]
+    },
+    {
+        "id": 9,
+        "q": ["I want to enable the tab preview mode so that I can quickly browse through my files without opening each one in a new tab."],
+        "a": [{
+             "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.editor.enablePreview": true}
+              }}
+        }]
     }
 ]

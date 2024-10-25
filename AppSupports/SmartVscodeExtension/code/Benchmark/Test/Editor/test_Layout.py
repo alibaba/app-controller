@@ -55,6 +55,19 @@ class TestEditorLayout(BenchmarkTest):
         Copy the editor in a floating window.
         """
         self.evaluate_task()
+
+    def test_9(self):
+        """
+        I want to change the layout of my current editor to a two-column mode.
+        """
+        self.evaluate_task()
+
+    def test_10(self):
+        """
+        "I want to enable the centered layout for my editor, as I'm working on a single file on a large monitor.",
+        "I'm working on a large screen and I find the editor view too wide. Can you make it narrower and centered?"
+        """
+        self.evaluate_task()
         
     
 

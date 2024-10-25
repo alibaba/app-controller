@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "q": ["I want to enable Zen mode to focus on my coding."],
+      "a": [{
+           "executeCommand": {
+              "arguments": {"commandId": "workbench.action.toggleZenMode"}
+          }
+      }]
+    },
+    {
+      "id": 2,
+      "q": ["I want to change the Zen Mode settings to hide the Activity bar and Status bar, but I still want to see the line numbers."],
+      "a": [{
+           "setProperties": {
+              "arguments": {
+                  "key2Value": {"zenMode.hideLineNumbers": true}
+              }
+          }
+      }]
+    }
+]

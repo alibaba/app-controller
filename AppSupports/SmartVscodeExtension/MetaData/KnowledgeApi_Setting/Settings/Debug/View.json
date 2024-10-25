@@ -1,0 +1,9 @@
+[
+      {
+        "settingId": "debug.toolBarLocation",
+        "desc": " Controls the location of the debug toolbar.\n  - floating: Show debug toolbar in all views.\n  - docked: Show debug toolbar only in debug views.\n  - commandCenter: `(Experimental)` Show debug toolbar in the command center.\n  - hidden: Do not show debug toolbar.",
+        "setting": {
+            "debug.toolBarLocation": "floating"
+        }
+    }
+]

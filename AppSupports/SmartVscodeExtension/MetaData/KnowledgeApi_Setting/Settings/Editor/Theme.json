@@ -1,0 +1,30 @@
+[
+  {
+    "settingId": "editor.rulers",
+    "desc": " Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty.",
+    "setting": {
+      "editor.rulers": []
+    }
+  },
+  {
+    "settingId": "diffEditor.wordWrap",
+    "desc": "  - off: Lines will never wrap.\n  - on: Lines will wrap at the viewport width.\n  - inherit: Lines will wrap according to the `editor.wordWrap` setting.",
+    "setting": {
+      "diffEditor.wordWrap": "inherit"
+    }
+  },
+  {
+    "settingId": "editor.guides.indentation",
+    "desc": " Controls whether the editor should render indent guides.",
+    "setting": {
+      "editor.guides.indentation": true
+    }
+  },
+  {
+    "settingId": "editor.semanticTokenColorCustomizations",
+    "desc": " Overrides editor semantic token color and styles from the currently selected color theme.",
+    "setting": {
+      "editor.semanticTokenColorCustomizations": {}
+    }
+  }
+]

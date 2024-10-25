@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": [ "Can you open the editor playground ?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.showInteractivePlayground"}
+            }
+        }]
+    }
+]

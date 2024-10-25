@@ -18,5 +18,162 @@
                 "arguments": {"commandId": "workbench.action.unlockEditorGroup"}
             }
         }]
+    },
+    {
+        "id": 3,
+        "q": [ "I need to fold the current level where my cursor is located in the code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.fold"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I need to unfold the current level where my cursor ."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.unfold"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": [ "I want to collapse all the content in my current file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.foldAll"}
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": [ "I want to unfold all the contents in my current project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.unfoldAll"}
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": [ "I need to fold all block comments in my code to make it more readable."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.foldAllBlockComments"}
+            }
+        }]
+    },
+    {
+        "id": 8,
+        "q": [ "Can you help me create a fold range for the selected text?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.createFoldingRangeFromSelection"}
+            }
+        }]
+    },
+    {
+        "id": 9,
+        "q": [ "I need to remove the manual folding ranges I've set in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.removeManualFoldingRanges"}
+            }
+        }]
+    },
+    {
+        "id": 10,
+        "q": [ "I need to change the name of a variable in my code, can you help me with that?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.rename"}
+            }
+        }]
+    },
+    {
+        "id": 11,
+        "q": [ "I need to replace all instances of the word 'apple' with 'orange' in my project files."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.replaceInFiles"}
+            }
+        }]
+    },
+    {
+        "id": 12,
+        "q": [ "I need to view multiple files at the same time and want them to move together when I scroll."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleLockedScrolling"}
+            }
+        }]
+    },
+    {
+        "id": 13,
+        "q": [ "I want to increase the speed of fast scrolling when I hold down the option key. "],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.fastScrollSensitivity": "@:type(x) is int"}
+              }}
+        }]
+    },
+    {
+        "id": 14,
+        "q": [ "I want to enable the Sticky Scroll feature to help me navigate through my files more easily.",
+            "I'm having trouble keeping track of where I am in my files. Can you set it up so that the starting lines of the currently visible nested scopes are always shown at the top of the editor?"],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.stickyScroll.enabled": true}
+              }}
+        }]
+    },
+    {
+        "id": 15,
+        "q": [ "Can you help me search for the phrase 'error handling' in current file"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.startFindReplaceAction"}
+            }
+        }]
+    },
+    {
+        "id": 16,
+        "q": [ "I need to split my active editor into right side"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.splitEditorRight"}
+            }
+        }]
+    },
+    {
+        "id": 17,
+        "q": [ "I need to split my active editor into down side"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.splitEditorDown"}
+            }
+        }]
+    },
+    {
+        "id": 18,
+        "q": [ "I want to change the default behavior when splitting the editor to open the new editor to the right."],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.editor.openSideBySideDirection": "right"}
+            }}
+        }]
+    },
+    {
+        "id": 19,
+        "q": [ "I want to remove all the trailing whitespace in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.trimTrailingWhitespace"}
+            }
+        }]
     }
 ]

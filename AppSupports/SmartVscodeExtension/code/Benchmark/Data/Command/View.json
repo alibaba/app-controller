@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to open the command list."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.showCommands"}
+            }
+        }]
+    }
+]

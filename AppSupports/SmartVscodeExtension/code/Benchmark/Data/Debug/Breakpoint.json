@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you help me toggle a breakpoint on the current line of my file?",
+            "I'm trying to pause the execution of my code at a specific point, can you help me do that on the current line?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.debug.action.toggleBreakpoint"}
+            }
+        }]
+    },
+    {
+      "id": 2,
+      "q": [ "I need to add a conditional breakpoint on line 50, which should only be hit when the variable 'x' is greater than 10.",
+        "I'm debugging my code and I want to pause execution on line 30, but only when a certain condition is met. Specifically, when the 'count' variable reaches 100."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "editor.debug.action.conditionalBreakpoint"}
+          }
+      }]
+    },
+    {
+      "id": 3,
+      "q": [ "I need to add a Logpoint on line 50 of my code to output some log information when the execution reaches there.",
+         "I'm trying to monitor a specific line in my code without interrupting the execution. Can you help me set something up to print some messages when the program reaches that line?"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "editor.debug.action.addLogPoint"}
+          }
+      }]
+    },
+    {
+      "id": 4,
+      "q": [ "I want to set the middle mouse button click action in the editor gutter to add a Conditional Breakpoint.",
+        "When I click the editor gutter with the middle mouse button, I want it to create a breakpoint that only triggers when a certain condition is met."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"debug.gutterMiddleClickAction": "conditionalBreakpoint"}
+              }
+          }
+      }]
+    },
+    {
+      "id": 5,
+      "q": [ "I want to automatically enable breakpoints when a specific breakpoint is hit in my code.",
+         "I need my VScode to automatically pause execution when a certain part of my code is reached"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "editor.debug.action.triggerByBreakpoint"}
+          }
+      }]
+    },
+    {
+      "id": 6,
+      "q": [ "I want the program to stop when the hit count reaches 50."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "debug.editFunctionBreakpointHitCount"}
+          }
+      }]
+    },
+    {
+      "id": 7,
+      "q": [ "Can you help me reapply all breakpoints in my project's source code?",
+        "My debug environment seems to be misplacing breakpoints in unexpected source code. Can you help me fix this?"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.viewlet.action.reapplyBreakpointsAction"}
+          }
+      }]
+    },
+    {
+      "id": 8,
+      "q": [ "I need to enable all the breakpoints in my current project."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.viewlet.action.enableAllBreakpoints"}
+          }
+      }]
+    },
+    {
+      "id": 9,
+      "q": [ "I need to disable all the breakpoints in my current project."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.viewlet.action.disableAllBreakpoints"}
+          }
+      }]
+    },
+    {
+      "id": 10,
+      "q": [ "I need to remove all breakpoints from my current project."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.viewlet.action.removeAllBreakpoints"}
+          }
+      }]
+    },
+    {
+      "id": 11,
+      "q": ["Can you help me disable the function that shows breakpoints in the editor's overview ruler?",
+      "I'd like to see where I've set breakpoints directly on the side bar of my editor, can you make that happen?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"debug.showBreakpointsInOverviewRuler": true}
+              }
+          }
+      }]
+    },
+    {
+      "id": 12,
+      "q": ["I need to see all the breakpoints in my code, can you help me with that?"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.view.debug"}
+          }
+      }]
+    },
+    {
+      "id": 13,
+      "q": [ "I need to add a data breakpoint for the 'count' variable in my code."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.viewlet.action.addDataBreakpointOnAddress"}
+          }
+      }]
+    }
+]

@@ -1,46 +1,82 @@
 [
-    {
-        "id": "workbench.action.splitEditorLeft",
-        "desc": "Splits the active editor group and moves the editor into the new group on the left side."
-    },
-    {
-        "id": "workbench.action.splitEditorRight",
-        "desc": "Splits the currently active editor into two, placing the new editor group to the right of the current one."
-    },
-    {
-        "id": "workbench.action.splitEditorUp",
-        "desc": "Splits the currently active editor into two, placing the new editor group above the current one."
-    },
-    {
-        "id": "workbench.action.splitEditorDown",
-        "desc": "Splits the currently active editor into two, placing the new editor group below the current one."
-    },
-    {
-        "id": "workbench.action.toggleEditorGroupLayout",
-        "desc": "Toggles the layout of editor groups between vertical and horizontal orientation."
-    },
-    {
-        "id": "workbench.action.splitEditorInGroup",
-        "desc": "Splits the currently active editor into two, within the same editor group."
-    },
-    {
-        "id": "workbench.action.toggleSplitEditorInGroup",
-        "desc": "Toggle between split mode for the active editor."
-    },
-    {
-        "id": "workbench.action.toggleSplitEditorInGroupLayout",
-        "desc": "Toggle between horizontal and vertical layout in the active editor group."
-    },
-    {
-        "id": "workbench.action.joinEditorInGroup",
-        "desc": "Go back to a single editor for the active file."
-    },
-    {
-        "id": "workbench.action.moveEditorGroupToNewWindow",
-        "desc": "Moves the active editor group into a new window."
-    },
-    {
-        "id": "workbench.action.copyEditorGroupToNewWindow",
-        "desc": "Copies the current editor group into a new window."
-    }
+  {
+    "id": "workbench.action.splitEditorLeft",
+    "desc": "Splits the active editor group and moves the editor into the new group on the left side."
+  },
+  {
+    "id": "workbench.action.splitEditorRight",
+    "desc": "Splits the currently active editor into two, placing the new editor group to the right of the current one."
+  },
+  {
+    "id": "workbench.action.splitEditorUp",
+    "desc": "Splits the currently active editor into two, placing the new editor group above the current one."
+  },
+  {
+    "id": "workbench.action.splitEditorDown",
+    "desc": "Splits the currently active editor into two, placing the new editor group below the current one."
+  },
+  {
+    "id": "workbench.action.toggleEditorGroupLayout",
+    "desc": "Toggles the layout of editor groups between vertical and horizontal orientation."
+  },
+  {
+    "id": "workbench.action.splitEditorInGroup",
+    "desc": "Splits the currently active editor into two, within the same editor group."
+  },
+  {
+    "id": "workbench.action.toggleSplitEditorInGroup",
+    "desc": "Toggle between split mode for the active editor."
+  },
+  {
+    "id": "workbench.action.toggleSplitEditorInGroupLayout",
+    "desc": "Toggle between horizontal and vertical layout in the active editor group."
+  },
+  {
+    "id": "workbench.action.joinEditorInGroup",
+    "desc": "Go back to a single editor for the active file."
+  },
+  {
+    "id": "workbench.action.moveEditorGroupToNewWindow",
+    "desc": "Moves the active editor group into a new window."
+  },
+  {
+    "id": "workbench.action.copyEditorGroupToNewWindow",
+    "desc": "Copies the current editor group into a new window."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutSingle",
+    "desc": "Sets the editor layout to a single column or single editor group."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutTwoColumns",
+    "desc": "Arranges the editor layout into two columns."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutThreeColumns",
+    "desc": "Arranges the editor layout into three columns."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutTwoRows",
+    "desc": "Arranges the editor layout into two horizontal rows."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutThreeRows",
+    "desc": "Arranges the editor layout into three horizontal rows."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutTwoByTwoGrid",
+    "desc": "Arranges the editor layout into a two by two grid."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutTwoRowsRight",
+    "desc": "Arranges the editor layout into two rows with the second row to the right."
+  },
+  {
+    "commandId": "workbench.action.editorLayoutTwoColumnsBottom",
+    "desc": "Arranges the editor layout into two columns with an additional bottom panel."
+  },
+  {
+    "commandId": "workbench.action.toggleCenteredLayout",
+    "desc": "Toggles the centered layout mode in the editor, which centers the code editor in the window for a more focused coding experience."
+  }
 ]

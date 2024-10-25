@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "q": [ "I need to view the definition of a specific function in a separate window."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.revealDefinition"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["Can you show me the references of the selected variable?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.goToReferences"}
+            }
+        }]
+    }
+]

@@ -1,0 +1,29 @@
+[
+   {
+        "id": 1,
+        "q": [ "I need to add a cursor above the current position in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.insertCursorAbove"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": [ "I need to add a cursor below the current position in my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.insertCursorBelow"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": [ "I want to add cursors to all occurrences of a selection."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "addCursorsAtSearchResults"}
+            }
+        }]
+    }
+]

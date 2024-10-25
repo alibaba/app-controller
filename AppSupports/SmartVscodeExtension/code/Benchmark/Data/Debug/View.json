@@ -1,0 +1,72 @@
+[
+  {
+      "id": 1,
+      "q": [ "I need to check the state of my variables while debugging. Can you open the Variables view in the Run and Debug view on the left side?",
+        "I'm trying to troubleshoot my code and need to see what's happening with my variables. Can you show me where to find this information?"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.view.debug"}
+          }
+      }]
+    },
+    {
+      "id": 2,
+      "q": [ "I need to open the Run and Debug view for my current project."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.view.debug"}
+          }
+      }]
+    },
+    {
+      "id": 3,
+      "q": [ "I need to view the debug console to check the output of my code"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.action.toggleRepl"}
+          }
+      }]
+    },
+    {
+      "id": 4,
+      "q": [ "I want to see the debug toolbar only in debug views"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"debug.toolBarLocation": "docked"}
+              }
+          }
+      }]
+    },
+    {
+      "id": 5,
+      "q": [ "I don't want to see the debug toolbar at all when debugging"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"debug.toolBarLocation": "hidden"}
+              }
+          }
+      }]
+    },
+    {
+      "id": 6,
+      "q": [ "Can you help me open the Debug toolbar? I need to debug my code."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"debug.toolBarLocation": "floating"}
+              }
+          }
+      }]
+    },
+    {
+      "id": 7,
+      "q": [ "I need to open the Debug Console REPL to debug my code."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.debug.action.toggleRepl"}
+          }
+      }]
+    }
+]

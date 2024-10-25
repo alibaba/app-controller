@@ -1,0 +1,37 @@
+[
+  {
+    "settingId": "editor.fastScrollSensitivity",
+    "desc": " Scrolling speed multiplier when pressing `Alt`.",
+    "setting": {
+      "editor.fastScrollSensitivity": 5
+    }
+  },
+  {
+    "settingId": "editor.stickyScroll.defaultModel",
+    "desc": " Defines the model to use for determining which lines to stick. If the outline model does not exist, it will fall back on the folding provider model which falls back on the indentation model. This order is respected in all three cases.",
+    "setting": {
+      "editor.stickyScroll.defaultModel": "outlineModel"
+    }
+  },
+  {
+    "settingId": "editor.stickyScroll.enabled",
+    "desc": " Shows the nested current scopes during the scroll at the top of the editor.",
+    "setting": {
+      "editor.stickyScroll.enabled": true
+    }
+  },
+  {
+    "settingId": "editor.stickyScroll.maxLineCount",
+    "desc": " Defines the maximum number of sticky lines to show.",
+    "setting": {
+      "editor.stickyScroll.maxLineCount": 5
+    }
+  },
+  {
+    "settingId": "workbench.editor.openSideBySideDirection",
+    "desc": " Controls the default direction of editors that are opened side by side (for example, from the Explorer). By default, editors will open on the right hand side of the currently active one. If changed to `down`, the editors will open below the currently active one.",
+    "setting": {
+      "workbench.editor.openSideBySideDirection": "right"
+    }
+  }
+]

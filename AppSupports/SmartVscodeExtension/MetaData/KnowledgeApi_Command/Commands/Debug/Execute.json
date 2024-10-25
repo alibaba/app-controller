@@ -1,0 +1,18 @@
+[
+  {
+    "commandId": "workbench.action.debug.start",
+    "desc": "Starts debugging the currently active program."
+  },
+  {
+    "commandId": "workbench.action.debug.run",
+    "desc": "Starts or continues debugging the currently active file or project."
+  },
+  {
+    "commandId": "workbench.action.debug.stop",
+    "desc": "Stops the running debug session."
+  },
+  {
+    "commandId": "workbench.action.debug.restart",
+    "desc": "Restarts the current debug session."
+  }
+]

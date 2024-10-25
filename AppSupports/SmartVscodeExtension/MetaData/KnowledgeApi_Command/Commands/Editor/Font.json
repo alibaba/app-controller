@@ -1,0 +1,23 @@
+[
+    {
+      "id": "editor.fontSize",
+      "desc": " Controls the font size in pixels.",
+      "example": {
+        "editor.fontSize": 14
+      }
+    },
+    {
+      "id": "editor.fontLigatures",
+      "desc": " Configures font ligatures or font features. Can be either a boolean to enable/disable ligatures or a string for the value of the CSS 'font-feature-settings' property.",
+      "example": {
+          "editor.fontLigatures": false
+      }
+    },
+    {
+      "id": "editor.fontFamily",
+      "desc": " Controls the font family.",
+      "example": {
+          "editor.fontFamily": "Consolas, 'Courier New', monospace"
+      }
+  }
+  ]

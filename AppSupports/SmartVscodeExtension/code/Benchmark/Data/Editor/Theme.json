@@ -1,0 +1,91 @@
+[
+  {
+        "id": 1,
+        "q": ["I'd like to add vertical column rulers to the editor at the 30th, 50th, and 70th columns."],
+        "a": [{
+             "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.rulers": [30, 50, 70]}
+              }}
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to set the line wrapping in the editor to 'on', so that the lines wrap at the viewport width.",
+        "I'm having trouble reading my code because the lines are too long. Can you make it so they automatically move to the next line when they reach the edge of the screen?"],
+        "a": [{
+             "setProperties": {
+              "arguments": {
+                  "key2Value": {"diffEditor.wordWrap": "on"}
+              }}
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to turn off the indentation guides in the editor.",
+          "I find the vertical lines indicating matching indent levels distracting. Can you help me get rid of them?"],
+        "a": [{
+             "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.guides.indentation": false}
+              }}
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to enable the breadcrumbs at the top of my editor to quickly navigate between files and symbols.",
+          "I need a way to quickly jump between different parts of my project without having to manually search for files or symbols. "],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "breadcrumbs.toggle"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to change the color of the indent guides to green."],
+        "a": [{
+             "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.colorCustomizations":  {"editorIndentGuide.background": "#00FF00"}}
+              }}
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I need to list all the symbols in my current file, such as classes, methods, and variables."],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "workbench.action.gotoSymbol"}
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I need to navigate to a specific symbol in my file, can you help me with that?"],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "workbench.action.gotoSymbol"}
+            }
+        }]
+    },
+    {
+        "id": 8,
+        "q": ["I need to close all the editors that are currently open in my workspace."],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "workbench.action.closeAllEditors"}
+            }
+        }]
+    },
+    {
+        "id": 9,
+        "q": ["I need to open the welcome page again"],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openWalkthrough"}
+            }
+        }]
+    }
+
+]

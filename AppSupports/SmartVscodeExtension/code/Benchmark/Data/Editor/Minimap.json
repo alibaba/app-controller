@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "q": [ "I want to move the minimap to the left side of the screen."],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.minimap.side": "left"}
+              }
+          }
+        }]
+    },
+    {
+        "id": 2,
+        "q": [ "I want to disable the minimap in my editor."],
+        "a": [{
+            "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.minimap.enabled": true}
+              }
+          }
+        }]
+    }
+]
