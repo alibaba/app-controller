@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to view the log of my dispatched keyboard shortcuts to troubleshoot some issues."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleKeybindingsLog"}
+            }
+        }]
+    }
+]

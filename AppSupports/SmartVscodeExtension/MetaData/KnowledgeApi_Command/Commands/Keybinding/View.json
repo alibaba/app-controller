@@ -1,0 +1,26 @@
+[
+    {
+        "id": "workbench.action.openGlobalKeybindings",
+        "desc": "Opens the keyboard shortcuts editor to configure global keybindings."
+    },
+    {
+        "id": "workbench.action.openDefaultKeybindingsFile",
+        "desc": "Opens the default keyboard shortcuts file, allowing you to view the default keybindings."
+    },
+    {
+        "id": "workbench.action.openGlobalKeybindingsFile",
+        "desc": "Opens the global keybindings file where you can view and modify keyboard shortcuts."
+    },
+    {
+        "id": "keybindings.editor.showDefaultKeybindings",
+        "desc": "Show the default keybindings." 
+    },
+    {
+        "id": "keybindings.editor.showExtensionKeybindings",
+        "desc": "Show the extension keybindings." 
+    },
+    {
+        "id": "keybindings.editor.showUserKeybindings",
+        "desc": "Show the user defined keybindings."
+    }
+]

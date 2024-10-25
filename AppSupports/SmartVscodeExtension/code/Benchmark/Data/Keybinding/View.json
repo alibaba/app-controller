@@ -1,0 +1,69 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to open the keyboard shortcuts setting view."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openGlobalKeybindings"}
+            }
+        }, {
+            "openKeybindingSettings": {
+                "arguments": {}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to open the default keyboard shortcuts setting json file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openDefaultKeybindingsFile"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I need to open the keyboard shortcuts setting json file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openGlobalKeybindingsFile"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to view the default keyboard shortcuts setting in editor."],
+        "a": [{
+            "openKeybindingSettings": {
+                "arguments": {}
+            },
+            "executeCommand": {
+                "arguments": {"commandId": "keybindings.editor.showDefaultKeybindings"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to view the extension keyboard shortcuts setting in editor."],
+        "a": [{
+            "openKeybindingSettings": {
+                "arguments": {}
+            },
+            "executeCommand": {
+                "arguments": {"commandId": "keybindings.editor.showExtensionKeybindings"}
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I want to view the keyboard shortcuts that I have modified in VScode."],
+        "a": [{
+            "openKeybindingSettings": {
+                "arguments": {}
+            },
+            "executeCommand": {
+                "arguments": {"commandId": "keybindings.editor.showUserKeybindings"}
+            }
+        }]
+    }
+]
