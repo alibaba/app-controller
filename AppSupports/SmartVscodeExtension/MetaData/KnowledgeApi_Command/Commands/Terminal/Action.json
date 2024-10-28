@@ -1,0 +1,54 @@
+[
+  {
+    "id": "workbench.action.terminal.newInActiveWorkspace",
+    "desc": "Opens a new terminal in the context of the currently active workspace."
+  },
+  {
+    "id": "workbench.action.terminal.runActiveFile",
+    "desc": "Runs the active file in the terminal."
+  },
+  {
+    "id": "workbench.action.terminal.scrollDown",
+    "desc": "Scrolls down the terminal viewport within Visual Studio Code."
+  },
+  {
+    "id": "workbench.action.terminal.scrollDownPage",
+    "desc": "Scrolls down the terminal viewport by a page."
+  },
+  {
+    "id": "workbench.action.terminal.scrollToBottom",
+    "desc": "Scrolls the terminal view to the bottom, making the most recent output visible."
+  },
+  {
+    "id": "workbench.action.terminal.scrollUp",
+    "desc": "Scrolls up in the integrated terminal within Visual Studio Code."
+  },
+  {
+    "id": "workbench.action.terminal.scrollUpPage",
+    "desc": "Scrolls the terminal output up by one page."
+  },
+  {
+    "id": "workbench.action.terminal.scrollToTop",
+    "desc": "Scrolls the terminal output to the top."
+  },
+  {
+    "id": "workbench.action.terminal.clearSelection",
+    "desc": "Clears the current selection in the integrated terminal."
+  },
+  {
+    "id": "workbench.action.terminal.focusFind",
+    "desc": "Focuses the find widget in the integrated terminal."
+  },
+  {
+    "id": "workbench.action.terminal.hideFind",
+    "desc": "Hides the find widget in the integrated terminal."
+  },
+  {
+    "id": "workbench.action.terminal.toggleFindRegex",
+    "desc": "Toggles the option to use regular expressions in the terminal's find widget."
+  },
+  {
+    "id": "workbench.action.terminal.clear",
+    "desc": "Clears the terminal output in Visual Studio Code."
+  }
+]

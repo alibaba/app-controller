@@ -1,0 +1,9 @@
+[
+  {
+    "id": "terminal.integrated.shellIntegration.history",
+    "desc": " Controls the number of recently used commands to keep in the terminal command history. Set to 0 to disable terminal command history.",
+    "example": {
+      "terminal.integrated.shellIntegration.history": 100
+    }
+  }
+]

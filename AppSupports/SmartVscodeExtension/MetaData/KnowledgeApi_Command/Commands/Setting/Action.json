@@ -1,0 +1,34 @@
+[
+  {
+    "id": "workbench.userDataSync.actions.syncNow",
+    "desc": "Manually triggers synchronization of user data like settings, extensions, and keybindings across VS Code instances."
+  },
+  {
+    "id": "workbench.userDataSync.actions.configure",
+    "desc": "Opens the configuration options for user data synchronization in Visual Studio Code."
+  },
+  {
+    "id": "workbench.userDataSync.actions.settings",
+    "desc": "Opens the Settings Sync configuration page where you can manage preferences for synchronizing settings, extensions, and more across devices."
+  },
+  {
+    "id": "workbench.userDataSync.actions.help",
+    "desc": "Opens the help interface for Visual Studio Code's Settings Sync feature."
+  },
+  {
+    "id": "workbench.userDataSync.actions.showLog",
+    "desc": "Opens the log file that contains detailed information about the synchronization of user data like settings, extensions, and keybindings in VS Code."
+  },
+  {
+    "id": "workbench.actions.syncData.reset",
+    "desc": "Resets and clears all synchronized data (such as settings, extensions, and keyboard shortcuts) from the cloud, allowing you to start fresh or sync from a different state."
+  },
+  {
+    "id": "workbench.userDataSync.actions.turnOn",
+    "desc": "Turns on the synchronization of user data like settings, extensions, and keybindings across VS Code installations."
+  },
+  {
+    "id": "workbench.userDataSync.actions.turnOff",
+    "desc": "Turns off the synchronization of user data like settings, extensions, and keybindings across VS Code installations."
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "terminal.integrated.copyOnSelection",
+    "desc": " Controls whether text selected in the terminal will be copied to the clipboard.",
+    "example": {
+      "terminal.integrated.copyOnSelection": false
+    }
+  },
+  {
+    "id": "terminal.integrated.cwd",
+    "desc": " An explicit start path where the terminal will be launched, this is used as the current working directory (cwd) for the shell process. This may be particularly useful in workspace examples if the root directory is not a convenient cwd.",
+    "example": {
+      "terminal.integrated.cwd": ""
+    }
+  },
+  {
+    "id": "terminal.integrated.enableMultiLinePasteWarning",
+    "desc": " Controls whether to show a warning dialog when pasting multiple lines into the terminal.\n  - auto: Enable the warning but do not show it when:\n\n - Bracketed paste mode is enabled (the shell supports multi-line paste natively)\n - The paste is handled by the shell's readline (in the case of pwsh)\n  - always: Always show the warning if the text contains a new line.\n  - never: Never show the warning.",
+    "example": {
+      "terminal.integrated.enableMultiLinePasteWarning": "auto"
+    }
+  },
+  {
+    "id": "terminal.integrated.ignoreBracketedPasteMode",
+    "desc": " Controls whether the terminal will ignore bracketed paste mode even if the terminal was put into the mode, omitting the `\\x1b[200~` and `\\x1b[201~` sequences when pasting. This is useful when the shell is not respecting the mode which can happen in sub-shells for example.",
+    "example": {
+      "terminal.integrated.ignoreBracketedPasteMode": false
+    }
+  },
+  {
+    "id": "terminal.integrated.autoReplies",
+    "desc": " A set of messages that, when encountered in the terminal, will be automatically responded to. Provided the message is specific enough, this can help automate away common responses.",
+    "example": {
+      "terminal.integrated.autoReplies": {}
+    }
+  },
+  {
+    "id": "terminal.integrated.persistentSessionScrollback",
+    "desc": " Controls the maximum amount of lines that will be restored when reconnecting to a persistent terminal session. Increasing this will restore more lines of scrollback at the cost of more memory and increase the time it takes to connect to terminals on start up. This example requires a restart to take effect and should be set to a value less than or equal to `terminal.integrated.scrollback`.",
+    "example": {
+      "terminal.integrated.persistentSessionScrollback": 100
+    }
+  },
+  {
+    "id": "terminal.integrated.smoothScrolling",
+    "desc": " Controls whether the terminal will scroll using an animation.",
+    "example": {
+      "terminal.integrated.smoothScrolling": false
+    }
+  },
+  {
+    "id": "terminal.integrated.splitCwd",
+    "desc": " Controls the working directory a split terminal starts with.\n  - workspaceRoot: A new split terminal will use the workspace root as the working directory. In a multi-root workspace a choice for which root folder to use is offered.\n  - initial: A new split terminal will use the working directory that the parent terminal started with.\n  - inherited: On macOS and Linux, a new split terminal will use the working directory of the parent terminal. On Windows, this behaves the same as initial.",
+    "example": {
+      "terminal.integrated.splitCwd": "inherited"
+    }
+  },
+  {
+    "id": "terminal.integrated.confirmOnKill",
+    "desc": " Controls whether to confirm killing terminals when they have child processes. When set to editor, terminals in the editor area will be marked as changed when they have child processes. Note that child process detection may not work well for shells like Git Bash which don't run their processes as child processes of the shell.\n  - never: Never confirm.\n  - editor: Confirm if the terminal is in the editor.\n  - panel: Confirm if the terminal is in the panel.\n  - always: Confirm if the terminal is either in the editor or panel.",
+    "example": {
+      "terminal.integrated.confirmOnKill": "editor"
+    }
+  },
+  {
+    "id": "terminal.integrated.showExitAlert",
+    "desc": " Controls whether to show the alert \"The terminal process terminated with exit code\" when exit code is non-zero.",
+    "example": {
+      "terminal.integrated.showExitAlert": true
+    }
+  }
+]

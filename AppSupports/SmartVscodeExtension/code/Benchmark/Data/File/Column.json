@@ -1,0 +1,14 @@
+[
+   {
+        "id": 1,
+        "q": ["I want to enable column selection mode so that I can select multiple lines of code at once.",
+           "I need to select several lines of code simultaneously. Can you help me set that up?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.columnSelection": true}
+                }
+            }
+        }]
+    }
+]

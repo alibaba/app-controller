@@ -1,0 +1,9 @@
+[
+  {
+    "id": "terminal.integrated.gpuAcceleration",
+    "desc": " Controls whether the terminal will leverage the GPU to do its rendering.\n  - auto: Let VS Code detect which renderer will give the best experience.\n  - on: Enable GPU acceleration within the terminal.\n  - off: Disable GPU acceleration within the terminal.\n  - canvas: Use the terminal's fallback canvas renderer which uses a 2d context instead of webgl which may perform better on some systems.",
+    "example": {
+      "terminal.integrated.gpuAcceleration": "auto"
+    }
+  }
+]

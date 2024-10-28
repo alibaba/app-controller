@@ -1,0 +1,100 @@
+[
+  {
+    "id": "terminal.integrated.defaultLocation",
+    "desc": " Controls where newly created terminals will appear.\n  - editor: Create terminals in the editor\n  - view: Create terminals in the terminal view",
+    "example": {
+      "terminal.integrated.defaultLocation": "view"
+    }
+  },
+  {
+    "id": "terminal.integrated.shellIntegration.decorationsEnabled",
+    "desc": " When shell integration is enabled, adds a decoration for each command.\n  - both: Show decorations in the gutter (left) and overview ruler (right)\n  - gutter: Show gutter decorations to the left of the terminal\n  - overviewRuler: Show overview ruler decorations to the right of the terminal\n  - never: Do not show decorations",
+    "example": {
+      "terminal.integrated.shellIntegration.decorationsEnabled": "both"
+    }
+  },
+  {
+    "id": "terminal.integrated.stickyScroll.enabled",
+    "desc": " Shows the current command at the top of the terminal.",
+    "example": {
+      "terminal.integrated.stickyScroll.enabled": true
+    }
+  },
+  {
+    "id": "terminal.integrated.fontFamily",
+    "desc": " Controls the font family of the terminal. Defaults to `editor.fontFamily`'s value.",
+    "example": {
+      "terminal.integrated.fontFamily": ""
+    }
+  },
+  {
+    "id": "terminal.integrated.fontSize",
+    "desc": " Controls the font size in pixels of the terminal.",
+    "example": {
+      "terminal.integrated.fontSize": 14
+    }
+  },
+  {
+    "id": "terminal.integrated.fontWeight",
+    "desc": " The font weight to use within the terminal for non-bold text. Accepts \"normal\" and \"bold\" keywords or numbers between 1 and 1000.",
+    "example": {
+      "terminal.integrated.fontWeight": "normal"
+    }
+  },
+  {
+    "id": "terminal.integrated.fontWeightBold",
+    "desc": " The font weight to use within the terminal for bold text. Accepts \"normal\" and \"bold\" keywords or numbers between 1 and 1000.",
+    "example": {
+      "terminal.integrated.fontWeightBold": "bold"
+    }
+  },
+  {
+    "id": "terminal.integrated.letterSpacing",
+    "desc": " Controls the letter spacing of the terminal. This is an integer value which represents the number of additional pixels to add between characters.",
+    "example": {
+      "terminal.integrated.letterSpacing": 0
+    }
+  },
+  {
+    "id": "terminal.integrated.lineHeight",
+    "desc": " Controls the line height of the terminal. This number is multiplied by the terminal font size to get the actual line-height in pixels.",
+    "example": {
+      "terminal.integrated.lineHeight": 1
+    }
+  },
+  {
+    "id": "terminal.integrated.tabs.separator",
+    "desc": " Separator used by `terminal.integrated.tabs.title` and `terminal.integrated.tabs.description`.",
+    "example": {
+      "terminal.integrated.tabs.separator": " - "
+    }
+  },
+  {
+    "id": "terminal.integrated.tabs.showActions",
+    "desc": " Controls whether terminal split and kill buttons are displays next to the new terminal button.\n  - always: Always show the actions\n  - singleTerminal: Show the actions when it is the only terminal opened\n  - singleTerminalOrNarrow: Show the actions when it is the only terminal opened or when the tabs view is in its narrow textless state\n  - never: Never show the actions",
+    "example": {
+      "terminal.integrated.tabs.showActions": "singleTerminalOrNarrow"
+    }
+  },
+  {
+    "id": "terminal.integrated.tabs.showActiveTerminal",
+    "desc": " Shows the active terminal information in the view.\n  - always: Always show the active terminal\n  - singleTerminal: Show the active terminal when it is the only terminal opened\n  - singleTerminalOrNarrow: Show the active terminal when it is the only terminal opened or when the tabs view is in its narrow textless state\n  - never: Never show the active terminal",
+    "example": {
+      "terminal.integrated.tabs.showActiveTerminal": "singleTerminalOrNarrow"
+    }
+  },
+  {
+    "id": "terminal.integrated.drawBoldTextInBrightColors",
+    "desc": " Controls whether bold text in the terminal will always use the \"bright\" ANSI color variant.",
+    "example": {
+      "terminal.integrated.drawBoldTextInBrightColors": true
+    }
+  },
+  {
+    "id": "terminal.integrated.hideOnStartup",
+    "desc": " Whether to hide the terminal view on startup, avoiding creating a terminal when there are no persistent sessions.\n  - never: Never hide the terminal view on startup.\n  - whenEmpty: Only hide the terminal when there are no persistent sessions restored.\n  - always: Always hide the terminal, even when there are persistent sessions restored.",
+    "example": {
+      "terminal.integrated.hideOnStartup": "never"
+    }
+  }
+]

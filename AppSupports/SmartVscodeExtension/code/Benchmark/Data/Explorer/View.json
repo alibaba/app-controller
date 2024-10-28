@@ -1,0 +1,22 @@
+[
+  {
+      "id": 1,
+      "q": [ "I need to access the explorer view to manage my project files.",
+        "I need to see all my project files in one place. Can you help me with that?"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.view.explorer"}
+          }
+      }]
+  },
+  {
+      "id": 2,
+      "q": [ "I want to move the Explorer View to the top of the screen."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.sideBar.location": "top"}
+            }}
+      }]
+  }
+]

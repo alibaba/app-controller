@@ -1,0 +1,12 @@
+[
+   {
+      "id": 1,
+      "q": [ "I want to enable GPU acceleration for the terminal to improve rendering speed."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.gpuAcceleration": "on"}
+            }}
+      }]
+  }
+]

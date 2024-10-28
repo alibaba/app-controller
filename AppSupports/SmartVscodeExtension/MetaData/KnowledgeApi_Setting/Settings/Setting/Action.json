@@ -1,0 +1,23 @@
+[
+  {
+    "settingId": "settingsSync.ignoredExtensions",
+    "desc": " List of extensions to be ignored while synchronizing. The identifier of an extension is always `${publisher}.${name}`. For example: `vscode.csharp`.",
+    "setting": {
+      "settingsSync.ignoredExtensions": []
+    }
+  },
+  {
+    "settingId": "settingsSync.ignoredSettings",
+    "desc": " Configure settings to be ignored while synchronizing.",
+    "setting": {
+      "settingsSync.ignoredSettings": []
+    }
+  },
+  {
+    "settingId": "settingsSync.keybindingsPerPlatform",
+    "desc": " Synchronize keybindings for each platform.",
+    "setting": {
+      "settingsSync.keybindingsPerPlatform": true
+    }
+  }
+]

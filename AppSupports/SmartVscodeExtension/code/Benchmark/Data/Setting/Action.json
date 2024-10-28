@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to turn on Settings Sync"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.userDataSync.actions.syncNow"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to stop syncing my color theme settings in VScode."],
+        "a": [{
+             "setProperties": {
+                "arguments": {
+                    "key2Value": {"settingsSync.ignoredSettings": ["workbench.colorTheme"]}
+                }
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to stop the sync for my ms-python.python extensions."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"settingsSync.ignoredExtensions": ["ms-python.python"]}
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to change the configuration of setting sync"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.userDataSync.actions.configure"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I need to access the local backups folder on my computer."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.userDataSync.actions.turnOff"}
+            }
+        }]
+    }
+]

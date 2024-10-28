@@ -1,0 +1,12 @@
+[
+  {
+      "id": 1,
+      "q": [ "Can you adjust the number of commands kept in the terminal command history to 100"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.shellIntegration.history": 100}
+            }}
+      }]
+  }
+]

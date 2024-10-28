@@ -1,0 +1,22 @@
+[
+  {
+    "id": "workbench.action.toggleMaximizedPanel",
+    "desc": "Toggles the maximization state of the panel, switching between default and maximized sizes."
+  },
+  {
+    "id": "workbench.action.terminal.sizeToContentWidth",
+    "desc": "Adjusts the width of the active terminal to fit its content."
+  },
+  {
+    "id": "workbench.action.terminal.openSettings",
+    "desc": "Opens the terminal settings in the settings editor."
+  },
+  {
+    "id": "workbench.action.terminal.setDimensions",
+    "desc": "Sets the dimensions of the active terminal instance."
+  },
+  {
+    "id": "workbench.action.terminal.newWithProfile",
+    "desc": "Opens a new terminal with a user-specified profile."
+  }
+]

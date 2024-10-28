@@ -1,0 +1,23 @@
+[
+  {
+    "id": "terminal.integrated.defaultProfile.linux",
+    "desc": " The default terminal profile on Linux.",
+    "example": {
+      "terminal.integrated.defaultProfile.linux": null
+    }
+  },
+  {
+    "id": "terminal.integrated.defaultProfile.osx",
+    "desc": " The default terminal profile on macOS.",
+    "example": {
+      "terminal.integrated.defaultProfile.osx": null
+    }
+  },
+  {
+    "id": "terminal.integrated.defaultProfile.windows",
+    "desc": " The default terminal profile on Windows.",
+    "example": {
+      "terminal.integrated.defaultProfile.windows": null
+    }
+  }
+]

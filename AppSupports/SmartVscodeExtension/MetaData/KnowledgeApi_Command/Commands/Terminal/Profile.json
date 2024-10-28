@@ -1,0 +1,6 @@
+[
+  {
+    "id": "workbench.action.terminal.selectDefaultShell",
+    "desc": "Selects the default shell for the integrated terminal in VS Code."
+  }
+]

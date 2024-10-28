@@ -1,0 +1,21 @@
+[
+  {
+      "id": 1,
+      "q": [ "I want to set my default shell profile to bash in the terminal."],
+      "a": [{
+           "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.selectDefaultShell"}
+          }
+      }]
+  },
+  {
+      "id": 2,
+      "q": ["I want to set my default terminal profile to 'my-bash' instead of 'my-pwsh'"],
+      "a": [{
+         "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.defaultProfile.osx": "my-bash"}
+            }}
+      }]
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "workbench.profiles.actions.editCurrentProfile",
+    "desc": "Opens the settings editor to modify the settings of the currently active profile in VS Code."
+  },
+  {
+    "id": "workbench.profiles.actions.showProfileContents",
+    "desc": "Displays the contents of the selected user profile in VS Code."
+  },
+  {
+    "id": "workbench.profiles.actions.exportProfile",
+    "desc": "Exports the currently active profile settings and extensions into a profile file."
+  },
+  {
+    "id": "workbench.profiles.actions.importProfile",
+    "desc": "Imports a user profile including settings, extensions, and keyboard shortcuts from a file."
+  },
+  {
+    "id": "workbench.profiles.actions.createFromCurrentProfile",
+    "desc": "Creates a new profile from the current configuration settings in VS Code."
+  },
+  {
+    "id": "workbench.profiles.actions.createProfile",
+    "desc": "Creates a new user profile in Visual Studio Code, allowing for customized settings and extensions separate from other profiles."
+  },
+  {
+    "id": "workbench.profiles.actions.deleteProfile",
+    "desc": "Deletes a user profile from Visual Studio Code."
+  },
+  {
+    "id": "workbench.profiles.actions.switchProfile",
+    "desc": "Switches to a different user profile in Visual Studio Code, allowing the user to change settings, extensions, and setup configurations."
+  }
+]

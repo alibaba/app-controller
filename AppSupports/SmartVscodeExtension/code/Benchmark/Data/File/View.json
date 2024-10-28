@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "q": [  "I want to see my recently opened files."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openRecent"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["Can you open the current file in the system window?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "revealFileInOS"}
+            }
+        }]
+    }
+]

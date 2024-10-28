@@ -1,0 +1,13 @@
+[
+   {
+        "id": 1,
+        "q": ["I have a custom file with the extension .mydata, but it's actually a JSON file. Can you set it up so that VScode recognizes it as such?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"files.associations": {"*.mydata": "json"}}
+                }
+            }
+        }]
+    }
+]

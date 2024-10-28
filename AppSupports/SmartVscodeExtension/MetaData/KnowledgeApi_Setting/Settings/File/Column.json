@@ -1,0 +1,9 @@
+[
+  {
+    "settingId": "editor.columnSelection",
+    "desc": " Enable that the selection with the mouse and keys is doing column selection.",
+    "setting": {
+      "editor.columnSelection": false
+    }
+  }
+]

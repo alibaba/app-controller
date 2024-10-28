@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "q": ["I want the terminal tabs view to never hide, regardless of how many terminals or terminal groups are open."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.tabs.hideCondition": "never"}
+            }}
+      }]
+    },
+    {
+      "id": 2,
+      "q": ["I'd like to have the terminal tabs shown on the left side of the terminal."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.tabs.location": "left"}
+            }}
+      }]
+    },
+    {
+      "id": 3,
+      "q": ["I want the terminal tab title to display the current working directory instead of the process name."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.tabs.title": "${cwd}"}
+            }}
+      }]
+    },
+    {
+      "id": 4,
+      "q": ["I want to disable the animation that appears on the right of the terminal tab."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.tabs.enableAnimation": false}
+            }}
+      }]
+    }
+]

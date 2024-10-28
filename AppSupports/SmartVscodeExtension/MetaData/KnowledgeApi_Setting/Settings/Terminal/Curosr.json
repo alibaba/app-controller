@@ -1,0 +1,30 @@
+[
+  {
+    "id": "terminal.integrated.cursorBlinking",
+    "desc": " Controls whether the terminal cursor blinks.",
+    "example": {
+      "terminal.integrated.cursorBlinking": false
+    }
+  },
+  {
+    "id": "terminal.integrated.cursorStyle",
+    "desc": " Controls the style of terminal cursor when the terminal is focused.",
+    "example": {
+      "terminal.integrated.cursorStyle": "block"
+    }
+  },
+  {
+    "id": "terminal.integrated.cursorStyleInactive",
+    "desc": " Controls the style of terminal cursor when the terminal is not focused.",
+    "example": {
+      "terminal.integrated.cursorStyleInactive": "outline"
+    }
+  },
+  {
+    "id": "terminal.integrated.cursorWidth",
+    "desc": " Controls the width of the cursor when `terminal.integrated.cursorStyle` is set to `line`.",
+    "example": {
+      "terminal.integrated.cursorWidth": 1
+    }
+  }
+]

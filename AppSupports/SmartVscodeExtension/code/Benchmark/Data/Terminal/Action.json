@@ -1,0 +1,151 @@
+[
+    {
+      "id": 1,
+      "q": ["I want to enable the feature that automatically copies the text when I select it in the terminal."],
+      "a": [{
+           "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.copyOnSelection": true}
+            }}
+      }]
+    },
+    {
+      "id": 2,
+      "q": [ "Open a new terminal."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.new"}
+          }
+      }]
+    },
+    {
+      "id": 3,
+      "q": ["I want the terminal to open in the '/home/myproject' directory instead of the default one."],
+      "a": [{
+           "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.cwd": "/home/myproject"}
+            }}
+      }]
+    },
+    {
+      "id": 4,
+      "q": ["I need to execute the current file I'm working on in the terminal."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.runActiveFile"}
+          }
+      }]
+    },
+    {
+      "id": 5,
+      "q": ["I want to enable the warning when I paste multiple lines in the terminal."],
+      "a": [{
+           "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.enableMultiLinePasteWarning": true}
+            }}
+      }]
+    },
+    {
+      "id": 6,
+      "q": ["I want to enable the bracketed paste mode in the terminal, can you help me with that?",
+        "I'm having trouble with some sequences when pasting in the terminal, can you help me ignore them?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.bracketedPaste": true}
+            }}
+      }]
+    },
+    {
+      "id": 7,
+      "q": ["I want to configure the terminal to automatically respond 'N' when asked 'Terminate batch job (Y/N)?'."],
+      "a": [{
+           "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.autoReplies": {"Terminate batch job (Y/N)?": "N"}}
+            }}
+      }]
+    },
+    {
+      "id": 8,
+      "q": ["I need to quickly navigate to the top of my terminal view."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.scrollToTop"}
+          }
+      }]
+    },
+    {
+      "id": 9,
+      "q": ["I want to increase the amount of scrollback kept in the terminal buffer to 2000."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.scrollback": 2000}
+            }}
+      }]
+    },
+    {
+      "id": 10,
+      "q": ["I need to open the find view in the terminal to search for a specific string."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.focusFind"}
+          }
+      }]
+    },
+    {
+      "id": 11,
+      "q": ["I want to enable the smooth scrolling feature in the terminal view.",
+      "I'd like the terminal to scroll more fluidly, can we make that happen?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.smoothScrolling": true}
+            }}
+      }]
+    },
+    {
+      "id": 12,
+      "q": ["When I split the terminal, I want the new terminal to start in the same location as the original one."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.splitCwd": "inherited"}
+            }}
+      }]
+    },
+    {
+      "id": 13,
+      "q": ["I'd like to avoid any prompts when I close terminals that are running tasks. Can you help me with that?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.confirmOnKill": "never"}
+            }}
+      }]
+    },
+    {
+      "id": 14,
+      "q": ["I'd like to be prompted every time I try to close the window while there are still active terminal sessions. Can you make that happen?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.confirmOnKill": "always"}
+            }}
+      }]
+    },
+    {
+      "id": 15,
+      "q": ["Can you help me turn on the alert for terminal process termination with non-zero exit code?",
+        "I'd like to get notified whenever the terminal process doesn't end smoothly."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.showExitAlert": true}
+            }}
+      }]
+    }
+]

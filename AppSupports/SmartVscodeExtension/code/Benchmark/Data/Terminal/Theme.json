@@ -1,0 +1,168 @@
+[
+  {
+      "id": 1,
+      "q": ["I need to enlarge the terminal panel to full screen for better visibility."],
+      "a": [{
+         "executeCommand": {
+              "arguments": {"commandId": "workbench.action.toggleMaximizedPanel"}
+          }
+      }]
+    },
+    {
+      "id": 2,
+      "q": ["I want to change the default location of the terminal to the editor area."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.defaultLocation": "editor"}
+            }}
+      }]
+    },
+    {
+      "id": 3,
+      "q": ["Can you adjust the terminal columns to match the longest line in the terminal?"],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.sizeToContentWidth"}
+          }
+      }]
+    },
+    {
+      "id": 4,
+      "q": ["I need to set the terminal dimensions to 80 columns and 24 rows."],
+      "a": [{
+          "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.setDimensions"}
+          }
+      }]
+    },
+    {
+      "id": 5,
+      "q": ["Can you make it so that I only see the command status indicators on the left side of the terminal?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.shellIntegration.decorationsEnabled": "gutter"}
+            }}
+      }]
+    },
+    {
+      "id": 6,
+      "q": ["I want to enable the sticky scroll feature in the terminal so that I can easily see the command that the output belongs to.",
+        "I'm having trouble keeping track of the commands in the terminal. Is there a way to make the current command stay at the top?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.stickyScroll.enabled": true}
+            }}
+      }]
+    },
+    {
+      "id": 7,
+      "q": ["I want to change the font family of the terminal to 'Courier New'."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.fontFamily": "Courier New"}
+            }}
+      }]
+    },
+    {
+      "id": 8,
+      "q": ["I'd like to adjust the font size in the terminal to 14 pixels."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.fontSize": 14}
+            }}
+      }]
+    },
+    {
+      "id": 9,
+      "q": ["I'd like to increase the spacing between characters in the terminal to 2 pixels."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.letterSpacing": 2}
+            }}
+      }]
+    },
+    {
+      "id": 10,
+      "q": ["I want to increase the vertical spacing between characters in my terminal. Let's make it 20% more than the regular line height."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.lineHeight": 1.2}
+            }}
+      }]
+    },
+    {
+      "id": 11,
+      "q": ["I want to change the font weight of the normal text in the terminal to 'bold'."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.fontWeight": "bold"}
+            }}
+      }]
+    },
+    {
+      "id": 12,
+      "q": ["I want to always see the terminal's actions in the view header, can you set it up for me?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.tabs.showActions": "always"}
+            }}
+      }]
+    },
+    {
+      "id": 13,
+      "q": ["I want to change the text color of my terminal to green."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"workbench.colorCustomizations": {"terminal.foreground": "#00FF00"}}
+            }}
+      }]
+    },
+    {
+      "id": 14,
+      "q": ["I want to set the terminal to always use the bright ANSI color variant for bold text."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.drawBoldTextInBrightColors": true}
+            }}
+      }]
+    },
+    {
+      "id": 15,
+      "q": ["I need to switch to a different command line interface, specifically PowerShell."],
+      "a": [{
+           "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.newWithProfile"}
+          }
+      }]
+    },
+    {
+      "id": 16,
+      "q": ["Can you show me my recent terminal commands?"],
+      "a": [{
+           "executeCommand": {
+              "arguments": {"commandId": "workbench.action.terminal.runRecentCommand"}
+          }
+      }]
+    },
+    {
+      "id": 17,
+      "q": ["I don't want to see the terminal when I open VScode, regardless of whether there are any ongoing sessions."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.hideOnStartup": "always"}
+            }}
+      }]
+    }
+]

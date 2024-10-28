@@ -1,0 +1,6 @@
+[
+  {
+    "id": "workbench.action.configureLocale",
+    "desc": "Opens the locale configuration file where you can set the display language for VS Code."
+  }
+]

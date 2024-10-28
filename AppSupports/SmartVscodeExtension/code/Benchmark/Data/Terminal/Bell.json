@@ -1,0 +1,22 @@
+[
+  {
+      "id": 1,
+      "q": [ "I want to enable the visual bell in the terminal. Can you help me with that?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.enableVisualBell": true}
+            }}
+      }]
+  },
+  {
+      "id": 2,
+      "q": [ "I want the yellow bell icon to show for 2000 milliseconds when the terminal's bell is triggered."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.bellDuration": 2000}
+            }}
+      }]
+  }
+]

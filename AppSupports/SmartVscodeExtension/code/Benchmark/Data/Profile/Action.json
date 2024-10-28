@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to import a different profile for my project.",
+            "I need to bring in a new set of configurations for my project"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.profiles.actions.importProfile"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to change my profile."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.profiles.actions.switchProfile"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I need to create a new profile"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.profiles.actions.createProfile"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to export my profile."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.profiles.actions.exportProfile"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to delete a profile"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.profiles.actions.deleteProfile"}
+            }
+        }]
+    }
+]

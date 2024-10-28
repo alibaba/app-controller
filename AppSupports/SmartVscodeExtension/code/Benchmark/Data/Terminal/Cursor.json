@@ -1,0 +1,43 @@
+[
+  {
+      "id": 1,
+      "q": [ "I want to change the cursor style in the terminal to a line."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.cursorStyle": "block"}
+            }}
+      }]
+  },
+  {
+      "id": 2,
+      "q": [ "I want to adjust the cursor width in the terminal to 3 pixels when the cursor style is set to line.",
+        "I'm having trouble seeing the cursor in the terminal when it's set to line style. Can you make it a bit thicker, say about 3 pixels wide?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"editor.cursorWidth": 3}
+            }}
+      }]
+  },
+  {
+      "id": 3,
+      "q": [ "I want the cursor to blink when the terminal is focused, can you help me set that up?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.cursorBlinking": true}
+            }}
+      }]
+  },
+  {
+      "id": 4,
+      "q": [ "I want to change the style of the terminal cursor when it's not focused to 'block'."],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.cursorStyle": "block"}
+            }}
+      }]
+  }
+]

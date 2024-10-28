@@ -1,0 +1,16 @@
+[
+  {
+    "id": "terminal.integrated.enableVisualBell",
+    "desc": " Controls whether the visual terminal bell is enabled. This shows up next to the terminal's name.",
+    "example": {
+      "terminal.integrated.enableVisualBell": false
+    }
+  },
+  {
+    "id": "terminal.integrated.bellDuration",
+    "desc": " The number of milliseconds to show the bell within a terminal tab when triggered.",
+    "example": {
+      "terminal.integrated.bellDuration": 1000
+    }
+  }
+]

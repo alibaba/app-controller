@@ -1,0 +1,10 @@
+[
+  {
+    "id": "workbench.action.openRecent",
+    "desc": "Opens a quick pick menu to select from a list of recently opened files and workspaces."
+  },
+  {
+    "id": "revealFileInOS",
+    "desc": "Reveal the file in the OS file explorer."
+  }
+]

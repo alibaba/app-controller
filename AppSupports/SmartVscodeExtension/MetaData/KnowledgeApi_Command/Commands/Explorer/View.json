@@ -1,0 +1,6 @@
+[
+  {
+    "id": "workbench.view.explorer",
+    "desc": "Opens or focuses the Explorer view in the sidebar of VS Code."
+  }
+]

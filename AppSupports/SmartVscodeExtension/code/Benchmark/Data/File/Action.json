@@ -86,5 +86,98 @@
                 }
             }
         }]
+    },
+     {
+        "id": 9,
+        "q": ["I need to format the selected text in my code to make it more readable."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.formatSelection"}
+            }
+        }]
+    },
+    {
+        "id": 10,
+        "q": ["I need to go back to the previous location where my cursor was in the code","I want to return to the place I was editing before."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.navigateBack"}
+            }
+        }]
+    },
+     {
+        "id": 11,
+        "q": ["Can you help me navigate to line 50 in my current file?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.gotoLine"}
+            }
+        }]
+    },
+    {
+        "id": 12,
+        "q": ["Can you help me navigate to the beginning of my document?"],,
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.goToTopHover"}
+            }
+        }]
+    },
+    {
+        "id": 13,
+        "q": ["I need to quickly jump to the end of my current file."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.goToBottomHover"}
+            }
+        }]
+    },
+    {
+        "id": 14,
+        "q": ["I want to replace 'cat' with 'dog' in my project"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.startFindReplaceAction"}
+            }
+        }]
+    },
+    {
+        "id": 15,
+        "q": ["I need to open the find widget in the editor to search for a specific function."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "actions.find"}
+            }
+        }]
+    },
+    {
+        "id": 16,
+        "q": ["I need to convert the selected text in my document to lowercase."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.transformToLowercase"}
+            }
+        }]
+    },
+    {
+        "id": 17,
+        "q": ["Please convert the selected text into Camel Case style."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "editor.action.transformToCamelcase"}
+            }
+        }]
+    },
+    {
+        "id": 18,
+        "q": ["I want to enable the feature that automatically formats the line after I finish typing."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"editor.formatOnType": true}
+                }
+            }
+        }]
     }
+
 ]
