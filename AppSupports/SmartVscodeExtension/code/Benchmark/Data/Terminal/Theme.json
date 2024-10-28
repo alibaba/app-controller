@@ -164,5 +164,16 @@
                   "key2Value": {"terminal.integrated.hideOnStartup": "always"}
             }}
       }]
+    },
+    {
+      "id": 18,
+      "q": ["Can you change the minimum contrast ratio of terminal to 1 so that it uses the standard theme colors?"],
+      "a": [{
+          "setProperties": {
+              "arguments": {
+                  "key2Value": {"terminal.integrated.minimumContrastRatio": 1}
+              }
+          }
+      }]
     }
 ]
