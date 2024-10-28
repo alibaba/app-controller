@@ -1,0 +1,6 @@
+[
+    {
+        "id": "workbench.action.closeFolder",
+        "desc": "Closes the currently opened folder in VS Code."
+    }
+]

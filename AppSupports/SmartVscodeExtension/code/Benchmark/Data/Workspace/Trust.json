@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to manage the trust settings for my current workspace."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.trust.manage"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to set the handling of untrusted files in a trusted workspace to 'prompt'. So, every time an untrusted file is introduced, I will be asked how to handle it."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"security.workspace.trust.untrustedFiles": "prompt"}
+                }
+            }
+        }]
+    }
+    {
+        "id": 3,
+        "q": ["I want to trust all my empty windows by default."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"security.workspace.trust.emptyWindow": true  }
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["Can you help me turn on the Workspace Trust feature in my VS Code?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"security.workspace.trust.enabled": true  }
+                }
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to be asked for trust every time I open an untrusted workspace."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"security.workspace.trust.startupPrompt": "always"  }
+                }
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["I want to set the handling of untrusted files in a trusted workspace to always open without prompting."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"security.workspace.trust.untrustedFiles": "open"  }
+                }
+            }
+        }]
+    },
+    {
+        "id": 7,
+        "q": ["I want the Restricted Mode banner to always show up whenever I open an untrusted workspace."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"security.workspace.trust.banner": "always"  }
+                }
+            }
+        }]
+    }
+]

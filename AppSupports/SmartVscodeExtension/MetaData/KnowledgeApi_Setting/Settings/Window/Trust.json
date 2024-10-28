@@ -1,0 +1,44 @@
+[
+    {
+        "id": "security.workspace.trust.untrustedFiles",
+        "desc": " Controls how to handle opening untrusted files in a trusted workspace. This setting also applies to opening files in an empty window which is trusted via `security.workspace.trust.emptyWindow`.\n  - prompt: Ask how to handle untrusted files for each workspace. Once untrusted files are introduced to a trusted workspace, you will not be prompted again.\n  - open: Always allow untrusted files to be introduced to a trusted workspace without prompting.\n  - newWindow: Always open untrusted files in a separate window in restricted mode without prompting.",
+        "example": {
+            "security.workspace.trust.untrustedFiles": "prompt"
+        }
+    },
+    {
+        "id": "security.workspace.trust.emptyWindow",
+        "desc": " Controls whether or not the empty window is trusted by default within VS Code. When used with `security.workspace.trust.untrustedFiles`, you can enable the full functionality of VS Code without prompting in an empty window.",
+        "example": {
+            "security.workspace.trust.emptyWindow": true
+        }
+    },
+    {
+        "id": "security.workspace.trust.enabled",
+        "desc": " Controls whether or not Workspace Trust is enabled within VS Code.",
+        "example": {
+            "security.workspace.trust.enabled": true
+        }
+    },
+    {
+        "id": "security.workspace.trust.startupPrompt",
+        "desc": " Controls when the startup prompt to trust a workspace is shown.\n  - always: Ask for trust every time an untrusted workspace is opened.\n  - once: Ask for trust the first time an untrusted workspace is opened.\n  - never: Do not ask for trust when an untrusted workspace is opened.",
+        "example": {
+            "security.workspace.trust.startupPrompt": "once"
+        }
+    },
+    {
+        "id": "security.workspace.trust.untrustedFiles",
+        "desc": " Controls how to handle opening untrusted files in a trusted workspace. This setting also applies to opening files in an empty window which is trusted via `security.workspace.trust.emptyWindow`.\n  - prompt: Ask how to handle untrusted files for each workspace. Once untrusted files are introduced to a trusted workspace, you will not be prompted again.\n  - open: Always allow untrusted files to be introduced to a trusted workspace without prompting.\n  - newWindow: Always open untrusted files in a separate window in restricted mode without prompting.",
+        "example": {
+            "security.workspace.trust.untrustedFiles": "prompt"
+        }
+    },
+    {
+        "id": "security.workspace.trust.banner",
+        "desc": " Controls when the restricted mode banner is shown.\n  - always: Show the banner every time an untrusted workspace is open.\n  - untilDismissed: Show the banner when an untrusted workspace is opened until dismissed.\n  - never: Do not show the banner when an untrusted workspace is open.",
+        "example": {
+            "security.workspace.trust.banner": "untilDismissed"
+        }
+    }
+]

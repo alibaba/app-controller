@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to copy the current file into a new window. Can you help me with that?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.copyEditorToNewWindow"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to move the current editor into a new window."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.moveEditorGroupToNewWindow"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to set the window behavior to always open files in a new window when I select a file or folder from the File menu."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"window.openFilesInNewWindow": "off"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I want to set the window behavior to always open a new window when I open a folder."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"window.openFoldersInNewWindow": "on"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["Can you set VS Code to only restore the last window I worked on when I start a new session?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"window.restoreWindows": "one"}
+                }
+            }
+        }]
+    }
+]

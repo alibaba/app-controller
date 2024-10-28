@@ -1,0 +1,6 @@
+[
+    {
+        "id": "workbench.trust.manage",
+        "desc": "Opens the workspace trust management interface allowing users to manage the trust settings for their workspaces in VS Code."
+    }
+]

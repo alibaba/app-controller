@@ -1,0 +1,10 @@
+[
+    {
+        "id": "workbench.action.copyEditorToNewWindow",
+        "desc": "Copies the current editor into a new window."
+    },
+    {
+        "id": "workbench.action.moveEditorGroupToNewWindow",
+        "desc": "Moves the active editor group into a new window."
+    }
+]

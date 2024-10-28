@@ -27,6 +27,15 @@
                 }
             }
         }]
+    },
+    {
+        "id": 4,
+        "q": ["I need to open the panel in my screen."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.togglePanel"}
+            }
+        }]
     }
     
 ]

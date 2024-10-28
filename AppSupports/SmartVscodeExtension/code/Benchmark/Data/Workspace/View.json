@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to open a view of my recently opened folders and workspaces in VScode."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openRecent"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["Can you help me open a view that lists all the symbols in my workspace?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.showAllSymbols"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I need to open a view that allows me to search for symbols across all files in my workspace."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.gotoSymbol"}
+            }
+        }]
+    }
+]

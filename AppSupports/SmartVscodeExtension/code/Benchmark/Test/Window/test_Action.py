@@ -1,34 +1,40 @@
 import unittest
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.BaseTest import BenchmarkTest
 
-class TestWorkbenchPanel(BenchmarkTest):
+class TestWindowAction(BenchmarkTest):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        test_data_path = 'Workbench/Panel.json'
+        test_data_path = 'Window/Action.json'
         cls.load_tasks(cls, test_data_path)
-
+        
     def test_1(self):
         """
-        Set the panel size.
+        Copy the current editor into a new window.
         """
         self.evaluate_task()
-        
+    
     def test_2(self):
         """
-        Open PROBLEMS panel.
+        Move the active editor into a new window.
         """
         self.evaluate_task()
     
     def test_3(self):
         """
-        Set the layout of the panel.
+        Control whether files should open in a new window.
         """
         self.evaluate_task()
-
+    
     def test_4(self):
         """
-        Toggles the visibility of the panel area.
+        Control whether folders should open in a new window.
+        """
+        self.evaluate_task()
+    
+    def test_5(self):
+        """
+        Control how windows are being reopened after starting for the first time.
         """
         self.evaluate_task()
         
