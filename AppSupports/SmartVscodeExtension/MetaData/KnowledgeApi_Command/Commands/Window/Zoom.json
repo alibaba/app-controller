@@ -1,0 +1,14 @@
+[
+    {
+        "id": "workbench.action.zoomIn",
+        "desc": "Increases the zoom level of the editor, making text and interface elements larger."
+    },
+    {
+        "id": "workbench.action.zoomOut",
+        "desc": "Decreases the zoom level of the editor, making the text and interface elements smaller."
+    },
+    {
+        "id": "workbench.action.zoomReset",
+        "desc": "Resets the zoom level of the editor to the default value."
+    }
+]

@@ -1,0 +1,6 @@
+[
+    {
+        "id": "workbench.action.customizeLayout",
+        "desc": "Opens the layout customization interface allowing users to adjust the appearance and arrangement of the user interface components within VS Code."
+    }
+]

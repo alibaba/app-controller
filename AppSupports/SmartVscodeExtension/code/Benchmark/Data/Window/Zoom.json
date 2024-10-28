@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to increase the zoom level of the editor."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.zoomIn"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I want to decrease the zoom level of the editor."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.zoomOut"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to reset the zoom level of the editor to the default value."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.zoomReset"}
+            }
+        }]
+    }
+]

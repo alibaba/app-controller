@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "q": ["Set the font size in the terminal to 14 pixels."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"terminal.integrated.fontSize": 14}
+                }
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["Can you change the minimum contrast ratio of terminal to 1 so that it uses the standard theme colors?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"terminal.integrated.minimumContrastRatio": 1}
+                }
+            }
+        }]
+    }
+    
+]

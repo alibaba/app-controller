@@ -16,6 +16,17 @@
                 "arguments": {"commandId": "workbench.actions.view.problems"}
             }
         }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to set the default location of the panel to the right of the editor area."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"workbench.panel.defaultLocation": "right"}
+                }
+            }
+        }]
     }
     
 ]

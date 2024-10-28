@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you help me open the settings editor?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openSettings"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["Can you help me open the global settings editor to configure my user settings?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openGlobalSettings"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to know how to access the workspace settings editor for my current project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openWorkspaceSettings"}
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["Can you help me find a way to view the default settings in their raw JSON format?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openRawDefaultSettings"}
+            }
+        }]
+    },
+    {
+        "id": 5,
+        "q": ["I want to know how to directly open the global settings.json file for editing."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openSettingsJson"}
+            }
+        }]
+    },
+    {
+        "id": 6,
+        "q": ["Can you help me open the settings.json file for the current workspace folder?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openFolderSettingsFile"}
+            }
+        }]
+    }
+    
+]
