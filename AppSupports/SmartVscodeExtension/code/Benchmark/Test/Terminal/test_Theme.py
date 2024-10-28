@@ -111,6 +111,12 @@ class TestTerminalTheme(BenchmarkTest):
         """
         self.evaluate_task()
 
+    def test_18(self):
+        """
+        Set the mininum contrast ratio of terminal.
+        """
+        self.evaluate_task()
+
 
 if __name__ == "__main__":
     unittest.main()

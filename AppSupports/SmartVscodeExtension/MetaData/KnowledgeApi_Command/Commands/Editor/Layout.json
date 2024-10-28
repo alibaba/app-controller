@@ -44,39 +44,39 @@
     "desc": "Copies the current editor group into a new window."
   },
   {
-    "commandId": "workbench.action.editorLayoutSingle",
+    "id": "workbench.action.editorLayoutSingle",
     "desc": "Sets the editor layout to a single column or single editor group."
   },
   {
-    "commandId": "workbench.action.editorLayoutTwoColumns",
+    "id": "workbench.action.editorLayoutTwoColumns",
     "desc": "Arranges the editor layout into two columns."
   },
   {
-    "commandId": "workbench.action.editorLayoutThreeColumns",
+    "id": "workbench.action.editorLayoutThreeColumns",
     "desc": "Arranges the editor layout into three columns."
   },
   {
-    "commandId": "workbench.action.editorLayoutTwoRows",
+    "id": "workbench.action.editorLayoutTwoRows",
     "desc": "Arranges the editor layout into two horizontal rows."
   },
   {
-    "commandId": "workbench.action.editorLayoutThreeRows",
+    "id": "workbench.action.editorLayoutThreeRows",
     "desc": "Arranges the editor layout into three horizontal rows."
   },
   {
-    "commandId": "workbench.action.editorLayoutTwoByTwoGrid",
+    "id": "workbench.action.editorLayoutTwoByTwoGrid",
     "desc": "Arranges the editor layout into a two by two grid."
   },
   {
-    "commandId": "workbench.action.editorLayoutTwoRowsRight",
+    "id": "workbench.action.editorLayoutTwoRowsRight",
     "desc": "Arranges the editor layout into two rows with the second row to the right."
   },
   {
-    "commandId": "workbench.action.editorLayoutTwoColumnsBottom",
+    "id": "workbench.action.editorLayoutTwoColumnsBottom",
     "desc": "Arranges the editor layout into two columns with an additional bottom panel."
   },
   {
-    "commandId": "workbench.action.toggleCenteredLayout",
+    "id": "workbench.action.toggleCenteredLayout",
     "desc": "Toggles the centered layout mode in the editor, which centers the code editor in the window for a more focused coding experience."
   }
 ]

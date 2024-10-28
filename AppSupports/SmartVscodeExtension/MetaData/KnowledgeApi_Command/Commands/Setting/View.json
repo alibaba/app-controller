@@ -1,0 +1,26 @@
+[
+    {
+        "id": "workbench.action.openSettings",
+        "desc": "Launches the main Settings editor for configuration."
+    },
+    {
+        "id": "workbench.action.openGlobalSettings",
+        "desc": "Accesses the global settings editor for user-specific configurations in VS Code."
+    },
+    {
+        "id": "workbench.action.openWorkspaceSettings",
+        "desc": "Opens the settings editor dedicated to the current workspace."
+    },
+    {
+        "id": "workbench.action.openRawDefaultSettings",
+        "desc": "Opens the default settings.json file."
+    },
+    {
+        "id": "workbench.action.openSettingsJson",
+        "desc": "Directly opens the global settings.json file for modification."
+    },
+    {
+        "id": "workbench.action.openFolderSettingsFile",
+        "desc": "Opens the settings.json file specific to the active workspace folder in VS Code."
+    }
+]

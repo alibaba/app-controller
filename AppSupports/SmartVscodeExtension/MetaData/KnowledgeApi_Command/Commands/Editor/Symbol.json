@@ -1,10 +1,10 @@
 [
   {
-    "commandId": "editor.action.revealDefinition",
+    "id": "editor.action.revealDefinition",
     "desc": "Navigates to the definition of the symbol at the current cursor position in the editor."
   },
   {
-    "commandId": "editor.action.goToReferences",
+    "id": "editor.action.goToReferences",
     "desc": "Navigates to the references of the symbol under the cursor, showing them in a peek view."
   }
 ]

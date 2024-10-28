@@ -1,0 +1,9 @@
+[
+    {
+        "id": "workbench.panel.defaultLocation",
+        "desc": " Controls the default location of the panel (Terminal, Debug Console, Output, Problems) in a new workspace. It can either show at the bottom, right, or left of the editor area.",
+        "example": {
+            "workbench.panel.defaultLocation": "bottom"
+        }
+    }
+]

@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "q": ["I want to maixmize the panel size."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleMaximizedPanel"}
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to navigate to the warnings in my current project."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.actions.view.problems"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I want to set the default location of the panel to the right of the editor area."],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"workbench.panel.defaultLocation": "right"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 4,
+        "q": ["I need to open the panel in my screen."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.togglePanel"}
+            }
+        }]
+    }
+    
+]

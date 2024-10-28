@@ -1,0 +1,23 @@
+[
+    {
+        "id": "window.openFilesInNewWindow",
+        "desc": " Controls whether files should open in a new window when using a command line or file dialog.\n Note that there can still be cases where this setting is ignored (e.g. when using the `--new-window` or `--reuse-window` command line option).\n  - on: Files will open in a new window.\n  - off: Files will open in the window with the files' folder open or the last active window.\n  - default: Files will open in a new window unless picked from within the application (e.g. via the File menu).",
+        "example": {
+            "window.openFilesInNewWindow": "off"
+        }
+    },
+    {
+        "id": "window.openFoldersInNewWindow",
+        "desc": " Controls whether folders should open in a new window or replace the last active window.\n Note that there can still be cases where this setting is ignored (e.g. when using the `--new-window` or `--reuse-window` command line option).\n  - on: Folders will open in a new window.\n  - off: Folders will replace the last active window.\n  - default: Folders will open in a new window unless a folder is picked from within the application (e.g. via the File menu).",
+        "example": {
+            "window.openFoldersInNewWindow": "default"
+        }
+    },
+    {
+        "id": "window.restoreWindows",
+        "desc": " Controls how windows are being reopened after starting for the first time. This setting has no effect when the application is already running.\n  - preserve: Always reopen all windows. If a folder or workspace is opened (e.g. from the command line) it opens as a new window unless it was opened before. If files are opened they will open in one of the restored windows.\n  - all: Reopen all windows unless a folder, workspace or file is opened (e.g. from the command line).\n  - folders: Reopen all windows that had folders or workspaces opened unless a folder, workspace or file is opened (e.g. from the command line).\n  - one: Reopen the last active window unless a folder, workspace or file is opened (e.g. from the command line).\n  - none: Never reopen a window. Unless a folder or workspace is opened (e.g. from the command line), an empty window will appear.",
+        "example": {
+            "window.restoreWindows": "all"
+        }
+    }
+]

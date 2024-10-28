@@ -7,37 +7,37 @@
     }
   },
   {
-    "settingId": "workbench.editor.enablePreview",
+    "id": "workbench.editor.enablePreview",
     "desc": " Controls whether opened editors show as preview editors. Preview editors do not stay open, are reused until explicitly set to be kept open (via double-click or editing), and show file names in italics.",
-    "setting": {
+    "example": {
       "workbench.editor.enablePreview": true
     }
   },
   {
-    "settingId": "workbench.editor.showTabs",
+    "id": "workbench.editor.showTabs",
     "desc": " Controls whether opened editors should show as individual tabs, one single large tab or if the title area should not be shown.\n  - multiple: Each editor is displayed as a tab in the editor title area.\n  - single: The active editor is displayed as a single large tab in the editor title area.\n  - none: The editor title area is not displayed.",
-    "setting": {
+    "example": {
       "workbench.editor.showTabs": "multiple"
     }
   },
   {
-    "settingId": "workbench.editor.titleScrollbarSizing",
+    "id": "workbench.editor.titleScrollbarSizing",
     "desc": " Controls the height of the scrollbars used for tabs and breadcrumbs in the editor title area.\n  - default: The default size.\n  - large: Increases the size, so it can be grabbed more easily with the mouse.",
-    "setting": {
+    "example": {
       "workbench.editor.titleScrollbarSizing": "default"
     }
   },
   {
-    "settingId": "workbench.editor.openPositioning",
+    "id": "workbench.editor.openPositioning",
     "desc": " Controls where editors open. Select `left` or `right` to open editors to the left or right of the currently active one. Select `first` or `last` to open editors independently from the currently active one.",
-    "setting": {
+    "example": {
       "workbench.editor.openPositioning": "right"
     }
   },
   {
-    "settingId": "workbench.editor.wrapTabs",
+    "id": "workbench.editor.wrapTabs",
     "desc": " Controls whether tabs should be wrapped over multiple lines when exceeding available space or whether a scrollbar should appear instead. This value is ignored when `workbench.editor.showTabs` is not set to `multiple`.",
-    "setting": {
+    "example": {
       "workbench.editor.wrapTabs": false
     }
   }

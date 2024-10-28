@@ -1,43 +1,43 @@
 [
   {
-    "settingId": "editor.minimap.showSlider",
+    "id": "editor.minimap.showSlider",
     "desc": " Controls when the minimap slider is shown.",
-    "setting": {
+    "example": {
       "editor.minimap.showSlider": "mouseover"
     }
   },
   {
-    "settingId": "editor.minimap.side",
+    "id": "editor.minimap.side",
     "desc": " Controls the side where to render the minimap.",
-    "setting": {
+    "example": {
       "editor.minimap.side": "right"
     }
   },
   {
-    "settingId": "editor.minimap.size",
+    "id": "editor.minimap.size",
     "desc": " Controls the size of the minimap.\n  - proportional: The minimap has the same size as the editor contents (and might scroll).\n  - fill: The minimap will stretch or shrink as necessary to fill the height of the editor (no scrolling).\n  - fit: The minimap will shrink as necessary to never be larger than the editor (no scrolling).",
-    "setting": {
+    "example": {
       "editor.minimap.size": "proportional"
     }
   },
   {
-    "settingId": "editor.minimap.autohide",
+    "id": "editor.minimap.autohide",
     "desc": " Controls whether the minimap is hidden automatically.",
-    "setting": {
+    "example": {
       "editor.minimap.autohide": false
     }
   },
   {
-    "settingId": "editor.minimap.enabled",
+    "id": "editor.minimap.enabled",
     "desc": " Controls whether the minimap is shown.",
-    "setting": {
+    "example": {
       "editor.minimap.enabled": true
     }
   },
   {
-    "settingId": "editor.minimap.maxColumn",
+    "id": "editor.minimap.maxColumn",
     "desc": " Limit the width of the minimap to render at most a certain number of columns.",
-    "setting": {
+    "example": {
       "editor.minimap.maxColumn": 120
     }
   }

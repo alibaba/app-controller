@@ -1,0 +1,6 @@
+[
+    {
+        "id": "workbench.action.toggleSidebarVisibility",
+        "desc": "Toggles the visibility of the sidebar in VS Code."
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "workbench.action.openRecent",
+        "desc": "Opens a quick pick menu to select from a list of recently opened files and workspaces."
+    },
+    {
+        "id": "workbench.action.showAllSymbols",
+        "desc": "Displays all symbols defined in the current workspace and can be opened."
+    },
+    {
+        "id": "workbench.action.gotoSymbol",
+        "desc": "Opens the 'Go to Symbol in Workspace' palette that allows searching for symbols across all files in the workspace."
+    }
+]

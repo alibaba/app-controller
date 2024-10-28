@@ -1,0 +1,9 @@
+[
+    {
+        "id": "workbench.activityBar.location",
+        "desc": " Controls the location of the Activity Bar. It can either show to the `default` or `top` / `bottom` of the Primary and Secondary Side Bar or `hidden`.\n  - default: Show the Activity Bar of the Primary Side Bar on the side.\n  - top: Show the Activity Bar on top of the Primary and Secondary Side Bar.\n  - bottom: Show the Activity Bar at the bottom of the Primary and Secondary Side Bar.\n  - hidden: Hide the Activity Bar in the Primary and Secondary Side Bar.",
+        "example": {
+            "workbench.activityBar.location": "default"
+        }
+    }
+]

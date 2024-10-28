@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you hide the Activity Bar in the Primary and Secondary Side Bars for me?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"workbench.activityBar.location": "hidden"}
+                }
+            }
+        }]
+    }
+]

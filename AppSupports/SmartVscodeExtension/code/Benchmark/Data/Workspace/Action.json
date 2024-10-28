@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you help me to close the current project folder?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.closeFolder"}
+            }
+        }]
+    }
+]

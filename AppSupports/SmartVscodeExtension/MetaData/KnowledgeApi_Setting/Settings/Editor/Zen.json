@@ -1,57 +1,57 @@
 [
   {
-    "settingId": "zenMode.centerLayout",
+    "id": "zenMode.centerLayout",
     "desc": " Controls whether turning on Zen Mode also centers the layout.",
-    "setting": {
+    "example": {
       "zenMode.centerLayout": true
     }
   },
   {
-    "settingId": "zenMode.fullScreen",
+    "id": "zenMode.fullScreen",
     "desc": " Controls whether turning on Zen Mode also puts the workbench into full screen mode.",
-    "setting": {
+    "example": {
       "zenMode.fullScreen": true
     }
   },
   {
-    "settingId": "zenMode.hideActivityBar",
+    "id": "zenMode.hideActivityBar",
     "desc": " Controls whether turning on Zen Mode also hides the activity bar either at the left or right of the workbench.",
-    "setting": {
+    "example": {
       "zenMode.hideActivityBar": true
     }
   },
   {
-    "settingId": "zenMode.hideLineNumbers",
+    "id": "zenMode.hideLineNumbers",
     "desc": " Controls whether turning on Zen Mode also hides the editor line numbers.",
-    "setting": {
+    "example": {
       "zenMode.hideLineNumbers": true
     }
   },
   {
-    "settingId": "zenMode.hideStatusBar",
+    "id": "zenMode.hideStatusBar",
     "desc": " Controls whether turning on Zen Mode also hides the status bar at the bottom of the workbench.",
-    "setting": {
+    "example": {
       "zenMode.hideStatusBar": true
     }
   },
   {
-    "settingId": "zenMode.restore",
+    "id": "zenMode.restore",
     "desc": " Controls whether a window should restore to Zen Mode if it was exited in Zen Mode.",
-    "setting": {
+    "example": {
       "zenMode.restore": true
     }
   },
   {
-    "settingId": "zenMode.showTabs",
+    "id": "zenMode.showTabs",
     "desc": " Controls whether turning on Zen Mode should show multiple editor tabs, a single editor tab, or hide the editor title area completely.\n  - multiple: Each editor is displayed as a tab in the editor title area.\n  - single: The active editor is displayed as a single large tab in the editor title area.\n  - none: The editor title area is not displayed.",
-    "setting": {
+    "example": {
       "zenMode.showTabs": "multiple"
     }
   },
   {
-    "settingId": "zenMode.silentNotifications",
+    "id": "zenMode.silentNotifications",
     "desc": " Controls whether notifications do not disturb mode should be enabled while in Zen Mode. If true, only error notifications will pop out.",
-    "setting": {
+    "example": {
       "zenMode.silentNotifications": true
     }
   }

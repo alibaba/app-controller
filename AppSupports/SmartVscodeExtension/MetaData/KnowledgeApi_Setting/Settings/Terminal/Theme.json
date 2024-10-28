@@ -96,5 +96,12 @@
     "example": {
       "terminal.integrated.hideOnStartup": "never"
     }
+  },
+  {
+    "id": "terminal.integrated.minimumContrastRatio",
+    "desc": " When set, the foreground color of each cell will change to try meet the contrast ratio specified. Example values:\n - 1: Do nothing and use the standard theme colors.\n - 4.5: WCAG AA compliance (minimum).\n - 7: WCAG AAA compliance (enhanced).\n - 21: White on black or black on white.",
+    "example": {
+      "terminal.integrated.minimumContrastRatio": 4.5
+    }
   }
 ]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you help me move the activity bar to the right side of the workbench?"],
+        "a": [{
+            "setProperties": {
+                "arguments": {
+                    "key2Value": {"workbench.sideBar.location": "right"}
+                }
+            }
+        }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to hide the sidebar to get a full view of my code."],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.toggleSidebarVisibility"}
+            }
+        }]
+    }
+]

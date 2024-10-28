@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "q": ["Can you open the 'Customize Layout' dropdown for me?"],
+        "a": [{
+            "executeCommand": {
+                "arguments": {"commandId": "workbench.action.customizeLayout"}
+            }
+        }]
+    }
+]

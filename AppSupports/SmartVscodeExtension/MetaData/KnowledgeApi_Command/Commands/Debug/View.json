@@ -1,10 +1,10 @@
 [
       {
-        "commandId": "workbench.view.debug",
+        "id": "workbench.view.debug",
         "desc": "Opens the Debug view where you can launch configurations, view call stacks, and manage breakpoints."
     },
       {
-        "commandId": "workbench.debug.action.toggleRepl",
+        "id": "workbench.debug.action.toggleRepl",
         "desc": "Toggles the display of the Debug Console panel in Visual Studio Code."
     }
 ]

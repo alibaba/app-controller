@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "q": ["I need to set the keyboard shortcut for the command 'workbench.files.action.collapseExplorerFolders'.",
+            "I need to set the keyboard shortcut for the operate 'collapse all folders'."],
+        "a": [{
+            "openAndSetKeybinding": {
+                "arguments": {
+                    "commandName": "@:type(x) is str and ('collapse' in x.lower() and 'folders' in x.lower())"
+                }
+            }
+        }]
+    }
+]

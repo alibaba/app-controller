@@ -1,0 +1,6 @@
+[
+    {
+        "id": "workbench.action.toggleKeybindingsLog",
+        "desc": "Toggles the logging of dispatched keybinding events in the developer tools console."
+    }
+]

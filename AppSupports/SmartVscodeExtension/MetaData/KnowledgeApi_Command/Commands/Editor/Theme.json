@@ -1,22 +1,22 @@
 [
   {
-    "commandId": "workbench.action.gotoSymbol",
+    "id": "workbench.action.gotoSymbol",
     "desc": "Opens the 'Go to Symbol in Workspace' palette that allows searching for symbols across all files in the workspace."
   },
   {
-    "commandId": "workbench.action.closeAllEditors",
+    "id": "workbench.action.closeAllEditors",
     "desc": "Closes all editor windows in the currently active group."
   },
   {
-    "commandId": "workbench.action.closeEditorsInOtherGroups",
+    "id": "workbench.action.closeEditorsInOtherGroups",
     "desc": "Closes all editors in editor groups other than the one that has the current active editor."
   },
   {
-    "commandId": "workbench.action.closeEditorInAllGroups",
+    "id": "workbench.action.closeEditorInAllGroups",
     "desc": "Closes the currently active editor in all editor groups."
   },
   {
-    "commandId": "workbench.action.openWalkthrough",
+    "id": "workbench.action.openWalkthrough",
     "desc": "Opens an interactive walkthrough for VS Code features or extensions."
   }
 ]

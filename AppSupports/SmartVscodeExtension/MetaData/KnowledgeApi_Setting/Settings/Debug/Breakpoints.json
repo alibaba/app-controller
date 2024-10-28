@@ -1,15 +1,15 @@
 [
   {
-    "settingId": "debug.showBreakpointsInOverviewRuler",
+    "id": "debug.showBreakpointsInOverviewRuler",
     "desc": " Controls whether breakpoints should be shown in the overview ruler.",
-    "setting": {
+    "example": {
       "debug.showBreakpointsInOverviewRuler": false
     }
   },
   {
-    "settingId": "debug.gutterMiddleClickAction",
+    "id": "debug.gutterMiddleClickAction",
     "desc": " Controls the action to perform when clicking the editor gutter with the middle mouse button.\n  - logpoint: Add Logpoint.\n  - conditionalBreakpoint: Add Conditional Breakpoint.\n  - triggeredBreakpoint: Add Triggered Breakpoint.\n  - none: Don't perform any action.",
-    "setting": {
+    "example": {
       "debug.gutterMiddleClickAction": "logpoint"
     }
   }

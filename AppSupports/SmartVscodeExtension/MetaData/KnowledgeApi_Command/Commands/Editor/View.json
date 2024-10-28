@@ -1,6 +1,6 @@
 [
   {
-    "commandId": "workbench.action.showInteractivePlayground",
+    "id": "workbench.action.showInteractivePlayground",
     "desc": "Opens the Interactive Playground where you can learn about and experiment with VS Code features interactively."
   }
 ]
