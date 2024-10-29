@@ -1,8 +1,8 @@
 [
   {
-    "settingId": "files.associations",
+    "id": "files.associations",
     "desc": " Configure glob patterns of file associations to languages.",
-    "setting": {
+    "example": {
       "files.associations": {}
     }
   }

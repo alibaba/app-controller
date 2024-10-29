@@ -8,7 +8,6 @@ import sys
 # from HTMLTestRunner.HTMLTestRunner import HTMLTestRunner
 from XTestRunner import HTMLTestRunner
 from XTestRunner.config import RunResult
-from BeautifulReport import BeautifulReport
 
 # test_model = "gpt-4-turbo"
 test_model = "qwen-max"
