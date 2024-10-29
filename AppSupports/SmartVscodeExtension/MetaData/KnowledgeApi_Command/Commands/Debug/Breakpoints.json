@@ -13,7 +13,7 @@
   },
   {
     "id": "editor.debug.action.triggerByBreakpoint",
-    "desc": "Triggers a breakpoint action in the editor when debugging."
+    "desc": "A triggered breakpoint is a breakpoint that is automatically enabled once another breakpoint is hit. "
   },
   {
     "id": "debug.editFunctionBreakpointHitCount",
@@ -42,6 +42,10 @@
   {
     "id": "workbench.view.debug",
     "desc": "Opens the Debug view where you can launch configurations, view call stacks, and manage breakpoints."
+  },
+  {
+    "id": "workbench.debug.action.focusBreakpointsView",
+    "desc": "Focuses the breakpoints view in the debug sidebar in VS Code."
   },
   {
     "id": "workbench.debug.viewlet.action.addDataBreakpointOnAddress",

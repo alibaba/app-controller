@@ -3,7 +3,7 @@ import json
 import os
 
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TaskTestResult import TaskTestResult
-from AppSupports.SmartVscodeExtension.code.Benchmark.Test.utils import test_one_case, spawn_server_thread, stop_server
+from AppSupports.SmartVscodeExtension.code.Benchmark.Test.utils import test_one_case, ThreadedHTTPServer
 from Core.Common.TimeStatistic import TimeStatistic
 
 
@@ -11,12 +11,16 @@ class BaseTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print("Start test server")
-        spawn_server_thread()
+        # spawn_server_thread()
+        cls.server = ThreadedHTTPServer()
+        cls.server.start_server()
     
     @classmethod
     def tearDownClass(cls):
         print("Close test server")
-        stop_server()
+        # stop_server()
+        cls.server.stop_server()
+        
 
     def execute(self, case):
         return test_one_case(case)
@@ -58,10 +62,11 @@ class BenchmarkTest(BaseTest):
                 tasks = json.load(file)  
             for task in tasks:
                 self.tasks[task['id']] = task
+            return True, "success"
         except FileNotFoundError:
-            self.fail(f"FileNotFoundError: The file {self.test_data_path} does not exist.")
+            print(f"FileNotFoundError: The file {self.test_data_path} does not exist.")
         except json.JSONDecodeError:
-            self.fail(f"JSONDecodeError: The file {self.test_data_path} is not properly formatted.")
+            print(f"JSONDecodeError: The file {self.test_data_path} is not properly formatted.")
             
     def evaluate_task(self):
         

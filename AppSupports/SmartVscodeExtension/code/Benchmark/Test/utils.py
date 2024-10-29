@@ -44,27 +44,25 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
 
-def run_server(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=TEST_CLIENT_PORT):
-    global httpd
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
+class ThreadedHTTPServer:
+    def __init__(self, host='localhost', port=5000):
+        self.server = HTTPServer((host, port), SimpleHTTPRequestHandler)
+        self.server_thread = None
+        self.stop_event = threading.Event()
 
-def spawn_server_thread():
-    global server_thread
-    server_thread = threading.Thread(target=run_server, kwargs={"port": TEST_CLIENT_PORT})
-    # server_thread.daemon = True
-    server_thread.start()
+    def run_server(self):
+        print("Starting server...")
+        self.server.serve_forever()  # 使用 serve_forever() 来持续监听
 
-def stop_server():
-    if 'httpd' in globals():
-        httpd.shutdown()
-        httpd.server_close()
-    # httpd = http_queue.get(block=True)
-    # httpd.shutdown()
-    # httpd.server_close()
-    if 'server_thread' in globals():
-        server_thread.join()
+    def start_server(self):
+        self.server_thread = threading.Thread(target=self.run_server)
+        self.server_thread.start()
+
+    def stop_server(self):
+        print("Stopping server...")
+        self.server.shutdown()  # 关闭HTTPServer
+        self.server_thread.join()  # 等待线程结束
+        print("Server thread has been joined.")
 
 
 

@@ -5,7 +5,7 @@
         "I'm trying to troubleshoot my code and need to see what's happening with my variables. Can you show me where to find this information?"],
       "a": [{
           "executeCommand": {
-              "arguments": {"commandId": "workbench.view.debug"}
+              "arguments": {"commandId": "workbench.debug.action.focusVariablesView"}
           }
       }]
     },
@@ -51,7 +51,7 @@
     },
     {
       "id": 6,
-      "q": [ "Can you help me open the Debug toolbar? I need to debug my code."],
+      "q": [ "Can you help me show the Debug toolbar? I need to debug my code."],
       "a": [{
           "setProperties": {
               "arguments": {

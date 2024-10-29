@@ -7,6 +7,8 @@
             "executeCommand": {
                 "arguments": {"commandId": "editor.debug.action.toggleBreakpoint"}
             }
+        }, {
+            "toggleBreakpointAtLine": {"arguments": {}}
         }]
     },
     {
@@ -43,8 +45,7 @@
     },
     {
       "id": 5,
-      "q": [ "I want to automatically enable breakpoints when a specific breakpoint is hit in my code.",
-         "I need my VScode to automatically pause execution when a certain part of my code is reached"],
+      "q": [ "I want to automatically enable breakpoints when a specific breakpoint is hit in my code."],
       "a": [{
           "executeCommand": {
               "arguments": {"commandId": "editor.debug.action.triggerByBreakpoint"}
@@ -99,8 +100,8 @@
     },
     {
       "id": 11,
-      "q": ["Can you help me disable the function that shows breakpoints in the editor's overview ruler?",
-      "I'd like to see where I've set breakpoints directly on the side bar of my editor, can you make that happen?"],
+      "q": ["Can you help me enable the function that shows breakpoints in the editor's overview ruler?",
+      "I'd like to see where I've set breakpoints directly on the overview ruler of my editor, can you make that happen?"],
       "a": [{
           "setProperties": {
               "arguments": {
@@ -114,7 +115,7 @@
       "q": ["I need to see all the breakpoints in my code, can you help me with that?"],
       "a": [{
           "executeCommand": {
-              "arguments": {"commandId": "workbench.view.debug"}
+              "arguments": {"commandId": "workbench.debug.action.focusBreakpointsView"}
           }
       }]
     },
