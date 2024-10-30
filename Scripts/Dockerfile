@@ -4,6 +4,7 @@ FROM ubuntu:18.04
 # Set enviroment variables for llm4api service
 ARG OPENAI_BASE_URL
 ARG OPENAI_API_KEY
+ARG DASHSCOPE_API_KEY
 ARG SERVER_PORT
 
 ENV APP_CONTROLLER_PROJECT_PATH=/usr/local/bin/app-controller
@@ -12,6 +13,7 @@ ENV APP_CONTROLLER_PYTHON_NAME=app-controller
 ENV APP_CONTROLLER_SERVER_PORT=${SERVER_PORT}
 ENV OPENAI_BASE_URL=${OPENAI_BASE_URL}
 ENV OPENAI_API_KEY=${OPENAI_API_KEY}
+ENV DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
 
 # Set environment to non-interactive to avoid any prompts during the build process
 ENV DEBIAN_FRONTEND=noninteractive
@@ -41,20 +43,20 @@ RUN mkdir -p ${CONDA_DIR} && \
 
 RUN ${CONDA_DIR}/bin/conda init
 
-RUN ${CONDA_DIR}/bin/conda create --name ${APP_CONTROLLER_PYTHON_NAME} python=3.10
+RUN ${CONDA_DIR}/bin/conda create --name ${APP_CONTROLLER_PYTHON_NAME} python=3.9
 
 # Install llm4api service
-RUN git -c http.sslVerify=false clone --depth 1 --branch main https://github.com/alibaba/app-controller.git ${APP_CONTROLLER_PROJECT_PATH}
+RUN git -c http.sslVerify=false clone --depth 1 --branch dev https://github.com/alibaba/app-controller.git ${APP_CONTROLLER_PROJECT_PATH}
 
 # Install libraries
 RUN source ${CONDA_DIR}/bin/activate ${APP_CONTROLLER_PYTHON_NAME} && \
     cd ${APP_CONTROLLER_PROJECT_PATH} && \
     pip install -r requirements.txt
 
-COPY entrypoint.sh ${APP_CONTROLLER_PROJECT_PATH}/entrypoint.sh
+# COPY entrypoint.sh ${APP_CONTROLLER_PROJECT_PATH}/entrypoint.sh
 
-RUN chmod +x ${APP_CONTROLLER_PROJECT_PATH}/entrypoint.sh
+# RUN chmod +x ${APP_CONTROLLER_PROJECT_PATH}/entrypoint.sh
 
-ENTRYPOINT ["sh", "-c", "${APP_CONTROLLER_PROJECT_PATH}/entrypoint.sh"]
+# ENTRYPOINT ["sh", "-c", "${APP_CONTROLLER_PROJECT_PATH}/entrypoint.sh"]
 
 CMD ["/bin/bash"]
