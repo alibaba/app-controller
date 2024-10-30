@@ -12,7 +12,7 @@ class BaseTest(unittest.TestCase):
     def setUpClass(cls):
         print("Start test server")
         spawn_server_thread()
-    
+
     @classmethod
     def tearDownClass(cls):
         print("Close test server")
@@ -27,18 +27,17 @@ class BaseTest(unittest.TestCase):
         return res.success
 
 
-
 class BenchmarkTest(BaseTest):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.benchmark_data_path = 'AppSupports/SmartVscodeExtension/code/Benchmark/Data'
         cls.test_data_path = None
-        cls.tasks = {} # id -> task
-    
+        cls.tasks = {}  # id -> task
+
     def get_id(self):
         return int(self._testMethodName.split('_')[1])
-    
+
     def load_tasks(self, test_data_path):
         """
         Load tasks from a JSON file and map them by their IDs.
@@ -50,21 +49,21 @@ class BenchmarkTest(BaseTest):
             FileNotFoundError: If the JSON file does not exist.
             json.JSONDecodeError: If the JSON file is not properly formatted.
         """
-        
+
         self.test_data_path = os.path.join(self.benchmark_data_path, test_data_path)
         try:
             with open(self.test_data_path, 'r') as file:
                 print("\nLoad tasks from", self.test_data_path)
-                tasks = json.load(file)  
+                tasks = json.load(file)
             for task in tasks:
                 self.tasks[task['id']] = task
         except FileNotFoundError:
             self.fail(f"FileNotFoundError: The file {self.test_data_path} does not exist.")
         except json.JSONDecodeError:
             self.fail(f"JSONDecodeError: The file {self.test_data_path} is not properly formatted.")
-            
+
     def evaluate_task(self):
-        
+
         """
         Evaluate one test task, which is the one with the ID extracted from the test method name.
         
@@ -90,7 +89,7 @@ class BenchmarkTest(BaseTest):
         """
         task_id = self.get_id()
         task = self.tasks.get(task_id, None)
-        
+
         # Safety checks
         if task is None:
             self.fail(f"Task with id {task_id} not found.")
@@ -111,7 +110,7 @@ class BenchmarkTest(BaseTest):
         count = 0
         for i, q in enumerate(task['q']):
             case = {
-                "id": f'{id}-{i+1}', 
+                "id": f'{id}-{i + 1}',
                 "q": q,
                 "a": task['a'],
             }
@@ -126,7 +125,7 @@ class BenchmarkTest(BaseTest):
                     count += 1
             elapsed_time = timer.end(f"task_{task_id}")
             print(f"Response time: {float(elapsed_time):.2f} s")
-                
+
         # Summary
         print("==============")
         print(f"Summary:\nTask {id} completed. {count}/{len(task['q'])} queries passed.")
@@ -134,4 +133,3 @@ class BenchmarkTest(BaseTest):
         formatted_stats = {k: f"{v:.2f} " for k, v in stats.items()}
         print(formatted_stats)
         print("==============")
-        

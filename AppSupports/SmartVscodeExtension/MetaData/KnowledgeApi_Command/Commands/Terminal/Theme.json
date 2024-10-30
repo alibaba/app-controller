@@ -18,5 +18,9 @@
   {
     "id": "workbench.action.terminal.newWithProfile",
     "desc": "Opens a new terminal with a user-specified profile."
+  },
+  {
+    "id": "workbench.action.terminal.runRecentCommand",
+    "desc": "Runs the most recently used command in the integrated terminal."
   }
 ]
