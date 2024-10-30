@@ -7,10 +7,10 @@
     }
   },
   {
-    "id": "diffEditor.wordWrap",
-    "desc": "  - off: Lines will never wrap.\n  - on: Lines will wrap at the viewport width.\n  - inherit: Lines will wrap according to the `editor.wordWrap` setting.",
+    "id": "editor.wordWrap",
+    "desc": " Controls how lines should wrap.\n  - off: Lines will never wrap.\n  - on: Lines will wrap at the viewport width.\n  - wordWrapColumn: Lines will wrap at `editor.wordWrapColumn`.\n  - bounded: Lines will wrap at the minimum of viewport and `editor.wordWrapColumn`.",
     "example": {
-      "diffEditor.wordWrap": "inherit"
+      "editor.wordWrap": "off"
     }
   },
   {
@@ -26,5 +26,12 @@
     "example": {
       "editor.semanticTokenColorCustomizations": {}
     }
-  }
+  },
+  {
+    "id": "workbench.colorCustomizations",
+    "desc": " Overrides colors from the currently selected color theme.",
+    "example": {
+        "workbench.colorCustomizations": {}
+    }
+}
 ]

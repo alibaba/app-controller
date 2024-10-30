@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "q": ["Can you open the current file in the system window?"],
+        "q": ["Can you open the current file position in the system window?"],
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "revealFileInOS"}

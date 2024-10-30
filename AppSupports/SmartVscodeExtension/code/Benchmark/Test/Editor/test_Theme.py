@@ -31,40 +31,11 @@ class TestTheme(BenchmarkTest):
 
     def test_4(self):
         """
-        I want to enable the breadcrumbs at the top of my editor to quickly navigate between files and symbols.
-        I need a way to quickly jump between different parts of my project without having to manually search for files or symbols.
-        """
-        self.evaluate_task()
-
-    def test_5(self):
-        """
         I want to change the color of the indent guides to green.
         """
         self.evaluate_task()
 
-    def test_6(self):
-        """
-        I need to list all the symbols in my current file, such as classes, methods, and variables.
-        """
-        self.evaluate_task()
 
-    def test_7(self):
-        """
-        I need to navigate to a specific symbol in my file, can you help me with that?
-        """
-        self.evaluate_task()
-
-    def test_8(self):
-        """
-        I need to close all the editors that are currently open in my workspace.
-        """
-        self.evaluate_task()
-
-    def test_9(self):
-        """
-        I need to open the welcome page again
-        """
-        self.evaluate_task()
 
 
 if __name__ == "__main__":

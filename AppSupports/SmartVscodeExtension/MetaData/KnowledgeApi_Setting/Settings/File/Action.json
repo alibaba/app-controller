@@ -46,5 +46,12 @@
                 "*.myphp": "php"
             }
         }
+    },
+    {
+        "id": "editor.formatOnType",
+        "desc": " Controls whether the editor should automatically format the line after typing.",
+        "example": {
+            "editor.formatOnType": false
+        }
     }
 ]

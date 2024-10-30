@@ -46,7 +46,68 @@ class TestFileAction(BenchmarkTest):
     
     def test_7(self):
         """
+        Set the language mode.
+        """
+        self.evaluate_task()
+    
+    def test_8(self):
+        """
         Set the file associations.
+        """
+        self.evaluate_task()
+    
+    def test_9(self):
+        """
+        Format the selected text.
+        """
+        self.evaluate_task()
+    
+    def test_10(self):
+        """
+        Navigate back to the previous cursor location.
+        """
+        self.evaluate_task()
+    
+    def test_11(self):
+        """
+        Navigate to line 50.
+        """
+        self.evaluate_task()
+    
+    def test_12(self):
+        """
+        Navigate to the beginning of the document.
+        """
+        self.evaluate_task()
+    
+    def test_13(self):
+        """
+        Navigate to the end of the document.
+        """
+        self.evaluate_task()
+    
+    
+    def test_14(self):
+        """
+        Open the find widget in the editor.
+        """
+        self.evaluate_task()
+    
+    def test_15(self):
+        """
+        Convert selected text to lowercase.
+        """
+        self.evaluate_task()
+    
+    def test_16(self):
+        """
+        Convert selected text to Camel Case.
+        """
+        self.evaluate_task()
+    
+    def test_17(self):
+        """
+        Enable format on type.
         """
         self.evaluate_task()
         

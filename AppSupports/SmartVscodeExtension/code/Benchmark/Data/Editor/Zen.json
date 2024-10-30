@@ -14,7 +14,9 @@
       "a": [{
            "setProperties": {
               "arguments": {
-                  "key2Value": {"zenMode.hideLineNumbers": true}
+                  "key2Value": {"zenMode.hideActivityBar": true, 
+                  "zenMode.hideStatusBar": true, 
+                  "zenMode.hideLineNumbers": false}
               }
           }
       }]

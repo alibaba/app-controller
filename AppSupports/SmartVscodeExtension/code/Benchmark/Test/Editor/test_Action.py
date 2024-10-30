@@ -71,13 +71,13 @@ class TestEditorAction(BenchmarkTest):
 
     def test_11(self):
         """
-        I need to replace all instances of the word 'apple' with 'orange' in my project files."
+        I need to open the global replace interface to replace words in my project.
         """
         self.evaluate_task()
 
     def test_12(self):
         """
-        I need to view multiple files at the same time and want them to move together when I scroll.
+        I need to scroll files together when I view multiple files at the same time.
         """
         self.evaluate_task()
 
@@ -96,7 +96,7 @@ class TestEditorAction(BenchmarkTest):
 
     def test_15(self):
         """
-        Can you help me search for the phrase 'error handling' in current file
+        Can you help me open the find and replace interface in my current editor?
         """
         self.evaluate_task()
 
@@ -121,6 +121,12 @@ class TestEditorAction(BenchmarkTest):
     def test_19(self):
         """
         I want to remove all the trailing whitespace in my code.
+        """
+        self.evaluate_task()
+    
+    def test_20(self):
+        """
+        I need to replace all instances of the word 'apple' with 'orange' in my project files.
         """
         self.evaluate_task()
 

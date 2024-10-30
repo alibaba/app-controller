@@ -20,6 +20,7 @@ class BaseTest(unittest.TestCase):
         print("Close test server")
         # stop_server()
         cls.server.stop_server()
+        del cls.server
         
 
     def execute(self, case):
@@ -92,7 +93,7 @@ class BenchmarkTest(BaseTest):
             - Case ID: 1-1, Query: query1, Answer: [{answer1}, {answer2}]
             - Case ID: 1-2, Query: query2, Answer: [{answer1}, {answer2}]
             - Case ID: 1-3, Query: query3, Answer: [{answer1}, {answer2}]
-        """
+        """  
         task_id = self.get_id()
         task = self.tasks.get(task_id, None)
         
