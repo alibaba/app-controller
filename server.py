@@ -73,6 +73,7 @@ async def start(request):
         sys_logger.error(f"An error occurred: {e}\n\nStack Trace:\n{stack_trace}")
         result = Response.get_exception_response()
         test_manager.task_failed()
+        await finish(request)
 
     # task may be cancelled
     if not is_valid_pipeline(context):
@@ -100,6 +101,7 @@ async def handle_api_response(request):
             sys_logger.error(f"An error occurred: {e}\n\nStack Trace:\n{stack_trace}")
             result = Response.get_exception_response()
             test_manager.task_failed()
+            await finish(request)
 
     if not is_valid_pipeline(context):
         clear(context)
