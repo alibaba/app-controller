@@ -6,6 +6,7 @@ from Common.Context import Context
 from Common.Recoder import Recorder
 from Common.TimeStatistic import TimeStatistic
 from Common.Config import Config
+from Exception.Exception import MaxFormatRetryException
 from Index.EmbedIndexManager import EmbedIndexManager, index_manager
 from Prompt.Prompt import Prompt
 from agentscope.agents import AgentBase
@@ -31,7 +32,8 @@ class CustomAgentBase(AgentBase, ABC):
         return {"response": data}
 
     async def _get_model_response(self, _check_valid_response):
-        while True:
+        repeated_count = 0
+        while True and repeated_count < self.config.max_model_wrong_format_count:
             try:
                 timer = TimeStatistic()
                 prompt = self.model.format(Msg("system", self.prompt.system(), role="system"), self.memory.get_memory())
@@ -51,6 +53,8 @@ class CustomAgentBase(AgentBase, ABC):
                     self.recorder.separate()
             except Exception as e:
                 raise e
+            repeated_count += 1
+        raise MaxFormatRetryException()
 
     def _parser_to_json(self, model_response):
         response_json = json.loads(extract_possible_valid_json(model_response.text))
