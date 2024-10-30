@@ -14,7 +14,7 @@
       "q": [ "Open a new terminal."],
       "a": [{
           "executeCommand": {
-              "arguments": {"commandId": "workbench.action.terminal.new"}
+              "arguments": {"commandId": "@: x in {'workbench.action.terminal.new', 'workbench.action.terminal.newInActiveWorkspace'}"}
           }
       }]
     },
@@ -43,18 +43,17 @@
       "a": [{
            "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.enableMultiLinePasteWarning": true}
+                  "key2Value": {"terminal.integrated.enableMultiLinePasteWarning": "always"}
             }}
       }]
     },
     {
       "id": 6,
-      "q": ["I want to enable the bracketed paste mode in the terminal, can you help me with that?",
-        "I'm having trouble with some sequences when pasting in the terminal, can you help me ignore them?"],
+      "q": ["I want to enable the bracketed paste mode in the terminal, can you help me with that?"],
       "a": [{
           "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.bracketedPaste": true}
+                  "key2Value": {"terminal.integrated.ignoreBracketedPasteMode": false}
             }}
       }]
     },

@@ -79,7 +79,6 @@ class ApiScheduleAgent(ApiAgentBase):
                 iterate, api_call_message = self._get_api_call_message(model_response_json)
                 if iterate:
                     continue
-
                 # execute the api
                 response = self._response(api_call_message)
                 return response

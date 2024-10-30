@@ -4,7 +4,7 @@
         "q": ["I want to turn on Settings Sync"],
         "a": [{
             "executeCommand": {
-                "arguments": {"commandId": "workbench.userDataSync.actions.syncNow"}
+                "arguments": {"commandId": "workbench.userDataSync.actions.turnOn"}
             }
         }]
     },
@@ -44,7 +44,7 @@
         "q": ["I need to access the local backups folder on my computer."],
         "a": [{
             "executeCommand": {
-                "arguments": {"commandId": "workbench.userDataSync.actions.turnOff"}
+                "arguments": {"commandId": "workbench.userData.actions.openSyncBackupsFolder"}
             }
         }]
     }

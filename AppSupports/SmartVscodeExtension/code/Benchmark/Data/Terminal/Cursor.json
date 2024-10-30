@@ -5,7 +5,7 @@
       "a": [{
           "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.cursorStyle": "block"}
+                  "key2Value": {"terminal.integrated.cursorStyle": "line"}
             }}
       }]
   },
@@ -16,7 +16,7 @@
       "a": [{
           "setProperties": {
               "arguments": {
-                  "key2Value": {"editor.cursorWidth": 3}
+                  "key2Value": {"terminal.integrated.cursorWidth": 3}
             }}
       }]
   },
@@ -36,7 +36,7 @@
       "a": [{
           "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.cursorStyle": "block"}
+                  "key2Value": {"terminal.integrated.cursorStyleInactive": "block"}
             }}
       }]
   }

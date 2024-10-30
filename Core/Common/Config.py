@@ -41,6 +41,7 @@ class Config:
 
         # Scheduler section
         self.max_iteration_count = parser.getint('Scheduler', 'max_iteration_count')
+        self.max_model_wrong_format_count = parser.getint('Scheduler', 'max_model_wrong_format_count')
         self.force_continue_task = parser.getboolean('Scheduler', 'force_continue_task')
 
         # Message section

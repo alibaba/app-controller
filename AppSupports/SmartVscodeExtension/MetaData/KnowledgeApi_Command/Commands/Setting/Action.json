@@ -30,5 +30,9 @@
   {
     "id": "workbench.userDataSync.actions.turnOff",
     "desc": "Turns off the synchronization of user data like settings, extensions, and keybindings across VS Code installations."
+  },
+  {
+    "id": "workbench.userData.actions.openSyncBackupsFolder",
+    "desc": "Opens the folder where synchronized settings backups are stored."
   }
 ]

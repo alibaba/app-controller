@@ -1,8 +1,7 @@
 [
     {
         "id": 1,
-        "q": ["I want to import a different profile for my project.",
-            "I need to bring in a new set of configurations for my project"],
+        "q": ["I want to import a different profile for my project."],
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "workbench.profiles.actions.importProfile"}

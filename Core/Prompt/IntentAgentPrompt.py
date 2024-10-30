@@ -16,7 +16,7 @@ class IntentAgentPrompt(Prompt):
         {context}
         If my input is a question, Please respond in the following JSON format:
         {
-            "type": 1,
+            "type": 1
         }
         If my input is a task, inform me using the following JSON format:
         {

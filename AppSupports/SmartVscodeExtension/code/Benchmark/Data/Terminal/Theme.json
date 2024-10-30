@@ -59,7 +59,7 @@
     },
     {
       "id": 7,
-      "q": ["I want to change the font family of the terminal to 'Courier New'."],
+      "q": ["I want to change the font family of the terminal to Courier New."],
       "a": [{
           "setProperties": {
               "arguments": {
@@ -139,7 +139,7 @@
     },
     {
       "id": 15,
-      "q": ["I need to switch to a different command line interface, specifically PowerShell."],
+      "q": ["I need to open a terminal window with a different command line interface, specifically PowerShell."],
       "a": [{
            "executeCommand": {
               "arguments": {"commandId": "workbench.action.terminal.newWithProfile"}
@@ -148,7 +148,7 @@
     },
     {
       "id": 16,
-      "q": ["Can you show me my recent terminal commands?"],
+      "q": ["Can you show me which commands in terminal I've used recently"],
       "a": [{
            "executeCommand": {
               "arguments": {"commandId": "workbench.action.terminal.runRecentCommand"}

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "q": ["I want to change the language in VScode."],
+        "q": ["I want to change the display language in VScode."],
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "workbench.action.configureLocale"}
