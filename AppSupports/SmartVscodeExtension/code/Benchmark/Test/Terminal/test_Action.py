@@ -23,7 +23,7 @@ class TestTerminalAction(BenchmarkTest):
 
     def test_3(self):
         """
-        I want the terminal to open in the '/home/myproject' directory instead of the default one.
+        I want the terminal to open in my current directory instead of the default one.
         """
         self.evaluate_task()
 
