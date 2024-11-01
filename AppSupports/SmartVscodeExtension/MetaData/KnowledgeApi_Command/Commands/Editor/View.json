@@ -2,5 +2,21 @@
   {
     "id": "workbench.action.showInteractivePlayground",
     "desc": "Opens the Interactive Playground where you can learn about and experiment with VS Code features interactively."
+  },
+  {
+    "id": "workbench.action.closeAllEditors",
+    "desc": "Closes all editor windows in the currently active group."
+  },
+  {
+    "id": "workbench.action.closeEditorsInOtherGroups",
+    "desc": "Closes all editors in editor groups other than the one that has the current active editor."
+  },
+  {
+    "id": "workbench.action.closeEditorInAllGroups",
+    "desc": "Closes the currently active editor in all editor groups."
+  },
+  {
+    "id": "workbench.action.openWalkthrough",
+    "desc": "Opens a guided tutorial or walkthrough within the editor, helping users learn how to use various features and functionalities effectively."
   }
 ]

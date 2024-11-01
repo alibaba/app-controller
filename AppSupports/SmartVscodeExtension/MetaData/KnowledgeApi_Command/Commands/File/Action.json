@@ -6,5 +6,61 @@
     {
         "id": "workbench.action.editor.changeLanguageMode",
         "desc": "Changes the language mode of the currently active editor in VS Code."
+    },
+    {
+        "id": "editor.action.formatSelection",
+        "desc": "Formats the code in the currently selected text range according to the code formatting settings."
+    },
+    {
+        "id": "workbench.action.navigateForward",
+        "desc": "Navigates forward in the history of editors and files opened in VS Code."
+    },
+    {
+        "id": "workbench.action.navigateBack",
+        "desc": "Navigates to the last location in the editor's history."
+    },
+    {
+        "id": "workbench.action.gotoLine",
+        "desc": "Opens a prompt to navigate to a specific line and, optionally, column in the current file."
+    },
+    {
+        "id": "editor.action.goToTopHover",
+        "desc": "Navigates to the top-most code hover tooltip in the editor."
+    },
+    {
+        "id": "editor.action.goToBottomHover",
+        "desc": "Moves the hover widget to the bottom of the editor viewport."
+    },
+    {
+        "id": "actions.find",
+        "desc": "Opens the find widget to search within the editor or an open file when the editor has focus."
+    },
+    {
+        "id": "editor.action.transformToUppercase",
+        "desc": "Transforms the selected text to uppercase in the editor."
+    },
+    {
+        "id": "editor.action.transformToLowercase",
+        "desc": "Transforms the selected text to lowercase in the editor."
+    },
+    {
+        "id": "editor.action.transformToSnakecase",
+        "desc": "Transforms the selected text to snake_case."
+    },
+    {
+        "id": "editor.action.transformToCamelcase",
+        "desc": "Transforms the selected text to camelCase format."
+    },
+    {
+        "id": "editor.action.transformToPascalcase",
+        "desc": "Transforms the selected text to PascalCase, capitalizing the first letter of each word and removing spaces."
+    },
+    {
+        "id": "editor.action.transformToTitlecase",
+        "desc": "Transforms the selected text to Title Case, capitalizing the first letter of each word."
+    },
+    {
+        "id": "editor.action.transformToKebabcase",
+        "desc": "Transforms the selected text to kebab-case, where all letters are lowercase and words are separated by hyphens."
     }
 ]

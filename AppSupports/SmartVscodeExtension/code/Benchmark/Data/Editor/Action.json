@@ -93,7 +93,7 @@
     },
     {
         "id": 11,
-        "q": [ "I need to replace all instances of the word 'apple' with 'orange' in my project files."],
+        "q": [ "I need to open the global replace interface to replace words in my project."],
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "workbench.action.replaceInFiles"}
@@ -102,7 +102,7 @@
     },
     {
         "id": 12,
-        "q": [ "I need to view multiple files at the same time and want them to move together when I scroll."],
+        "q": [ "I need to scroll files together when I view multiple files at the same time."],
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "workbench.action.toggleLockedScrolling"}
@@ -132,7 +132,7 @@
     },
     {
         "id": 15,
-        "q": [ "Can you help me search for the phrase 'error handling' in current file"],
+        "q": [ "Can you help me open the find and replace interface in my current editor?"],
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "editor.action.startFindReplaceAction"}
@@ -173,6 +173,25 @@
         "a": [{
             "executeCommand": {
                 "arguments": {"commandId": "editor.action.trimTrailingWhitespace"}
+            }
+        }]
+    },
+    {
+        "id": 20,
+        "q": [ "I need to replace all instances of the word 'apple' with 'orange' in my project files."],
+        "a": [{
+            "findAndReplace": {
+                "arguments": {
+                    "position": "files", 
+                    "query": "apple", 
+                    "replace": "orange", 
+                    "isRegex": false, 
+                    "preserveCase": false, 
+                    "findInSelection": false, 
+                    "matchWholeWord": false, 
+                    "isCaseSensitive": false, 
+                    "filesToInclude": "", 
+                    "filesToExclude": ""}
             }
         }]
     }

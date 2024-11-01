@@ -20,11 +20,11 @@
     },
     {
       "id": 3,
-      "q": ["I want the terminal to open in the '/home/myproject' directory instead of the default one."],
+      "q": ["I want the terminal to open in my current directory instead of the default one."],
       "a": [{
            "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.cwd": "/home/myproject"}
+                  "key2Value": {"terminal.integrated.cwd": "@: type(x) is str "} 
             }}
       }]
     },
@@ -53,7 +53,7 @@
       "a": [{
           "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.ignoreBracketedPasteMode": false}
+                  "key2Value": {"terminal.integrated.ignoreBracketedPasteMode": true}
             }}
       }]
     },

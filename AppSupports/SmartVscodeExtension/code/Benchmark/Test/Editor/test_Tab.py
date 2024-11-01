@@ -37,7 +37,6 @@ class TestEditorTab(BenchmarkTest):
         I want to display only one tab in my workbench editor.
         """
         self.evaluate_task()
-
     def test_6(self):
         """
         "I want to change the scroll bar size between the tab and editor regions to large.",
@@ -47,14 +46,14 @@ class TestEditorTab(BenchmarkTest):
 
     def test_7(self):
         """
-        "I want to open new tabs on the left side of my workspace forever"
+        "I want to set to open new tabs on the left side of my workspace forever"
         """
         self.evaluate_task()
 
     def test_8(self):
         """
         "I want to enable the editor tabs to wrap and fill multiple rows above the editor region.",
-            "I'd like to have my tabs arranged in multiple rows above the editor region, instead of a single row."
+        "I'd like to have my tabs arranged in multiple rows above the editor region, instead of a single row."
         """
         self.evaluate_task()
 

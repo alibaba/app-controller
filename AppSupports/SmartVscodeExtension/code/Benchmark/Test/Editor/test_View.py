@@ -14,6 +14,18 @@ class TestView(BenchmarkTest):
         Can you open the editor playground ?
         """
         self.evaluate_task()
+    
+    def test_2(self):
+        """
+        I need to close all the editors that are currently open in my workspace.
+        """
+        self.evaluate_task()
+
+    def test_3(self):
+        """
+        I need to open the welcome page again
+        """
+        self.evaluate_task()
 
 
 if __name__ == "__main__":

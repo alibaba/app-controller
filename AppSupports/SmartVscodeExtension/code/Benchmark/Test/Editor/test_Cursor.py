@@ -21,12 +21,6 @@ class TestCursor(BenchmarkTest):
         """
         self.evaluate_task()
 
-    def test_3(self):
-        """
-        I want to add cursors to all occurrences of a selection.
-        """
-        self.evaluate_task()
-
 
 if __name__ == "__main__":
     unittest.main()

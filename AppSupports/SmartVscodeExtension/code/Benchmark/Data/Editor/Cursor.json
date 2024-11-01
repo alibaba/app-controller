@@ -16,14 +16,5 @@
                 "arguments": {"commandId": "editor.action.insertCursorBelow"}
             }
         }]
-    },
-    {
-        "id": 3,
-        "q": [ "I want to add cursors to all occurrences of a selection."],
-        "a": [{
-            "executeCommand": {
-                "arguments": {"commandId": "addCursorsAtSearchResults"}
-            }
-        }]
     }
 ]

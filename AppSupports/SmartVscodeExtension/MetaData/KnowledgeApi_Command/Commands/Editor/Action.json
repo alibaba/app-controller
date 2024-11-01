@@ -53,7 +53,7 @@
   },
   {
     "id": "workbench.action.toggleLockedScrolling",
-    "desc": "Toggles locked scrolling, allowing the editor to scroll beyond the last line of the file."
+    "desc": "Toggles to synchronize the scrolling of multiple editor panes, allowing all open editors to scroll together while keeping the current cursor position visible in each pane.."
   },
   {
     "id": "editor.action.startFindReplaceAction",

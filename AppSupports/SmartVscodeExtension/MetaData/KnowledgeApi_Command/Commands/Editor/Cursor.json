@@ -6,9 +6,5 @@
   {
     "id": "editor.action.insertCursorBelow",
     "desc": "Adds a new cursor below the current cursor position."
-  },
-  {
-    "id": "addCursorsAtSearchResults",
-    "desc": "Add cursors to all selected text"
   }
 ]

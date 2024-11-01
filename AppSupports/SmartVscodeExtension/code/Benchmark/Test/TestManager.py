@@ -26,9 +26,12 @@ class TestManager:
         if self.on_test_stage:
             self.post_back_to_unittest()
 
-    def task_failed(self):
+    def task_failed(self, errorMessage=None):
         if self.on_test_stage:
-            self.result_checker.task_failed()
+            if errorMessage is None:
+                self.result_checker.task_failed()
+            else:
+                self.result_checker.task_failed(errorMessage)
             # self.post_back_to_unittest()
 
     def post_back_to_unittest(self):

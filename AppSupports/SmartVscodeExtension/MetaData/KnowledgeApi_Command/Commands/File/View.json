@@ -5,6 +5,6 @@
   },
   {
     "id": "revealFileInOS",
-    "desc": "Reveal the file in the OS file explorer."
+    "desc": "Reveal the file postition in the OS file explorer."
   }
 ]

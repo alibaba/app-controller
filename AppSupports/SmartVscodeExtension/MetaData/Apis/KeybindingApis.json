@@ -1,7 +1,7 @@
 {
   "openKeybindingSettings": {
     "name": "openKeybindingSettings",
-    "description": "Open the settings page of keybindings (keyboard shortcuts) of vscode.",
+    "description": "Open the global settings page of keybindings (keyboard shortcuts) of vscode. It is the same as the command @command:workbench.action.openGlobalKeybindings.",
     "parameters": {
       "type": "object",
       "properties": {}

@@ -16,7 +16,7 @@
         "a": [{
             "setProperties": {
               "arguments": {
-                  "key2Value": {"editor.minimap.enabled": true}
+                  "key2Value": {"editor.minimap.enabled": false}
               }
           }
         }]

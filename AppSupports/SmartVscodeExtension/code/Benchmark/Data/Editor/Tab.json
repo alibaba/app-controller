@@ -56,13 +56,13 @@
         "a": [{
             "setProperties": {
               "arguments": {
-                  "key2Value": {"workbench.editor.titleScrollbarSizing": "larger"}
+                  "key2Value": {"workbench.editor.titleScrollbarSizing": "large"}
               }}
         }]
     },
     {
         "id": 7,
-        "q": ["I want to open new tabs on the left side of my workspace forever"],
+        "q": ["I want to set to open new tabs on the left side of my workspace forever"],
         "a": [{
             "setProperties": {
               "arguments": {
@@ -77,7 +77,7 @@
         "a": [{
              "setProperties": {
               "arguments": {
-                  "key2Value": {"workbench.editor.wrapTabs": false}
+                  "key2Value": {"workbench.editor.wrapTabs": true}
               }}
         }]
     },

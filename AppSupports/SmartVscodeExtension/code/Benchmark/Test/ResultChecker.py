@@ -73,9 +73,12 @@ class ResultChecker:
                             self.fail_reason_in_nl += v
         self.finish = True
 
-    def task_failed(self):
+    def task_failed(self, errorMessage=None):
         self.success = False
-        self.fail_reason_in_nl = traceback.format_exc()
+        if errorMessage is not None:
+            self.fail_reason_in_nl = errorMessage
+        else:
+            self.fail_reason_in_nl = traceback.format_exc()
         self.info += self.fail_reason_in_nl
         self.finish = True
 

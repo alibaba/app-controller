@@ -7,5 +7,23 @@
                 "arguments": {"commandId": "workbench.action.showInteractivePlayground"}
             }
         }]
+    },
+    {
+        "id": 2,
+        "q": ["I need to close all the editors that are currently open in my workspace."],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "workbench.action.closeAllEditors"}
+            }
+        }]
+    },
+    {
+        "id": 3,
+        "q": ["I need to open the welcome page again"],
+        "a": [{
+             "executeCommand": {
+                "arguments": {"commandId": "workbench.action.openWalkthrough"}
+            }
+        }]
     }
 ]

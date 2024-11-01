@@ -1,6 +1,7 @@
 import sys
 import argparse
 import traceback
+import threading
 
 sys.path.append("Core")
 
@@ -27,6 +28,7 @@ parser.add_argument("--port", "-p", type=int, default=config.SERVER_PORT, help="
 
 session_id_2_pipeline = {}
 session_id_2_test_manager = {}
+session_id_2_timer = {}
 
 
 def is_valid_pipeline(context: Context):
@@ -54,6 +56,11 @@ def get_test_manager(context: Context):
         session_id_2_test_manager[context.session_id] = TestManager(config, context)
     return session_id_2_test_manager[context.session_id]
 
+def get_timer(context: Context):
+    if context.session_id not in session_id_2_timer:
+        session_id_2_timer[context.session_id] = threading.Timer(config.session_time_out, handle_time_out, [context])
+    return session_id_2_timer[context.session_id]
+
 
 async def start(request):
     context = Context.from_dict(await request.json())
@@ -63,6 +70,9 @@ async def start(request):
 
     test_manager = get_test_manager(context)
     pipeline = get_pipeline(context)
+    timer = get_timer(context)
+    print("Start timer")
+    timer.start()
 
     try:
         result: Response = await pipeline.start(context)
@@ -134,10 +144,22 @@ async def cancel(request):
 def clear(context: Context):
     if context.session_id in session_id_2_pipeline:
         del session_id_2_pipeline[context.session_id]
+    if context.session_id in session_id_2_test_manager:
         del session_id_2_test_manager[context.session_id]
+    if context.session_id in session_id_2_timer:
+        timer = session_id_2_timer[context.session_id]
+        timer.cancel()
+        del session_id_2_timer[context.session_id]
 
     recorder = Recorder(config, context.session_id)
     recorder.close()
+
+def handle_time_out(context):
+    if context.session_id in session_id_2_test_manager:
+        test_manager = get_test_manager(context)
+        test_manager.task_failed(f"Time out: {config.session_time_out} seconds")
+        test_manager.task_finished()
+    clear(context)
 
 
 async def query_session(request):
