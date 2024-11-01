@@ -34,9 +34,6 @@
         "id": 4,
         "q": ["I want to view the default keyboard shortcuts setting in editor."],
         "a": [{
-            "openKeybindingSettings": {
-                "arguments": {}
-            },
             "executeCommand": {
                 "arguments": {"commandId": "keybindings.editor.showDefaultKeybindings"}
             }
@@ -46,9 +43,6 @@
         "id": 5,
         "q": ["I want to view the extension keyboard shortcuts setting in editor."],
         "a": [{
-            "openKeybindingSettings": {
-                "arguments": {}
-            },
             "executeCommand": {
                 "arguments": {"commandId": "keybindings.editor.showExtensionKeybindings"}
             }
@@ -58,9 +52,6 @@
         "id": 6,
         "q": ["I want to view the keyboard shortcuts that I have modified in VScode."],
         "a": [{
-            "openKeybindingSettings": {
-                "arguments": {}
-            },
             "executeCommand": {
                 "arguments": {"commandId": "keybindings.editor.showUserKeybindings"}
             }

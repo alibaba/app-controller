@@ -53,7 +53,7 @@
       "a": [{
           "setProperties": {
               "arguments": {
-                  "key2Value": {"terminal.integrated.ignoreBracketedPasteMode": false}
+                  "key2Value": {"terminal.integrated.ignoreBracketedPasteMode": true}
             }}
       }]
     },

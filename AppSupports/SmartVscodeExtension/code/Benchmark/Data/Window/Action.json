@@ -23,7 +23,7 @@
         "a": [{
             "setProperties": {
                 "arguments": {
-                    "key2Value": {"window.openFilesInNewWindow": "off"}
+                    "key2Value": {"window.openFilesInNewWindow": "on"}
                 }
             }
         }]
