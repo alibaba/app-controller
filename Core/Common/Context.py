@@ -53,9 +53,9 @@ class Context:
 
         # update config name
         for model_level in [ModelLevelEnum.Lightweight, ModelLevelEnum.Advanced]:
-            chat_model_config[model_level.name]["config_name"] = x["userId"] + "_chat"
+            chat_model_config[model_level.name]["config_name"] = x["sessionId"] + str(model_level.name) + "_chat"
 
-        embedding_model_config["config_name"] = x["userId"] + "_embedding"
+        embedding_model_config["config_name"] = x["sessionId"] + "_embedding"
         return chat_model_config, embedding_model_config
 
     @classmethod
