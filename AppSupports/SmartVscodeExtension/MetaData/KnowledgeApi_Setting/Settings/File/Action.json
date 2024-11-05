@@ -40,7 +40,7 @@
     },
     {
         "id": "files.associations",
-        "desc": " Configure glob patterns of file associations to languages.",
+        "desc": "Configure glob patterns of file associations to languages.",
         "example": {
             "files.associations": {
                 "*.myphp": "php"
