@@ -23,4 +23,10 @@ class ResponseStatusEnum:
     TASK_CANCELLED = "Task_Cancelled"
     TASK_EXCEPTION = "Task_Exception"
     TASK_QUESTION = "Task_Question"
-    SUCCESS = "success"
+
+
+class ActionEnum:
+    QUERY_API = 1
+    CALL_API = 2
+    TASK_FAILED = 3
+    TASK_FINISHED = 4

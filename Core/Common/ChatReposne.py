@@ -27,12 +27,8 @@ class Response:
         return Response(ResponseStatusEnum.TASK_QUESTION, {})
 
     @classmethod
-    def get_exception_response(cls, msg="There is an exception in the task, Please try again later."):
+    def get_exception_response(cls, msg):
         return Response(ResponseStatusEnum.TASK_EXCEPTION, {"msg": msg})
-
-    @classmethod
-    def get_success_response(cls, msg=None):
-        return Response(ResponseStatusEnum.SUCCESS, {"msg": msg})
 
     def to_json(self):
         return {

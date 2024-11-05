@@ -3,6 +3,8 @@ import argparse
 import traceback
 import threading
 
+from Exception.Exception import TaskCancelledException
+
 sys.path.append("Core")
 
 from Common.ChatReposne import Response
@@ -19,7 +21,7 @@ from Pipeline.ChatPipeline import ChatPipeline
 from Pipeline.IntentKnowledgeChatPipeline import IntentKnowledgeAgentChatPipeline
 from aiohttp import web
 import aiohttp_cors
-from Common.Utils import update_model_config, load_model_config
+from Common.Utils import update_model_config, load_local_model_config
 from Common.Context import Context
 from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
 
@@ -31,13 +33,12 @@ session_id_2_test_manager = {}
 session_id_2_timer = {}
 
 
-def is_valid_pipeline(context: Context):
+def is_cancelled_pipeline(context: Context):
     if context.session_id not in session_id_2_pipeline:
-        return False
-
-    if not session_id_2_pipeline[context.session_id].is_started:
-        return False
-    return True
+        return True
+    if session_id_2_pipeline[context.session_id].is_task_cancelled:
+        return True
+    return False
 
 
 def get_pipeline(context: Context):
@@ -55,6 +56,7 @@ def get_test_manager(context: Context):
     if context.session_id not in session_id_2_test_manager:
         session_id_2_test_manager[context.session_id] = TestManager(config, context)
     return session_id_2_test_manager[context.session_id]
+
 
 def get_timer(context: Context):
     if context.session_id not in session_id_2_timer:
@@ -78,52 +80,45 @@ async def start(request):
         result: Response = await pipeline.start(context)
         if result.status != ResponseStatusEnum.TASK_QUESTION:
             test_manager.check(result)
-    except Exception as e:
-        stack_trace = traceback.format_exc()
-        sys_logger.error(f"An error occurred: {e}\n\nStack Trace:\n{stack_trace}")
-        result = Response.get_exception_response()
-        test_manager.task_failed()
-        await finish(request)
 
-    # task may be cancelled
-    if not is_valid_pipeline(context):
-        clear(context)
-        result = Response.get_task_cancelled_response()
+        if is_cancelled_pipeline(context):
+            clear(context)
+            result = Response.get_task_cancelled_response()
+    except Exception as e:
+        return await _handle_exception(request, context, e)
 
     # task should be finished immediately when it is a question
     if result.status == ResponseStatusEnum.TASK_QUESTION:
-        await finish(request)    
+        await finish(request)
     return web.json_response(result.to_json())
 
 
 async def handle_api_response(request):
     context = Context.from_dict(await request.json())
-    if not is_valid_pipeline(context):
-        result = Response.get_task_cancelled_response()
-    else:
-        pipeline = session_id_2_pipeline[context.session_id]
-        test_manager = get_test_manager(context)
-        try:
-            result = await pipeline.handle_api_response(context)
-            test_manager.check(result)
-        except Exception as e:
-            stack_trace = traceback.format_exc()
-            sys_logger.error(f"An error occurred: {e}\n\nStack Trace:\n{stack_trace}")
-            result = Response.get_exception_response()
-            test_manager.task_failed()
-            await finish(request)
-
-    if not is_valid_pipeline(context):
+    if is_cancelled_pipeline(context):
         clear(context)
         result = Response.get_task_cancelled_response()
-
+    else:
+        try:
+            pipeline = session_id_2_pipeline[context.session_id]
+            test_manager = get_test_manager(context)
+            result = await pipeline.handle_api_response(context)
+            test_manager.check(result)
+            if is_cancelled_pipeline(context):
+                clear(context)
+                result = Response.get_task_cancelled_response()
+        except Exception as e:
+            return await _handle_exception(request, context, e)
     return web.json_response(result.to_json())
 
 
 async def finish(request):
+    """
+    1. save data
+    2. clear context
+    """
     context = Context.from_dict(await request.json())
-    test_manager = get_test_manager(context)
-    test_manager.task_finished()
+    get_test_manager(context).task_finished()
 
     recorder = Recorder(config, context.session_id)
     await recorder.save()
@@ -137,7 +132,7 @@ async def cancel(request):
     context = Context.from_dict(await request.json())
     if context.session_id in session_id_2_pipeline:
         pipeline: ChatPipeline = session_id_2_pipeline[context.session_id]
-        pipeline.is_started = False
+        pipeline.stop_task()
     return web.json_response({})
 
 
@@ -154,6 +149,7 @@ def clear(context: Context):
     recorder = Recorder(config, context.session_id)
     recorder.close()
 
+
 def handle_time_out(context):
     if context.session_id in session_id_2_test_manager:
         test_manager = get_test_manager(context)
@@ -169,32 +165,46 @@ async def query_session(request):
     return web.json_response({"model": model.to_json()})
 
 
-app = web.Application()
-app.add_routes([web.post('/start', start),
-                web.post('/handleApiResponse', handle_api_response),
-                web.post('/finish', finish),
-                web.post('/cancel', cancel),
-                web.post('/query_session', query_session)])
+async def _handle_exception(request, context: Context, e: Exception):
+    get_test_manager(context).task_failed()
+    await finish(request)
 
-# Set up the CORS configuration
-cors = aiohttp_cors.setup(app, defaults={
-    "*": aiohttp_cors.ResourceOptions(
-        allow_credentials=True,
-        expose_headers="*",
-        allow_headers="*",
-    )
-})
+    if isinstance(e, TaskCancelledException):
+        return web.json_response(Response.get_task_cancelled_response().to_json())
+    else:
+        sys_logger.error(f"Unhandled Exception: {e}. Stack Trace: {traceback.format_exc()}")
+        return web.json_response(Response.get_exception_response(str(e)).to_json())
 
-# Apply CORS settings to every route
-for route in list(app.router.routes()):
-    cors.add(route)
 
-# Set up the database initialization and closing hooks
-app.on_startup.append(init_server)
-app.on_cleanup.append(close_server)
+def create_app():
+    app = web.Application()
+    # 添加路由
+    app.add_routes([
+        web.post('/start', start),
+        web.post('/handleApiResponse', handle_api_response),
+        web.post('/finish', finish),
+        web.post('/cancel', cancel),
+        web.post('/query_session', query_session)
+    ])
+    # 设置 CORS
+    cors = aiohttp_cors.setup(app, defaults={
+        "*": aiohttp_cors.ResourceOptions(
+            allow_credentials=True,
+            expose_headers="*",
+            allow_headers="*",
+        )
+    })
+    for route in list(app.router.routes()):
+        cors.add(route)
+    # 添加启动和关闭时的钩子
+    app.on_startup.append(init_server)
+    app.on_cleanup.append(close_server)
+    return app
+
 
 if __name__ == '__main__':
-    load_model_config("embed_model_config.json")
+    load_local_model_config("embed_model_config.json")
     index_manager.build_indexes()
     args = parser.parse_args()
+    app = create_app()
     web.run_app(app, port=args.port)

@@ -24,6 +24,7 @@ class IntentKnowledgeAgentChatPipeline(KnowledgeAgentChatPipeline):
     def _init_agents(self):
         super()._init_agents()
         self.intent_agent = IntentAgent(self.config, self.context)
+        self.agents.append(self.intent_agent)
 
     async def start(self, context):
         super(SimpleChatPipeline, self).start(context)
@@ -41,7 +42,3 @@ class IntentKnowledgeAgentChatPipeline(KnowledgeAgentChatPipeline):
 
     async def is_question(self, messages):
         return await self.intent_agent.reply(messages)
-
-    def reset(self):
-        super().reset()
-        [agent.reset() for agent in self.knowledge_api_agents]

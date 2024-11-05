@@ -7,8 +7,7 @@ from llama_index.core.base.base_retriever import BaseRetriever
 from Common.SysLogger import sys_logger
 from Common.TimeStatistic import TimeStatistic
 from Common.Config import Config
-from agentscope.models import load_model_by_config_name
-from agentscope.rag.llama_index_knowledge import _EmbeddingModel
+from Common.Utils import get_embed_model
 
 
 class BaseIndex(ABC):
@@ -20,7 +19,7 @@ class BaseIndex(ABC):
         self.index_dir = index_dir
 
     def build_index(self, emb_model_config_name):
-        Settings.embed_model = _EmbeddingModel(load_model_by_config_name(emb_model_config_name))
+        Settings.embed_model = get_embed_model(emb_model_config_name)
         time_identifier = "build_{}_index".format(self.identifier.lower())
         timer = TimeStatistic()
         timer.start(time_identifier)

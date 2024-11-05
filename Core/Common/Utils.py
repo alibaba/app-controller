@@ -2,7 +2,7 @@ import json
 import os
 
 from Common.CustomEnum import ModelLevelEnum
-from agentscope.models import read_model_configs, _MODEL_CONFIGS, load_model_by_config_name
+from agentscope.manager import ModelManager
 from agentscope.rag.llama_index_knowledge import _EmbeddingModel
 
 
@@ -35,22 +35,17 @@ def extract_possible_valid_json(error_json: str):
 
 def update_model_config(context):
     # Chat models
+    model_manager = ModelManager.get_instance()
     for model_level in [ModelLevelEnum.Lightweight, ModelLevelEnum.Advanced]:
-        name = context.get_chat_model_config_name(model_level)
         config = context.get_chat_model_config(model_level)
-        if name in _MODEL_CONFIGS:
-            del _MODEL_CONFIGS[name]
-        read_model_configs(config)
+        model_manager.load_model_configs(config)
 
     # Embedding model
-    name = context.get_embed_model_config_name()
     config = context.get_embed_model_config()
-    if name in _MODEL_CONFIGS:
-        del _MODEL_CONFIGS[name]
-    read_model_configs(config)
+    model_manager.load_model_configs(config)
 
 
-def load_model_config(file_name):
+def load_local_model_config(file_name):
     def replace_env(target: str, key: str):
         if key in target:
             if os.environ.get(key) is not None:
@@ -59,11 +54,12 @@ def load_model_config(file_name):
                 raise Exception("Please set {} in environment variables.".format(key))
         return target
 
+    model_manager = ModelManager.get_instance()
     if os.path.exists(file_name):
         with open(file_name, "r") as f:
             configs = json.load(f)
 
-        updated_configs_json = []
+        updated_configs_jsons = []
         for config_json in configs:
             config_str = json.dumps(config_json)
             # replace
@@ -71,14 +67,15 @@ def load_model_config(file_name):
             config_str = replace_env(config_str, "DASHSCOPE_API_KEY")
             config_str = replace_env(config_str, "OPENAI_API_KEY")
             # back to json
-            updated_configs_json.append(json.loads(config_str))
-
-        read_model_configs(updated_configs_json)
+            updated_configs_jsons.append(json.loads(config_str))
+        model_manager.load_model_configs(updated_configs_jsons)
 
 
 def get_embed_model(emb_model_config_name):
-    return _EmbeddingModel(load_model_by_config_name(emb_model_config_name))
+    model_manager = ModelManager.get_instance()
+    return _EmbeddingModel(model_manager.get_model_by_config_name(emb_model_config_name))
 
 
 def is_existed_model_config(model_config_name):
-    return model_config_name in _MODEL_CONFIGS
+    model_manager = ModelManager.get_instance()
+    return model_config_name in model_manager.model_configs

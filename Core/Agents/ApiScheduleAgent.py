@@ -6,6 +6,8 @@ from Api.SimpleApiRetriever import SimpleApiRetriever
 from Common.ChatReposne import Response
 from Common.Constants import TextConstants
 from Common.Context import Context
+from Common.CustomEnum import ActionEnum
+from Exception.Exception import InferCountLimitedException, TaskCancelledException
 from Prompt.ApiSchedulerAgentPrompt import ApiSchedulerAgentPrompt
 from Agents.ApiAgentBase import ApiAgentBase
 from agentscope.message import Msg
@@ -14,12 +16,10 @@ from Common.Config import Config
 
 class ApiScheduleAgent(ApiAgentBase):
     def __init__(self, config: Config, context: Context) -> None:
-        super().__init__(config, name="api_schedule_agent", prompt=ApiSchedulerAgentPrompt(config), context=context)
+        super().__init__(config, name=TextConstants.API_SCHEDULER_AGENT, prompt=ApiSchedulerAgentPrompt(config), context=context)
         self.api_retriever = SimpleApiRetriever(config, context)
         self.prompt = ApiSchedulerAgentPrompt(config)
-
         self.cur_iteration_count = 0
-        self.trigger_failed_count = 0
         self.history_executed_apis = set()
         self.is_front_api_loop = False
         self.user_question = None
@@ -33,7 +33,7 @@ class ApiScheduleAgent(ApiAgentBase):
 
     def _check_valid_response(self, model_response):
         try:
-            action_type = self.get_action_type(model_response)
+            action_type = self._get_action_type(model_response)
             model_response_json = self._parser_to_json(model_response)
             if action_type == 1:
                 model_keywords = model_response_json["keywords"]
@@ -42,7 +42,7 @@ class ApiScheduleAgent(ApiAgentBase):
                 api = self._get_selected_api_from_model(model_response_json)
                 return True
             return True
-        except:
+        except Exception as e:
             return False
 
     async def reply(self, x: dict = None) -> dict:
@@ -56,7 +56,7 @@ class ApiScheduleAgent(ApiAgentBase):
         return await self._iterate(knowledge_api_contents)
 
     async def handle_api_response(self, api_results) -> dict:
-        self.recorder.rag("Receive api results:{}".format(api_results))
+        self.recorder.api(TextConstants.API_EXECUTED_RESULT_MSG.format(api_results))
 
         apis_jsons = api_results if not isinstance(api_results, str) else json.loads(api_results)
         for api_json in apis_jsons:
@@ -65,34 +65,37 @@ class ApiScheduleAgent(ApiAgentBase):
         return await self._iterate()
 
     async def _iterate(self, knowledge_api_contents=None):
-        while self.cur_iteration_count < self.config.max_iteration_count:
+        while (not self._is_task_cancelled) and self.cur_iteration_count < self.config.max_iteration_count:
             model_response = await self._get_model_response(self._check_valid_response)
-            action_type = self.get_action_type(model_response)
+            action_type = self._get_action_type(model_response)
             model_response_json = self._parser_to_json(model_response)
             self.cur_iteration_count += 1
 
-            if action_type == 1:
-                self._add_knowledge_api_to_memory(knowledge_api_contents)
-                await self._handle_ask_rag_task(model_response_json)
-            elif action_type == 2:
-                # fill the front api arguments
+            if action_type == ActionEnum.QUERY_API:
+                self._add_knowledge_to_model(knowledge_api_contents)
+                apis = await self._get_related_apis(model_response_json)
+                await self._add_apis_to_model(apis)
+            elif action_type == ActionEnum.CALL_API:
                 iterate, api_call_message = self._get_api_call_message(model_response_json)
                 if iterate:
                     continue
-                # execute the api
-                response = self._response(api_call_message)
-                return response
-            elif action_type == 3:
+                return self._response(api_call_message)
+            elif action_type == ActionEnum.TASK_FAILED:
                 if self.config.force_continue_task:
                     self.memory.delete(self.memory.size() - 1)
                     self.memory.add(Msg("user", self.prompt.simulate_to_continue(), role="user"))
                     return await self._iterate()
-                return self._response(self._get_failed_message("Failed to finish the task, due to the lack of API"))
-            elif action_type == 4:
-                return self._response(self._get_success_message())
-            else:
-                raise ValueError("Invalid response type")
-        return self._response(self._get_failed_message("Exceeded maximum number of iterations"))
+
+                self.recorder.task_failed()
+                return self._response(Response.get_task_failed_response(TextConstants.TASK_FAILED_MSG))
+            elif action_type == ActionEnum.TASK_FINISHED:
+                return self._response(Response.get_task_finished_response())
+
+        if self._is_task_cancelled:
+            raise TaskCancelledException()
+
+        if self.cur_iteration_count >= self.config.max_iteration_count:
+            raise InferCountLimitedException()
 
     def _get_api_call_message(self, model_response_json):
         api = self._get_selected_api_from_model(model_response_json)
@@ -121,32 +124,20 @@ class ApiScheduleAgent(ApiAgentBase):
 
         return False, Response.get_api_response([api.parameterized_api()], is_terminal_api)
 
-    def _get_failed_message(self, reason="API execution failed"):
-        self.recorder.task_failed()
-        return Response.get_task_failed_response(reason)
-
-    def _get_success_message(self):
-        return Response.get_task_finished_response()
-
-    async def _handle_ask_rag_task(self, model_response_json):
+    async def _get_related_apis(self, model_response_json):
         model_keywords = model_response_json["keywords"]
-        apis: List[Api] = await self._retrieve_apis(self.user_question, model_keywords)
+        apis: List[Api] = await self.api_retriever.retrieve_apis(self.user_question, model_keywords, self.embed_model)
+        self.recorder.rag("APIs are found: {}".format([api.name for api in apis]))
+        return apis
 
+    async def _add_apis_to_model(self, apis):
         content = self.prompt.retrieve_api(json.dumps([api.api_config_json for api in apis]))
-
         msg = Msg(self.name, content, role="user")
         self.memory.add(msg)
 
-        return apis
-
-    def get_action_type(self, model_response):
+    def _get_action_type(self, model_response):
         response_json = self._parser_to_json(model_response)
         return response_json["type"]
-
-    async def _retrieve_apis(self, user_question, model_keywords):
-        apis: List[Api] = await self.api_retriever.retrieve_apis(user_question, model_keywords, self.embed_model)
-        self.recorder.rag("APIs are found: {}".format([api.name for api in apis]))
-        return apis
 
     def _search_front_api(self, api: Api):
         if api.dependency_apis is None:
@@ -184,7 +175,7 @@ class ApiScheduleAgent(ApiAgentBase):
     def _get_terminal_flag(self, model_response_json):
         return str(model_response_json.get("terminal", "")).lower() == "true"
 
-    def _add_knowledge_api_to_memory(self, knowledge_api_contents):
+    def _add_knowledge_to_model(self, knowledge_api_contents):
         if knowledge_api_contents is None:
             return
         for knowledge_api_content in knowledge_api_contents:

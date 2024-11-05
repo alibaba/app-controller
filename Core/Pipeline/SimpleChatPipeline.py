@@ -12,6 +12,7 @@ class SimpleChatPipeline(ChatPipeline):
 
     def _init_agents(self):
         self.api_scheduler_agent = ApiScheduleAgent(self.config, self.context)
+        self.agents.append(self.api_scheduler_agent)
 
     async def start(self, context):
         super(SimpleChatPipeline, self).start(context)
@@ -23,6 +24,4 @@ class SimpleChatPipeline(ChatPipeline):
         data: dict = await self.api_scheduler_agent.handle_api_response(api_results)
         return data.get("response")
 
-    def reset(self):
-        super().reset()
-        self.api_scheduler_agent.reset()
+
