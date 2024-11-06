@@ -88,7 +88,7 @@ async def start(request):
         return await _handle_exception(request, context, e)
 
     # task should be finished immediately when it is a question
-    if result.status == ResponseStatusEnum.TASK_QUESTION:
+    if result.status in {ResponseStatusEnum.TASK_QUESTION, ResponseStatusEnum.TASK_FAILED}:
         await finish(request)
     return web.json_response(result.to_json())
 
@@ -109,6 +109,9 @@ async def handle_api_response(request):
                 result = Response.get_task_cancelled_response()
         except Exception as e:
             return await _handle_exception(request, context, e)
+
+    if result.status in {ResponseStatusEnum.TASK_FAILED}:
+        await finish(request)
     return web.json_response(result.to_json())
 
 

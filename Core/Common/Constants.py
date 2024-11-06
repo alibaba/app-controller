@@ -16,7 +16,7 @@ class TextConstants:
 
     # Exception Description
     MODEL_FORMAT_EXCEPTION = "Maximum number of retries exceeded for checking the model response format."
-    TASK_CANCELLED_EXCEPTION = "The task was cancelled."
+    TASK_CANCELLED_EXCEPTION = "The task has been canceled, which may have been due to a timeout or manual cancellation."
     INFER_LOOP_LIMITED_EXCEPTION = "The number of inferences has exceeded the limit."
 
     # Task Status
