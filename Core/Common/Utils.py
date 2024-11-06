@@ -45,6 +45,20 @@ def update_model_config(context):
     model_manager.load_model_configs(config)
 
 
+def remove_model_config(context):
+    # Chat models
+    model_manager = ModelManager.get_instance()
+    for model_level in [ModelLevelEnum.Lightweight, ModelLevelEnum.Advanced]:
+        config_name = context.get_chat_model_config_name(model_level)
+        if config_name in model_manager.model_configs:
+            del model_manager.model_configs[config_name]
+
+    # Embedding model
+    config_name = context.get_embed_model_config_name()
+    if config_name in model_manager.model_configs:
+        del model_manager.model_configs[config_name]
+
+
 def load_local_model_config(file_name):
     def replace_env(target: str, key: str):
         if key in target:

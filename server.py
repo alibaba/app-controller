@@ -1,7 +1,7 @@
-import sys
 import argparse
-import traceback
+import sys
 import threading
+import traceback
 
 sys.path.append("Core")
 
@@ -21,7 +21,7 @@ from Pipeline.ChatPipeline import ChatPipeline
 from Pipeline.IntentKnowledgeChatPipeline import IntentKnowledgeAgentChatPipeline
 from aiohttp import web
 import aiohttp_cors
-from Common.Utils import update_model_config, load_local_model_config
+from Common.Utils import update_model_config, load_local_model_config, remove_model_config
 from Common.Context import Context
 from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
 
@@ -150,6 +150,8 @@ def clear(context: Context):
 
     recorder = Recorder(config, context.session_id)
     recorder.close()
+
+    remove_model_config(context)
 
 
 def handle_time_out(context):
