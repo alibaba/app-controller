@@ -3,9 +3,9 @@ import sys
 import threading
 import traceback
 
-from Exception.Exception import TaskCancelledException
-
 sys.path.append("Core")
+
+from Exception.Exception import TaskCancelledException
 
 from Common.ChatReposne import Response
 from Common.Config import config
@@ -121,12 +121,11 @@ async def finish(request):
     2. clear context
     """
     context = Context.from_dict(await request.json())
-    get_test_manager(context).task_finished()
-
-    recorder = Recorder(config, context.session_id)
-    await recorder.save()
-
-    clear(context)
+    if context.session_id in session_id_2_pipeline:
+        get_test_manager(context).task_finished()
+        recorder = Recorder(config, context.session_id)
+        await recorder.save()
+        clear(context)
 
     return web.json_response({})
 
