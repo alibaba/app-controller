@@ -76,20 +76,16 @@ enabling a seamless experience that meets diverse needs.
 We developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), that allows users to operate various VsCode features through natural language. Below are some demonstrations of its features:
 
 ### Tic-tac-toe Game
+https://github.com/user-attachments/assets/82d84f26-de49-4eae-9e31-e838c398343a
 
-https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58
+### A comprehensive pipeline in Python including configuration, code, and execution.
+https://github.com/user-attachments/assets/9ab9f14c-ff94-4dc5-af67-a358bd03e0f6
 
 ### Style Changing
-
-https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da
+https://github.com/user-attachments/assets/d29155d5-58c2-488b-8477-f95cd285533a
 
 ### Theme Changing
-
-https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb
-
-### Enable auto saving
-
-https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8
+https://github.com/user-attachments/assets/94636935-3789-496f-a6be-1baa0d18f63c
 
 ## Connect to your Application
 
