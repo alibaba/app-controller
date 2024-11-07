@@ -18,7 +18,7 @@ language</h3>
 
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), which allows users to manipulate
-  various VsCode features through natural language commands, such as changing the theme or generating code with a single
+  various VS Code features through natural language commands, such as changing the theme or generating code with a single
   sentence. 
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   We are thrilled to announce the release of **App-Controller** version 1.0!
@@ -73,7 +73,7 @@ enabling a seamless experience that meets diverse needs.
 
 ## Applications: The SmartVscode Plugin Based on App-Controller
 
-We developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), that allows users to operate various VsCode features through natural language. Below are some demonstrations of its features:
+We developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), that allows users to operate various VS Code features through natural language. Below are some demonstrations of its features:
 
 ### Tic-tac-toe Game
 https://github.com/user-attachments/assets/82d84f26-de49-4eae-9e31-e838c398343a
