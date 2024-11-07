@@ -48,17 +48,17 @@ class Recorder:
     def info(self, message: str, record: bool = True, label="Info"):
         if record:
             self.messages.append("[{}]".format(label) + message)
-        self.logger.info("{}", message, identifier=self.identifier, label=label)
+        self.logger.info("{}", message, label=label)
 
     def warning(self, message: str, record: bool = True):
         if record:
             self.messages.append("[Warning]:" + message)
-        self.logger.warning(message, identifier=self.identifier)
+        self.logger.warning(message)
 
     def error(self, message: str, record: bool = True):
         if record:
             self.messages.append("[Error]:" + message)
-        self.logger.error(message, identifier=self.identifier)
+        self.logger.error(message)
 
     def task_failed(self):
         self.feedback = TaskFeedBackEnum.Fail.name
@@ -69,10 +69,6 @@ class Recorder:
 
     def separate(self):
         self.info("--------------------------------------------------", record=False)
-
-    def _stdout_filter(self, record):
-        # Filter used by the console handler to display the log
-        return self.config.enable_stdout and record["extra"].get("identifier", None) == self.identifier
 
     def close(self):
         if self.identifier in self.__class__._instances:

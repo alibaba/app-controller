@@ -6,6 +6,7 @@ import traceback
 sys.path.append("Core")
 
 from Exception.Exception import TaskCancelledException
+from init import init_server, close_server
 
 from Common.ChatReposne import Response
 from Common.Config import config
@@ -13,7 +14,6 @@ from Common.CustomEnum import ResponseStatusEnum
 from Common.SysLogger import sys_logger
 
 from Index.EmbedIndexManager import index_manager
-from init import init_server, close_server
 from AppSupports.SmartVscodeExtension.code.Benchmark.Test.TestManager import TestManager
 from Common.Recoder import Recorder
 from Database.Models.SessionModel import SessionModel

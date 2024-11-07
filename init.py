@@ -29,7 +29,7 @@ async def close_server(app):
     await Tortoise.close_connections()
 
 
-agentscope.init(save_dir="AppSupports/SmartVscodeExtension/runs/Ignore", save_log=False, save_code=False, save_api_invoke=False,
+agentscope.init(save_dir=os.path.join(config.app_data_dir, "runs/Ignore"), save_log=False, save_code=False, save_api_invoke=False,
                 use_monitor=False)
 
 model_response_thread_pool = ThreadPoolExecutor(max_workers=config.model_response_thread_size)
