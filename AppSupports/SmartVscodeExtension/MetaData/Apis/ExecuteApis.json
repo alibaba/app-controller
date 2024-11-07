@@ -13,9 +13,6 @@
       "required": [
         "debugProgram"
       ]
-    },
-    "dependencyApis": {
-      "openFileInEditor": "In general, you must open the file in editor before starting debugging."
     }
   },
   "executeHtmlInBrowser": {
