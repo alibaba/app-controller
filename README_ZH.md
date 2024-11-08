@@ -14,11 +14,11 @@
 
 ## 新闻
 
-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
+- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-11-08]**
   基于**App-Controller**，我们实现了一个Visual Studio
   Code插件[SmartVscode](https://github.com/alibaba/smart-vscode-extension)
   ，允许用户通过自然语言来操作VS Code支持的各种功能，例如：一句话改变主题，字体，生成代码等等。
-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
+- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-11-08]**
   我们现在发布了**App-Controller** v1.0版本！
 
 ---
