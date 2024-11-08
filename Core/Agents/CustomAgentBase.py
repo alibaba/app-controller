@@ -1,6 +1,7 @@
 import asyncio
-import json
 from abc import ABC
+
+import json5
 
 from Common.Context import Context
 from Common.Recoder import Recorder
@@ -65,5 +66,5 @@ class CustomAgentBase(AgentBase, ABC):
         raise ModelFormatException()
 
     def _parser_to_json(self, model_response):
-        response_json = json.loads(extract_possible_valid_json(model_response.text))
+        response_json = json5.loads(extract_possible_valid_json(model_response.text))
         return response_json
