@@ -16,11 +16,11 @@ language</h3>
 
 ## 新闻
 
-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
+- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-11-08]**
   Based on **App-Controller**, we have developed a Visual Studio Code plugin, [SmartVscode](https://github.com/alibaba/smart-vscode-extension), which allows users to manipulate
   various VS Code features through natural language commands, such as changing the theme or generating code with a single
   sentence. 
-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
+- <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-11-08]**
   We are thrilled to announce the release of **App-Controller** version 1.0!
 
 ---
