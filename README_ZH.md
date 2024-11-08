@@ -17,7 +17,7 @@
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   基于**App-Controller**，我们实现了一个Visual Studio
   Code插件[SmartVscode](https://github.com/alibaba/smart-vscode-extension)
-  ，允许用户通过自然语言来操作VsCode支持的各种功能，例如：一句话改变主题，字体，生成代码等等。
+  ，允许用户通过自然语言来操作VS Code支持的各种功能，例如：一句话改变主题，字体，生成代码等等。
 - <img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/>**[2024-06-27]**
   我们现在发布了**App-Controller** v1.0版本！
 
@@ -64,20 +64,21 @@ App-Controller 的核心竞争力在于其高度自动化的 API 编排逻辑以
 
 - 🌟 Token优化：App-Controller 的优化算法能够智能的评估消息的可用性，降低令牌(token)的使用量，减少因API调用导致的开销（即将推出）。
 
-## 应用：基于App-Controller的VsCode插件
-我们实现了一个Visual Studio Code插件[SmartVscode](https://github.com/alibaba/smart-vscode-extension)，它允许用户通过自然语言来操作VsCode支持的各种功能，下面是其支持的部分功能演示：
+## 应用：基于App-Controller的VS Code插件
+我们实现了一个Visual Studio Code插件[SmartVscode](https://github.com/alibaba/smart-vscode-extension)，它允许用户通过自然语言来操作VS Code支持的各种功能，下面是其支持的部分功能演示：
 
-### Tic-tac-toe Game
-https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58
+### 井字棋游戏
+https://github.com/user-attachments/assets/82d84f26-de49-4eae-9e31-e838c398343a
 
-### Style Changing
-https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da
+### 一套完整的Python基础链路，涵盖配置、代码和执行。
+https://github.com/user-attachments/assets/9ab9f14c-ff94-4dc5-af67-a358bd03e0f6
 
-### Theme Changing
-https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb
+### 样式改变
+https://github.com/user-attachments/assets/d29155d5-58c2-488b-8477-f95cd285533a
 
-### Enable auto saving
-https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8
+### 主题切换
+https://github.com/user-attachments/assets/94636935-3789-496f-a6be-1baa0d18f63c
+
 
 ## 连接到你的应用程序
 下图展示了应用程序厂商利用 App-Controller 框架引入智能化过程中，应用程序开发者（App Developer）所要承担的工作以及 App-Controller 独立完成智能化的工作为用户需求编排最佳的API调用顺序的简要过程。 具体而言，应用程序开发者需要在 App 端开发与用户交互的前端以及与 App-Controller 后端（Backend）交互的通信接口。同时需要向 App-Controller 后端提供知识（Knowledge），其中知识包括 App 的 API文档和其它文档。API 文档应详细描述API的功能和参数信息。完成以上步骤后，App 便可实现与用户的智能交互。具体而言，App 首先转发用户输入（User Input）给App-Controller 后端。App-Controller 后端将用户输入和 API文档的信息整合，与LLM交互，以选择需要执行的API和确定任务状态。任务状态包括任务继续和任务终止，任务终止又分为任务成功和任务失败。如果任务继续，App 执行选定的 API，并将执行结果返回 App-Controller 后端。执行结果分为执行成功（Success）、执行失败（Failure）及可选的失败原因（Reason）。App-Controller 后端会继续把执行结果和 LLM 交互做出下一步的决策。若任务终止，则反馈结果给用户。
