@@ -54,6 +54,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#news">News</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-app-controller">What is App-Controller?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#applications-the-smartvscode-plugin-based-on-app-controller">Applications: The SmartVscode Plugin Based on App-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-to-your-application">Connect to your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributions">Contributions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
@@ -87,22 +91,23 @@
              
   <section id="introduction">
 <span id="app-controller-en"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
-<h3 align="center"><img src="../_static/logo.png" height="64"><br>App-Controller: Allow users to manipulate your App with natural
+<h3 align="center"><img src="../_static/logo.png" height="200"><br>App-Controller: Allow users to manipulate your App with natural
 language</h3>
 <div align="center">
 <p><img alt="" src="https://img.shields.io/badge/python-3.9+-blue" />
-<a class="reference external" href="https://alibaba.github.io/App-controller/en/index.html"><img alt="" src="https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown" /></a>
+<a class="reference external" href="https://alibaba.github.io/app-controller/en/index.html"><img alt="" src="https://img.shields.io/badge/Docs-English%7C%E4%B8%AD%E6%96%87-blue?logo=markdown" /></a>
 <img alt="" src="https://img.shields.io/badge/license-Apache--2.0-black" />
 <img alt="" src="https://img.shields.io/badge/Contribute-Welcome-green" /></p>
 </div>
 <section id="news">
 <h2>News<a class="headerlink" href="#news" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/><strong>[2024-06-27]</strong>
-Based on <strong>App-Controller</strong>, we have developed a Visual Studio Code plugin, <a class="reference internal" href="#"><span class="xref myst">SmartVscode</span></a>, which allows users to manipulate
-various VsCode features through natural language commands, such as changing the theme or generating code with a single
-sentence. <a class="reference external" href="https://github.com/alibaba/smart-vscode-extension">Learn more</a></p></li>
-<li><p><img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/><strong>[2024-06-27]</strong>
+<li><p><img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/><strong>[2024-11-08]</strong>
+Based on <strong>App-Controller</strong>, we have developed a Visual Studio Code
+plugin, <a class="reference external" href="https://github.com/alibaba/smart-vscode-extension">SmartVscode</a>, which allows users to manipulate
+various VS Code features through natural language commands, such as changing the theme or generating code with a single
+sentence.</p></li>
+<li><p><img src="https://img.alicdn.com/imgextra/i3/O1CN01SFL0Gu26nrQBFKXFR_!!6000000007707-2-tps-500-500.png" alt="new" width="30" height="30"/><strong>[2024-11-08]</strong>
 We are thrilled to announce the release of <strong>App-Controller</strong> version 1.0!</p></li>
 </ul>
 </section>
@@ -115,7 +120,7 @@ It aims to integrate and synchronize APIs provided by any applications (APPs) us
 <li><p>App-Controller allows applications to respond and execute instructions formulated in natural language, significantly simplifying
 user interaction with applications.</p></li>
 </ul>
-<img src="../_static/function.png" width=1000>
+<img src="../_static/mode.png" width=1000>
 <blockquote>
 <div><p>The above image illustrates how App-Controller enhances application interactivity.
 Specifically, the graphic is divided into two parts: the left-half details the traditional process of inquiry and execution when
@@ -140,17 +145,13 @@ enabling a seamless experience that meets diverse needs.</p>
 <p>🔥 <strong>Enhanced Usability</strong>: Allows users to control your application via simple natural language commands, eliminating the need to
 learn complex interfaces or command sets and making the services or content readily accessible.</p>
 <p>🛠️ <strong>Easy Integration</strong>: Developers only need to register their application’s API directory, and App-Controller will
-automatically
-manage the identification and orchestration, negating the need for intricate coding.</p>
+automatically manage the identification and orchestration, negating the need for intricate coding.</p>
 <p>🚀 <strong>Asynchronous and Concurrent Processing</strong>: App-Controller enhances its support for concurrent requests using modern
-asynchronous
-technology, ensuring efficiency and quick responses even under high-load conditions with multiple users or tasks.</p>
+asynchronous technology, ensuring efficiency and quick responses even under high-load conditions with multiple users or tasks.</p>
 <p>🌐 <strong>Robust API Interactions</strong>: App-Controller offers a stable and user-friendly HTTP API interface, enabling seamless
-interactions
-with applications while ensuring high-efficiency and security in data transfer.</p>
+interactions with applications while ensuring high-efficiency and security in data transfer.</p>
 <p>🤖 <strong>Multitude of Large Language Models</strong>: App-Controller integrates well with various Large Language Models, allowing developers
-to
-choose the most suitable model based on their needs and contexts for optimal understanding and natural language processing.</p>
+to choose the most suitable model based on their needs and contexts for optimal understanding and natural language processing.</p>
 <p>📚 <strong>Comprehensive Documentation</strong>: App-Controller provides extensive documentation, including quick start guides, API references,
 best practice examples, and FAQs, to help developers get started and fully utilize the framework.</p>
 <p>💾 <strong>Persistent Task Flows</strong>: Task workflows can be stored persistently in databases, facilitating the monitoring and management
@@ -158,38 +159,36 @@ of tasks and allowing developers to check the status and history at any time.</p
 <p>🛢️ <strong>Smart Caching Mechanism</strong>: With advanced caching technology, App-Controller optimizes performance and response times by
 intelligently storing frequently requested results, reducing the number of calls to external models (coming soon).</p>
 <p>🌟 <strong>Token Optimization</strong>: App-Controller’s optimization algorithm intelligently assesses message utility, reducing token usage
-and
-cutting down on costs associated with API calls (coming soon).</p>
+and cutting down on costs associated with API calls (coming soon).</p>
 </section>
 <section id="applications-the-smartvscode-plugin-based-on-app-controller">
 <h2>Applications: The SmartVscode Plugin Based on App-Controller<a class="headerlink" href="#applications-the-smartvscode-plugin-based-on-app-controller" title="Link to this heading"></a></h2>
-<p>We developed a Visual Studio Code plugin, <a class="reference internal" href="#"><span class="xref myst">SmartVscode</span></a>, that allows users to operate various VsCode features through natural
-language. Below are some demonstrations of its features:</p>
+<p>We developed a Visual Studio Code plugin, <a class="reference external" href="https://github.com/alibaba/smart-vscode-extension">SmartVscode</a>, that allows users to
+operate various VS Code features through natural language. Below are some demonstrations of its features:</p>
 <section id="tic-tac-toe-game">
 <h3>Tic-tac-toe Game<a class="headerlink" href="#tic-tac-toe-game" title="Link to this heading"></a></h3>
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/eef9765a-8cda-4654-a147-475ed1a13c58 -->
-<p><img alt="game" src="../_images/game8x.gif" /></p>
+<p><img alt="game8x" src="https://github.com/user-attachments/assets/5ae87029-6669-4d36-8655-6a7f0c408b2d" /></p>
+</section>
+<section id="a-comprehensive-pipeline-in-python-including-configuration-code-and-execution">
+<h3>A comprehensive pipeline in Python including configuration, code, and execution.<a class="headerlink" href="#a-comprehensive-pipeline-in-python-including-configuration-code-and-execution" title="Link to this heading"></a></h3>
+<p><img alt="quicksort4x" src="https://github.com/user-attachments/assets/2201a72b-2348-4c94-a01a-2f64515325d6" /></p>
 </section>
 <section id="style-changing">
 <h3>Style Changing<a class="headerlink" href="#style-changing" title="Link to this heading"></a></h3>
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/18480837-b90f-44d6-8c28-d5f17a4552da -->
-<p><img alt="style" src="../_images/fontsize2x.gif" /></p>
+<p><img alt="fontsize2x" src="https://github.com/user-attachments/assets/a5ab2c2a-0046-4f57-8dc3-7e0a304f2817" /></p>
 </section>
 <section id="theme-changing">
 <h3>Theme Changing<a class="headerlink" href="#theme-changing" title="Link to this heading"></a></h3>
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/2a8cd2fd-22df-4ba0-a564-90cad6c708bb -->
-<p><img alt="Theme Changing" src="../_images/theme1_8x.gif" /></p>
+<p><img alt="theme1_8x" src="https://github.com/user-attachments/assets/3f84f3e2-f75d-4b12-9a2e-c3fe0627222d" /></p>
 </section>
-<section id="enable-auto-saving">
-<h3>Enable auto saving<a class="headerlink" href="#enable-auto-saving" title="Link to this heading"></a></h3>
-<!-- https://github.com/alibaba/pilotscope/assets/31238100/77548e8a-2832-4770-8924-ea479646e3a8 -->
-<p><img alt="Auto Saving" src="../_images/autosave2x.gif" /></p>
+</section>
+<section id="connect-to-your-application">
+<h2>Connect to your Application<a class="headerlink" href="#connect-to-your-application" title="Link to this heading"></a></h2>
 <p>The following image illustrates the process of introducing intelligence into applications using the App-Controller framework,
 detailing the tasks that application developers need to undertake and the process by which App-Controller independently
 orchestrates
 API calls to fulfill user instructions.</p>
 <img src="../_static/developer.png" width=1000>
-</section>
 <section id="preparation-stage">
 <h3>Preparation Stage:<a class="headerlink" href="#preparation-stage" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
@@ -210,8 +209,23 @@ the LLM to
 make the next decision. The pipeline is terminated when the task has been completed, or failed, and the result is returned to the
 user.</p>
 <p>After completing these steps, the App can achieve intelligent interaction with users.</p>
-<p><a class="reference internal" href="#app-controller-en">[Return to the top]</a></p>
 </section>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://alibaba.github.io/app-controller/en/index.html">Documentation</a>
+provides comprehensive information on how to integrate App-Controller into your application. You can refer to these documents for
+an improved experience with App-Controller.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
+<p>App-Controller is released under the Apache License 2.0.</p>
+</section>
+<section id="contributions">
+<h2>Contributions<a class="headerlink" href="#contributions" title="Link to this heading"></a></h2>
+<p>Join us in building App-Controller!
+Please see our <a class="reference external" href="https://alibaba.github.io/app-controller/en/tutorial/contribute.html">Contribution Guide</a> for more detail</p>
+<p><a class="reference internal" href="#app-controller-en">[Return to the top]</a></p>
 </section>
 </section>
 
