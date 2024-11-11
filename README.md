@@ -1,7 +1,8 @@
 English | [中文](./README_ZH.md)
 
-<h3 align="center"><img src="Assets/logo.png" height="64"><br>App-Controller: Allow users to manipulate your App with natural
+<h3 align="center"><img src="Assets/logo.png" height="200"><br>App-Controller: Allow users to manipulate your App with natural
 language</h3>
+
 
 <div align="center">
 
@@ -33,7 +34,7 @@ It aims to integrate and synchronize APIs provided by any applications (APPs) us
 - App-Controller allows applications to respond and execute instructions formulated in natural language, significantly simplifying
   user interaction with applications.
 
-<img src="Assets/function.png" width=1000>
+<img src="Assets/mode.png" width=1000>
 
 > The above image illustrates how App-Controller enhances application interactivity.
 > Specifically, the graphic is divided into two parts: the left-half details the traditional process of inquiry and execution when

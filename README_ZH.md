@@ -28,7 +28,7 @@
 App-Controller 是一个基于大型语言模型（LLM）和代理（Agent）的创新性的 API 编排框架。该框架旨在通过运用 LLM 的高级推理功能，实现对不同应用程序（APP）提供的 API 接口的整合与协调。
 - App-Controller允许应用程序响应和执行基于自然语言的指令，极大提升了用户体验，并简化了应用程序与用户的交互流程。
 
-  <img src="Assets/function.png" width=1000>
+  <img src="Assets/mode.png" width=1000>
   
   > 上图展示了 App-Controller 如何增强应用程序的交互能力。具体而言，图片分为两部分，左半部分描述了传统完成任务时的问答和执行流程，右半部分展示了引入App-Controller后的完成任务的流程。传统流程中，当用户（User）需要在 App 中完成某项任务却不知道该如何操作时，他首先询问（Ask）LLM并且得到回答（Answer），于是用户对 App 发送命令（Command）并且获得其执行结果（Result），即完成了任务。引入 App-Controller 后的流程中，用户仅需使用自然语言向App输入需求（Requirement），便可得到执行结果（Result）完成任务。App 在 App-Controller 的协助下询问 LLM 用户意图并得知需要执行的命令，执行命令后返回结果。
 
