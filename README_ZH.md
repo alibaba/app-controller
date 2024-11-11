@@ -1,6 +1,6 @@
 [English](./README.md) | 中文
 
-<h3 align="center"><img src="Assets/logo.png" height="64"><br>App-Controller: 允许用户通过自然语言来操纵你的应用程序</h3>
+<h3 align="center"><img src="Assets/logo.png" height="200"><br>App-Controller: 允许用户通过自然语言来操纵你的应用程序</h3>
 
 <div align="center">
 
