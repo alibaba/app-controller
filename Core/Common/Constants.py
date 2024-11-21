@@ -26,3 +26,6 @@ class TextConstants:
     # Info
     API_EXECUTED_RESULT_MSG = "The result of the API execution is: {}"
     RELATED_APIS_MSG = "Related APIs: {}"
+
+
+SMART_VSCODE_DEFAULT_UID = "smart_vscode_default_uid"

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ _("Get Your Free SmartVscode Token") }}</title>
-    <link href="https://img.alicdn.com/imgextra/i3/O1CN01BP6UV221Lr7crkYBo_!!6000000006969-2-tps-380-372.png"
+    <link href="../../Assets/logo.png"
           rel="icon"
           type="image/png">
     <script src="{{ url_for('static', filename='js_third_party/jquery.min.js') }}"></script>
@@ -47,7 +47,7 @@
     <br>
 
     <img class="brand-gif"
-         src="https://gw.alicdn.com/imgextra/i3/O1CN01uioF2Z1tYCsWgR3Cf_!!6000000005913-1-tps-2156-1080.gif"
+         src="https://github.com/user-attachments/assets/5ae87029-6669-4d36-8655-6a7f0c408b2d"
          alt="App-Controller Animation">
     <h4>{{ _("Please log in and star the App-Controller repository") }}.</h4>
     <div class="terms">
@@ -106,7 +106,9 @@
         setTimeout(() => {
             const ip = "{{ ip }}";
             const port = "{{ port }}";
+            const uid = "{{ uid }}";
             const scope = encodeURIComponent("public_repo");
+            const state = encodeURIComponent(uid);
             let address;
             if (port) {
                 address = `http://${ip}:${port}/workstation`
@@ -115,10 +117,8 @@
             }
             address = `http://${ip}:${port}/oauth/callback`
 
-            {#const otherRedirectUri =#}
-            {#        encodeURIComponent(address);#}
-            const otherRedirectUri = address
-            window.location.href = `https://github.com/login/oauth/authorize?client_id={{ client_id }}&redirect_uri=${otherRedirectUri}&scope=${scope}`;
+            const otherRedirectUri = encodeURIComponent(address);
+            window.location.href = `https://github.com/login/oauth/authorize?client_id={{ client_id }}&redirect_uri=${otherRedirectUri}&scope=${scope}&state=${state}`;
         }, 500);
     }
 

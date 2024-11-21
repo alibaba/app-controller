@@ -1,4 +1,5 @@
 """The Web Server of the AgentScope Workstation Online Version."""
+import argparse
 import ipaddress
 import json
 import os
@@ -34,6 +35,8 @@ from agentscope.studio._app import (
     _list_workflows,
     _load_workflow,
 )
+
+from Common.Constants import SMART_VSCODE_DEFAULT_UID
 
 _app = Flask(__name__)
 _app.config["BABEL_DEFAULT_LOCALE"] = "en"
@@ -90,13 +93,14 @@ if not is_ip(COPILOT_IP):
     COPILOT_PORT = ""
 
 CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REPO_OWNER = os.getenv("REPO_OWNER")
 APP_CONTROLLER_REPO = os.getenv("APP_CONTROLLER_REPO")
+
 OSS_ENDPOINT = os.getenv("OSS_ENDPOINT")
 OSS_BUCKET_NAME = os.getenv("OSS_BUCKET_NAME")
 OSS_ACCESS_KEY_ID = os.getenv("OSS_ACCESS_KEY_ID")
 OSS_ACCESS_KEY_SECRET = os.getenv("OSS_ACCESS_KEY_SECRET")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 required_envs = {
     "OSS_ACCESS_KEY_ID": OSS_ACCESS_KEY_ID,
@@ -181,6 +185,8 @@ def _home() -> str:
     """
     Render the login page.
     """
+    uid = request.args.get("uid", SMART_VSCODE_DEFAULT_UID)
+
     if LOCAL_WORKSTATION:
         session["verification_token"] = "verification_token"
         session["user_login"] = "local_user"
@@ -191,7 +197,7 @@ def _home() -> str:
             secret_key=SECRET_KEY,
             version="online",
         )
-    return render_template("login.html", client_id=CLIENT_ID, ip=IP, port=PORT)
+    return render_template("login.html", client_id=CLIENT_ID, ip=IP, port=PORT, uid=uid)
 
 
 @_app.route("/oauth/callback")
@@ -200,6 +206,7 @@ def oauth_callback() -> str:
     Github oauth callback.
     """
     code = request.args.get("code")
+    uid = request.args.get("state")
     if not code:
         return "Error: Code not found."
 
@@ -390,12 +397,19 @@ def set_locale() -> Response:
 
 
 if __name__ == "__main__":
-    import sys
+    parser = argparse.ArgumentParser(description="Run the application with specified environment variables and port.")
 
-    if len(sys.argv) > 1:
-        try:
-            PORT = int(sys.argv[1])
-        except ValueError:
-            print(f"Invalid port number. Using default port {PORT}.")
+    parser.add_argument("--client_id", help="Set the CLIENT_ID environment variable.")
+    parser.add_argument("--client_secret", help="Set the CLIENT_SECRET environment variable.")
+    parser.add_argument("--owner", help="Set the REPO_OWNER environment variable.")
+    parser.add_argument("--repo", help="Set the APP_CONTROLLER_REPO environment variable.")
+    parser.add_argument("--port", type=int, default=8080, help="Set the port number for the application.")
+
+    args = parser.parse_args()
+    CLIENT_ID = args.client_id
+    CLIENT_SECRET = args.client_secret
+    REPO_OWNER = args.owner
+    APP_CONTROLLER_REPO = args.repo
+    PORT = args.port
 
     _app.run(host="0.0.0.0", port=PORT)
