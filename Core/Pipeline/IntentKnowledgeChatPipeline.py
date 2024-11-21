@@ -10,6 +10,7 @@ from Agents.IntentAgent import IntentAgent
 from Common.ChatReposne import Response
 from Common.Config import Config
 from Common.Context import Context
+from Exception.Exception import InputQuestionException
 from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
 from Pipeline.SimpleChatPipeline import SimpleChatPipeline
 
@@ -32,6 +33,7 @@ class IntentKnowledgeAgentChatPipeline(KnowledgeAgentChatPipeline):
 
         is_question = await self.is_question(messages)
         if is_question:
+            raise InputQuestionException()
             return Response.get_task_question_response()
 
         await asyncio.gather(

@@ -18,6 +18,7 @@ class TextConstants:
     MODEL_FORMAT_EXCEPTION = "Maximum number of retries exceeded for checking the model response format."
     TASK_CANCELLED_EXCEPTION = "The task has been canceled, which may have been due to a timeout or manual cancellation."
     INFER_LOOP_LIMITED_EXCEPTION = "The number of inferences has exceeded the limit."
+    INPUT_QUESTION_EXCEPTION = "Sorry, SmartVscode is designed to complete specific tasks in VS Code. Please enter your task instead of a question or a chat message."
 
     # Task Status
     TASK_FAILED_MSG = "Sorry, we were unable to complete your task. This may be due to the API being unavailable or the task's complexity exceeding our capabilities."

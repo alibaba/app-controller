@@ -23,3 +23,9 @@ class TaskCancelledException(AppControllerException):
     def __init__(self, message=TextConstants.TASK_CANCELLED_EXCEPTION):
         self.message = message
         super().__init__(self.message)
+
+
+class InputQuestionException(AppControllerException):
+    def __init__(self, message=TextConstants.INPUT_QUESTION_EXCEPTION):
+        self.message = message
+        super().__init__(self.message)
