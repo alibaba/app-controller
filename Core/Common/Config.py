@@ -46,10 +46,13 @@ class Config:
 
         # Message section
         self.enable_stdout = parser.getboolean('Message', 'enable_stdout')
-        
+
         # test
         self.test_mode = parser.getboolean('Test', 'test_mode')
         self.session_time_out = parser.getint('Test', 'session_time_out')
+
+        # Application
+        self.version = parser.get('Application', 'version')
 
     def get_knowledge_api_config(self, knowledge_dir_name):
         with open(os.path.join(self.metadata_dir_path, knowledge_dir_name, "config.json")) as f:

@@ -11,7 +11,8 @@
     "json_args": {
       "model": "text-embedding-3-small",
       "encoding_format": "float"
-    }
+    },
+    "max_retries": 5
   },
   {
     "config_name": "qwen_embedding_config",

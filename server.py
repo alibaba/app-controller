@@ -27,10 +27,14 @@ from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
 
 parser = argparse.ArgumentParser(description="App-Controller Service")
 parser.add_argument("--port", "-p", type=int, default=config.SERVER_PORT, help="The port of the service")
+parser.add_argument("--tongyi_free_api_key", help="The api key for tongyi free api")
+args = parser.parse_args()
 
 session_id_2_pipeline = {}
 session_id_2_test_manager = {}
 session_id_2_timer = {}
+
+TONGYI_FREE_API_KEY = args.tongyi_free_api_key
 
 
 def is_cancelled_pipeline(context: Context):
@@ -65,18 +69,18 @@ def get_timer(context: Context):
 
 
 async def start(request):
-    context = Context.from_dict(await request.json())
-
-    # update model config
-    update_model_config(context)
-
-    test_manager = get_test_manager(context)
-    pipeline = get_pipeline(context)
-    timer = get_timer(context)
-    print("Start timer")
-    timer.start()
-
+    context = None
     try:
+        context = Context.from_dict(await request.json())
+        # update model config
+        update_model_config(context)
+
+        test_manager = get_test_manager(context)
+        pipeline = get_pipeline(context)
+        timer = get_timer(context)
+        print("Start timer")
+        timer.start()
+
         result: Response = await pipeline.start(context)
         if result.status != ResponseStatusEnum.TASK_QUESTION:
             test_manager.check(result)
@@ -170,8 +174,9 @@ async def query_session(request):
 
 
 async def _handle_exception(request, context: Context, e: Exception):
-    get_test_manager(context).task_failed()
-    await finish(request)
+    if context is not None:
+        get_test_manager(context).task_failed()
+        await finish(request)
 
     if isinstance(e, TaskCancelledException):
         return web.json_response(Response.get_task_cancelled_response().to_json())

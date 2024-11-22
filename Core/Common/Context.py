@@ -1,11 +1,14 @@
+from Common.Config import config
 from Common.Constants import TextConstants
 from Common.CustomEnum import ModelLevelEnum
 from agentscope.manager import ModelManager
 
+from Exception.Exception import ApplicationVersionException
+
 
 class Context:
     def __init__(self, user_id, session_id, content, environments, chat_model_config,
-                 embedding_model_config, is_test, test_answer):
+                 embedding_model_config, is_test, test_answer, application_version, enable_free_token=False):
         # the user id is used to identify the user. Each user should have a unique user id.
         self.user_id = user_id
 
@@ -26,6 +29,9 @@ class Context:
         self.is_test = is_test
         self.test_answer = test_answer
 
+        self.application_version = application_version
+        self.enable_free_token = enable_free_token
+
     def to_task_prompt(self):
         return """
             My task is: {}. {}
@@ -36,7 +42,9 @@ class Context:
         return cls(x["userId"], x["sessionId"], x.get("content", None),
                    cls._parser_envs(x),
                    *cls._parser_model(x),
-                   *cls._parser_test_data(x)
+                   *cls._parser_test_data(x),
+                   cls._parser_application_version(x),
+                   *cls._parser_others(x)
                    )
 
     @classmethod
@@ -56,11 +64,25 @@ class Context:
             chat_model_config[model_level.name]["config_name"] = x["sessionId"] + str(model_level.name) + "_chat"
 
         embedding_model_config["config_name"] = x["sessionId"] + "_embedding"
+
+        cls._add_tongyi_free_api_key(chat_model_config, embedding_model_config)
         return chat_model_config, embedding_model_config
 
     @classmethod
     def _parser_test_data(cls, x):
         return x.get("isTest", False), x.get("testAnswer", None)
+
+    @classmethod
+    def _parser_application_version(cls, x):
+        version = x.get("version", None)
+        if version is None or version != config.version:
+            raise ApplicationVersionException(config.version)
+        return version
+
+    @classmethod
+    def _parser_others(cls, x):
+        enable_free_token = x.get("enable_free_token", False)
+        return enable_free_token,
 
     def _get_envs_prompt(self, environments):
         prompt = ""
@@ -88,3 +110,17 @@ class Context:
         model_manager = ModelManager.get_instance()
         model = model_manager.get_model_by_config_name(self.get_embed_model_config_name())
         return model.model_name
+
+    @classmethod
+    def _add_tongyi_free_api_key(cls, chat_model_config, embedding_model_config):
+        from server import TONGYI_FREE_API_KEY
+
+        # for chat model
+        if chat_model_config["Lightweight"]["model_type"] == "dashscope_chat":
+            chat_model_config["Lightweight"]["api_key"] = TONGYI_FREE_API_KEY
+        if chat_model_config["Advanced"]["model_type"] == "dashscope_chat":
+            chat_model_config["Advanced"]["api_key"] = TONGYI_FREE_API_KEY
+
+        # for embedding model
+        if embedding_model_config["model_type"] == "dashscope_text_embedding":
+            embedding_model_config["api_key"] = TONGYI_FREE_API_KEY
