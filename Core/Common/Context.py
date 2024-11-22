@@ -81,7 +81,7 @@ class Context:
 
     @classmethod
     def _parser_others(cls, x):
-        enable_free_token = x.get("enable_free_token", False)
+        enable_free_token = x.get("enable_free_tongyi_token", False)
         return enable_free_token,
 
     def _get_envs_prompt(self, environments):

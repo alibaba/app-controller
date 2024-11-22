@@ -24,6 +24,7 @@ import aiohttp_cors
 from Common.Utils import update_model_config, load_local_model_config, remove_model_config
 from Common.Context import Context
 from Pipeline.KnowledgeChatPipeline import KnowledgeAgentChatPipeline
+from Service.UserCallCountService import UserCallCountService
 
 parser = argparse.ArgumentParser(description="App-Controller Service")
 parser.add_argument("--port", "-p", type=int, default=config.SERVER_PORT, help="The port of the service")
@@ -68,6 +69,15 @@ def get_timer(context: Context):
     return session_id_2_timer[context.session_id]
 
 
+async def query_call_count(request):
+    data = await request.json()
+    userId = data.get("userId")
+    has_quota, call_count =  await UserCallCountService.get(userId)
+    print("has_quota", has_quota, "call_count", call_count)
+    return web.json_response({"has_quota": has_quota, "call_count": call_count})
+    
+    
+
 async def start(request):
     context = None
     try:
@@ -80,7 +90,9 @@ async def start(request):
         timer = get_timer(context)
         print("Start timer")
         timer.start()
-
+        
+        if context.enable_free_token:
+            await UserCallCountService.inc_call_count(context.user_id)
         result: Response = await pipeline.start(context)
         if result.status != ResponseStatusEnum.TASK_QUESTION:
             test_manager.check(result)
@@ -127,7 +139,7 @@ async def finish(request):
     context = Context.from_dict(await request.json())
     if context.session_id in session_id_2_pipeline:
         get_test_manager(context).task_finished()
-        recorder = Recorder(config, context.session_id)
+        recorder = Recorder(config, context.session_id, user_id=context.user_id)
         await recorder.save()
         clear(context)
 
@@ -152,7 +164,7 @@ def clear(context: Context):
         timer.cancel()
         del session_id_2_timer[context.session_id]
 
-    recorder = Recorder(config, context.session_id)
+    recorder = Recorder(config, context.session_id, context.user_id)
     recorder.close()
 
     remove_model_config(context)
@@ -193,7 +205,8 @@ def create_app():
         web.post('/handleApiResponse', handle_api_response),
         web.post('/finish', finish),
         web.post('/cancel', cancel),
-        web.post('/query_session', query_session)
+        web.post('/query_session', query_session),
+        web.post('/queryCallCount', query_call_count)
     ])
     # 设置 CORS
     cors = aiohttp_cors.setup(app, defaults={

@@ -24,7 +24,7 @@ class CustomAgentBase(AgentBase, ABC):
         self.prompt = prompt
         self.embed_model = get_embed_model(embed_model_config_name) if embed_model_config_name is not None else None
         self.index_manager: EmbedIndexManager = index_manager
-        self.recorder = Recorder(config, context.session_id)
+        self.recorder = Recorder(config, context.session_id, context.user_id)
         self._is_task_cancelled = False
 
     def stop_task(self):

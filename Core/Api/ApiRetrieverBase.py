@@ -15,7 +15,7 @@ class ApiRetrieverBase(ABC):
         self.api_index: ApiIndex = index_manager.get_index(TextConstants.API, context.get_embed_model_name(config))
         self.api_manager = api_manager
         self.context = context
-        self.recorder = Recorder(config, context.session_id)
+        self.recorder = Recorder(config, context.session_id, context.user_id)
 
     @abstractmethod
     def retrieve_apis(self, user_question, model_question, embed_model):

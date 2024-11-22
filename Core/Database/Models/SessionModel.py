@@ -7,6 +7,9 @@ class SessionModel(Model):
     id = fields.IntField(primary_key=True)
     # the session id of the task
     session_id = fields.CharField(max_length=255)
+    
+    # the user id of the task
+    user_id = fields.CharField(max_length=255)
 
     # the file path of execution pipeline
     pipeline = fields.TextField()
@@ -27,6 +30,7 @@ class SessionModel(Model):
     def to_json(self):
         return {
             "session_id": self.session_id,
+            "user_id": self.user_id,
             "pipeline": self.pipeline,
             "user_input": self.user_input,
             "feedback": self.feedback,

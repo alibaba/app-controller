@@ -7,6 +7,12 @@ import secrets
 import tempfile
 from typing import Tuple, Any
 from datetime import timedelta
+import sys
+sys.path.append("Core")
+sys.path.append("Core/..")
+from Service.UserCallCountService import UserCallCountService
+from init import init_db
+import asyncio
 
 import requests
 import oss2
@@ -201,7 +207,7 @@ def _home() -> str:
 
 
 @_app.route("/oauth/callback")
-def oauth_callback() -> str:
+async def oauth_callback() -> str:
     """
     Github oauth callback.
     """
@@ -242,12 +248,14 @@ def oauth_callback() -> str:
             secret_key=SECRET_KEY,
             version="online",
         )
-
+        await UserCallCountService.enable_quota(uid)
+        print("Enable quota: ", uid)
         return redirect(
             url_for(
                 "_success_for_star",
             ),
         )
+        
     else:
         return "Error: Unable to star the repository."
 
@@ -411,5 +419,12 @@ if __name__ == "__main__":
     REPO_OWNER = args.owner
     APP_CONTROLLER_REPO = args.repo
     PORT = args.port
+    
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(init_db())
+    # user = loop.run_until_complete(UserModel.get("9e82e05c-2731-483d-9232-df5c58165634"))
+    # print(user.user_id)
+    loop.close()
 
     _app.run(host="0.0.0.0", port=PORT)
+

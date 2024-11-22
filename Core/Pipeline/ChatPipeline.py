@@ -20,7 +20,7 @@ class ChatPipeline:
         self.metadata = {}
         self.context = context
         self.agents: List[CustomAgentBase] = []
-        self.recorder = Recorder(config, context.session_id)
+        self.recorder = Recorder(config, context.session_id, context.user_id)
 
     @abstractmethod
     def start(self, context: Context):

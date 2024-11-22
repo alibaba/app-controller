@@ -10,13 +10,13 @@ from Database.Models.SessionModel import SessionModel
 class Recorder:
     _instances = {}  # Stores instances of Recorder for each identifier
 
-    def __new__(cls, config: Config, identifier):
+    def __new__(cls, config: Config, identifier, user_id):
         # Singleton implementation: return existing instance if one exists
         if identifier not in cls._instances:
             cls._instances[identifier] = super().__new__(cls)
         return cls._instances[identifier]
 
-    def __init__(self, config: Config, identifier):
+    def __init__(self, config: Config, identifier, user_id):
         # Prevent reinitialization of the instance
         if hasattr(self, 'initialized') and self.initialized:
             return
@@ -25,6 +25,7 @@ class Recorder:
 
         self.config = config
         self.identifier = identifier
+        self.user_id = user_id
         self.messages = []
         self.input = None
         self.feedback = TaskFeedBackEnum.Unknown.name
@@ -65,7 +66,7 @@ class Recorder:
 
     async def save(self):
         pipeline = json.dumps(self.messages)
-        await SessionModel.create(session_id=self.identifier, pipeline=pipeline, user_input=self.input, feedback=self.feedback)
+        await SessionModel.create(session_id=self.identifier, user_id=self.user_id,pipeline=pipeline, user_input=self.input, feedback=self.feedback)
 
     def separate(self):
         self.info("--------------------------------------------------", record=False)
