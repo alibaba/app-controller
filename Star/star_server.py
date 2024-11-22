@@ -90,7 +90,7 @@ else:
     IP = os.getenv("IP", "127.0.0.1")
     COPILOT_IP = os.getenv("COPILOT_IP", "127.0.0.1")
 
-PORT = os.getenv("PORT", "8080")
+PORT = os.getenv("PORT", "8086")
 COPILOT_PORT = os.getenv("COPILOT_PORT", "8081")
 
 if not is_ip(IP):
@@ -411,7 +411,7 @@ if __name__ == "__main__":
     parser.add_argument("--client_secret", help="Set the CLIENT_SECRET environment variable.")
     parser.add_argument("--owner", help="Set the REPO_OWNER environment variable.")
     parser.add_argument("--repo", help="Set the APP_CONTROLLER_REPO environment variable.")
-    parser.add_argument("--port", type=int, default=8080, help="Set the port number for the application.")
+    parser.add_argument("--port", type=int, default=8086, help="Set the port number for the application.")
 
     args = parser.parse_args()
     CLIENT_ID = args.client_id
