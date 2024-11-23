@@ -8,6 +8,7 @@ import tempfile
 from typing import Tuple, Any
 from datetime import timedelta
 import sys
+
 sys.path.append("Core")
 sys.path.append("Core/..")
 from Service.UserCallCountService import UserCallCountService
@@ -255,7 +256,7 @@ async def oauth_callback() -> str:
                 "_success_for_star",
             ),
         )
-        
+
     else:
         return "Error: Unable to star the repository."
 
@@ -411,6 +412,7 @@ if __name__ == "__main__":
     parser.add_argument("--client_secret", help="Set the CLIENT_SECRET environment variable.")
     parser.add_argument("--owner", help="Set the REPO_OWNER environment variable.")
     parser.add_argument("--repo", help="Set the APP_CONTROLLER_REPO environment variable.")
+    parser.add_argument("--ip", help="Set the ip address for the current server")
     parser.add_argument("--port", type=int, default=8086, help="Set the port number for the application.")
 
     args = parser.parse_args()
@@ -419,7 +421,8 @@ if __name__ == "__main__":
     REPO_OWNER = args.owner
     APP_CONTROLLER_REPO = args.repo
     PORT = args.port
-    
+    IP = args.ip
+
     loop = asyncio.get_event_loop()
     loop.run_until_complete(init_db())
     # user = loop.run_until_complete(UserModel.get("9e82e05c-2731-483d-9232-df5c58165634"))
@@ -427,4 +430,3 @@ if __name__ == "__main__":
     loop.close()
 
     _app.run(host="0.0.0.0", port=PORT)
-
